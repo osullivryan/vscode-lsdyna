@@ -1,0 +1,94 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "LS-Dyna",
+	"scopeName": "source.lsdyna",
+	"patterns": [
+		{"include": "#comments"},
+		{"include": "#numbers"},
+		{"include": "#keywords_type"},
+		{"include": "#separate"},
+		{"include": "#posterior_keywords_and_options"},
+		{"include": "#parameter_type"},
+		{"include": "#suboptions_with_bracket"},
+		{"include": "#names"}
+	],
+	"repository": {
+		"comments": {
+			"patterns": [
+				{
+					"comment": "Comment line",
+					"begin": "^[$]",
+					"end": "(?=\\n|\\r)",
+					"name": "comment.line.c.lsdyna"
+				}
+			]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "comment": "Numeric type",
+                    "name": "constant.numeric",
+                    "match": "(\\.\\d)|(?ix)[\\+\\-]?\\b(\\d+\\.?\\d*|\\.\\d+)(d[\\+\\-]?\\d+|e[\\+\\-]?\\d+(_\\w+)?)?(?![a-z_])"
+                }
+            ]
+        },
+		"separate": {
+			"patterns": [
+				{
+					"comment": "LS-DYNA separate",
+					"name": "keyword.operator.other",
+					"begin": "_|\\,",
+					"end": "(?=\\w|\\s)"
+				}
+			]
+		},
+		"keywords_type": {
+			"patterns": [
+				{
+					"comment": "LS-DYNA keywords type",
+					"name": "keyword.other.lsdyna",
+					"begin": "^[*]",
+					"end": "(?=\\,|\\n|\\_|\\r|[ ])"
+				}
+			]
+		},
+		"posterior_keywords_and_options": {
+			"patterns": [
+				{
+					"comment": "posterior keywords and options",
+					"name": "entity.name.function.lsdyna",
+					"begin": "(?<=_)\\w",
+					"end": "(?=\\_|\\n|\\r|[ ])"
+				}
+			]
+		},
+		"parameter_type": {
+			"patterns": [
+				{
+					"comment": "LS-DYNA parameter type",
+					"name": "variable.parameter.lsdyna",
+					"begin": "[&]",
+					"end": "(?=\\,|\\n|\\_|\\r|[ ])"
+				}
+			]
+		},
+		"suboptions_with_bracket": {
+			"patterns": [
+				{
+					"comment": "suboptions with bracket",
+					"name": "variable.other.function.lsdyna",
+					"match": "(?<=\\{)\\w*(?=\\})"
+				}
+			]
+        },
+        "names":{
+            "patterns": [
+                {
+                "comment": "name",
+                "name": "string.interpolated.lsdyna",
+                "match": "(^(?=[\\S])[^\\$\\*\\,\\{\\}\\<\\>\\(\\)\\%\\&\\?\\!\\#\\.\\@0-9][\\w[ ]]*$)"
+                }
+            ]
+        }
+	}
+}

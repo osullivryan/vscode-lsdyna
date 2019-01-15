@@ -1,0 +1,25 @@
+{
+    "name": "lsdyna",
+    "displayName": "LSDynaForVSCode",
+    "description": "Syntax Highlighting and Snippets for LS-Dyna Deck Creation and Editing",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.30.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "lsdyna",
+            "aliases": ["LS-Dyna", "lsdyna"],
+            "extensions": [".k",".key",".dyna",".part",".mesh",".matdef"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "lsdyna",
+            "scopeName": "source.lsdyna",
+            "path": "./syntaxes/lsdyna.tmLanguage.json"
+        }]
+    }
+}
