@@ -10,7 +10,8 @@
 		{"include": "#posterior_keywords_and_options"},
 		{"include": "#parameter_type"},
 		{"include": "#suboptions_with_bracket"},
-		{"include": "#names"}
+		{"include": "#names"},
+		{"include": "#phrase"}
 	],
 	"repository": {
 		"comments": {
@@ -86,7 +87,16 @@
                 {
                 "comment": "name",
                 "name": "string.interpolated.lsdyna",
-                "match": "(^(?=[\\S])[^\\$\\*\\,\\{\\}\\<\\>\\(\\)\\%\\&\\?\\!\\#\\.\\@0-9][\\w[ ]]*$)"
+                "match": "^([\\S]+)$"
+                }
+            ]
+		},
+		"phrase":{
+            "patterns": [
+                {
+                "comment": "Phrase in quotes",
+                "name": "string.quoted.double.lsdyna",
+                "match": "(\"([^\"]|\"\")*\")"
                 }
             ]
         }
