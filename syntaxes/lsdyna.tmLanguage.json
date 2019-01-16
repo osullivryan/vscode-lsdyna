@@ -4,7 +4,7 @@
 	"scopeName": "source.lsdyna",
 	"patterns": [
 		{"include": "#comments"},
-		{"include": "#numbers"},
+		{"include": "#dyna_numeric"},
 		{"include": "#keywords_type"},
 		{"include": "#separate"},
 		{"include": "#posterior_keywords_and_options"},
@@ -22,16 +22,16 @@
 					"name": "comment.line.c.lsdyna"
 				}
 			]
-        },
-        "numbers": {
-            "patterns": [
-                {
-                    "comment": "Numeric type",
-                    "name": "constant.numeric",
-                    "match": "(\\.\\d)|(?ix)[\\+\\-]?\\b(\\d+\\.?\\d*|\\.\\d+)(d[\\+\\-]?\\d+|e[\\+\\-]?\\d+(_\\w+)?)?(?![a-z_])"
-                }
-            ]
-        },
+		},
+		"dyna_numeric": {
+			"patterns": [
+				{
+					"comment": "General Dyna Numbers",
+					"name": "constant.numeric.float.decimal.lsdyna",
+					"match": "(?:([\\+\\-]*(\\d+\\.*\\d*)([eE][\\-\\+]?\\d+)*))(?=[^A-QS-Za-qs-z_])"
+				}
+			]
+		},
 		"separate": {
 			"patterns": [
 				{
