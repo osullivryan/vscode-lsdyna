@@ -20,6 +20,10 @@
             "language": "lsdyna",
             "scopeName": "source.lsdyna",
             "path": "./syntaxes/lsdyna.tmLanguage.json"
+        }],
+        "snippets": [{
+            "language": "lsdyna",
+            "path": "./snippets/lsdyna.json"
         }]
     }
 }
