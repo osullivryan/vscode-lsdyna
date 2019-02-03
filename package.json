@@ -2,6 +2,7 @@
     "name": "lsdyna",
     "displayName": "LSDynaForVSCode",
     "description": "Syntax Highlighting and Snippets for LS-Dyna Deck Creation and Editing",
+    "publisher": "DCHartlen",
     "version": "0.0.1",
     "engines": {
         "vscode": "^1.30.0"
