@@ -169,6 +169,21 @@
                "AIRBAG_SIMPLE_PRESSURE_VOLUME_ID"
           ]
      },
+     "*BOUNDARY_CONVECTION_SET": {
+          "body": [
+               "*BOUNDARY_CONVECTION_SET",
+               "$#    ssid",
+               "",
+               "$#   hlcid     hmult     tlcid     tmult       loc",
+               "",
+               "$"
+          ],
+          "description": "BOUNDARY_CONVECTION_SET",
+          "prefix": [
+               "*BOUNDARY_CONVECTION_SET",
+               "BOUNDARY_CONVECTION_SET"
+          ]
+     },
      "*BOUNDARY_PRESCRIBED_FINAL_GEOMETRY": {
           "body": [
                "*BOUNDARY_PRESCRIBED_FINAL_GEOMETRY",
@@ -237,6 +252,21 @@
                "BOUNDARY_PRESCRIBED_MOTION_SET"
           ]
      },
+     "*BOUNDARY_RADIATION_SET": {
+          "body": [
+               "*BOUNDARY_RADIATION_SET",
+               "$#    ssid      type",
+               "",
+               "$#   flcid     fmult    tilcid    timult       loc",
+               "",
+               "$"
+          ],
+          "description": "BOUNDARY_RADIATION_SET",
+          "prefix": [
+               "*BOUNDARY_RADIATION_SET",
+               "BOUNDARY_RADIATION_SET"
+          ]
+     },
      "*BOUNDARY_SPC_NODE": {
           "body": [
                "*BOUNDARY_SPC_NODE",
@@ -261,6 +291,19 @@
           "prefix": [
                "*BOUNDARY_SPC_SET",
                "BOUNDARY_SPC_SET"
+          ]
+     },
+     "*BOUNDARY_TEMPERATURE_SET": {
+          "body": [
+               "*BOUNDARY_TEMPERATURE_SET",
+               "$#    nsid      lcid     cmult       loc",
+               "",
+               "$"
+          ],
+          "description": "BOUNDARY_TEMPERATURE_SET",
+          "prefix": [
+               "*BOUNDARY_TEMPERATURE_SET",
+               "BOUNDARY_TEMPERATURE_SET"
           ]
      },
      "*COMMENT": {
@@ -297,6 +340,19 @@
           "prefix": [
                "*CONSTRAINED_EXTRA_NODES_SET",
                "CONSTRAINED_EXTRA_NODES_SET"
+          ]
+     },
+     "*CONSTRAINED_GLOBAL": {
+          "body": [
+               "*CONSTRAINED_GLOBAL",
+               "$#      tc        rc       dir         x         y         z",
+               "",
+               "$"
+          ],
+          "description": "CONSTRAINED_GLOBAL",
+          "prefix": [
+               "*CONSTRAINED_GLOBAL",
+               "CONSTRAINED_GLOBAL"
           ]
      },
      "*CONSTRAINED_JOINT_CONSTANT_VELOCITY_ID": {
@@ -639,6 +695,36 @@
                "CONSTRAINED_RIGID_BODIES"
           ]
      },
+     "*CONSTRAINED_SPOTWELD": {
+          "body": [
+               "*CONSTRAINED_SPOTWELD",
+               "$#      n1        n2        sn        ss         n         m        tf        ep",
+               "",
+               "$"
+          ],
+          "description": "CONSTRAINED_SPOTWELD",
+          "prefix": [
+               "*CONSTRAINED_SPOTWELD",
+               "CONSTRAINED_SPOTWELD"
+          ]
+     },
+     "*CONTACT_2D_AUTOMATIC_NODE_TO_SURFACE": {
+          "body": [
+               "*CONTACT_2D_AUTOMATIC_NODE_TO_SURFACE",
+               "$#    ssid      msid     sfact      freq        fs        fd        dc     membs",
+               "",
+               "$#  tbirth    tdeath       sos       som       nds       ndm       cof      init",
+               "",
+               "$#      vc       vdc       ipf     slide    istiff   tiedgap",
+               "",
+               "$"
+          ],
+          "description": "CONTACT_2D_AUTOMATIC_NODE_TO_SURFACE",
+          "prefix": [
+               "*CONTACT_2D_AUTOMATIC_NODE_TO_SURFACE",
+               "CONTACT_2D_AUTOMATIC_NODE_TO_SURFACE"
+          ]
+     },
      "*CONTACT_AIRBAG_SINGLE_SURFACE_ID": {
           "body": [
                "*CONTACT_AIRBAG_SINGLE_SURFACE_ID",
@@ -664,6 +750,39 @@
           "prefix": [
                "*CONTACT_AIRBAG_SINGLE_SURFACE_ID",
                "CONTACT_AIRBAG_SINGLE_SURFACE_ID"
+          ]
+     },
+     "*CONTACT_AUTOMATIC_GENERAL_ID": {
+          "body": [
+               "*CONTACT_AUTOMATIC_GENERAL_ID",
+               "$#     cid                                                                 title",
+               "",
+               "$#  ignore      bckt    lcbckt    ns2trk   inititr    parmax              cparm8",
+               "$                                                                               2",
+               "$#    ssid      msid     sstyp     mstyp    sboxid    mboxid       spr       mpr",
+               "",
+               "$#      fs        fd        dc        vc       vdc    penchk        bt        dt",
+               "",
+               "$#     sfs       sfm       sst       mst      sfst      sfmt       fsf       vsf",
+               "",
+               "$#    soft    sofscl    lcidab    maxpar     sbopt     depth     bsort    frcfrq",
+               "",
+               "$#  penmax    thkopt    shlthk     snlog      isym     i2d3d    sldthk    sldstf",
+               "",
+               "$#    igap    ignore    dprfac    dtstif    unused    unused    flangl   cid_rcf",
+               "",
+               "$#   q2tri    dtpchk     sfnbr    fnlscl    dnlscl      tcso    tiedid    shledg",
+               "",
+               "$#  sharec    cparm8    ipback     srnde    fricsf      icor     ftorq    region",
+               "",
+               "$#  pstiff   ignroff               fstol    2dbinr",
+               "",
+               "$"
+          ],
+          "description": "CONTACT_AUTOMATIC_GENERAL_ID",
+          "prefix": [
+               "*CONTACT_AUTOMATIC_GENERAL_ID",
+               "CONTACT_AUTOMATIC_GENERAL_ID"
           ]
      },
      "*CONTACT_AUTOMATIC_GENERAL_INTERIOR_ID": {
@@ -749,6 +868,60 @@
                "CONTACT_AUTOMATIC_SINGLE_SURFACE_ID"
           ]
      },
+     "*CONTACT_AUTOMATIC_SINGLE_SURFACE_MORTAR": {
+          "body": [
+               "*CONTACT_AUTOMATIC_SINGLE_SURFACE_MORTAR",
+               "$#    ssid      msid     sstyp     mstyp    sboxid    mboxid       spr       mpr",
+               "",
+               "$#      fs        fd        dc        vc       vdc    penchk        bt        dt",
+               "",
+               "$#     sfs       sfm       sst       mst      sfst      sfmt       fsf       vsf",
+               "",
+               "$#    soft    sofscl    lcidab    maxpar     sbopt     depth     bsort    frcfrq",
+               "",
+               "$#  penmax    thkopt    shlthk     snlog      isym     i2d3d    sldthk    sldstf",
+               "",
+               "$#    igap    ignodprfac/mpadtstif/mpar2   unused     unused    flangl   cid_rcf",
+               "",
+               "$"
+          ],
+          "description": "CONTACT_AUTOMATIC_SINGLE_SURFACE_MORTAR",
+          "prefix": [
+               "*CONTACT_AUTOMATIC_SINGLE_SURFACE_MORTAR",
+               "CONTACT_AUTOMATIC_SINGLE_SURFACE_MORTAR"
+          ]
+     },
+     "*CONTACT_AUTOMATIC_SINGLE_SURFACE_MORTAR_ID": {
+          "body": [
+               "*CONTACT_AUTOMATIC_SINGLE_SURFACE_MORTAR_ID",
+               "$#     cid                                                                 title",
+               "",
+               "$#    ssid      msid     sstyp     mstyp    sboxid    mboxid       spr       mpr",
+               "",
+               "$#      fs        fd        dc        vc       vdc    penchk        bt        dt",
+               "",
+               "$#     sfs       sfm       sst       mst      sfst      sfmt       fsf       vsf",
+               "",
+               "$#    soft    sofscl    lcidab    maxpar     sbopt     depth     bsort    frcfrq",
+               "",
+               "$#  penmax    thkopt    shlthk     snlog      isym     i2d3d    sldthk    sldstf",
+               "",
+               "$#    igap    ignodprfac/mpadtstif/mpar2   unused     unused    flangl   cid_rcf",
+               "",
+               "$#   q2tri    dtpchk     sfnbr    fnlscl   dnlscl       tcso    tiedid    shledg",
+               "",
+               "$#  sharec    cparm8    ipback     srnde    fricsf      icor     ftorq    region",
+               "",
+               "$#  pstiff   ignroff   beam-cs",
+               "",
+               "$"
+          ],
+          "description": "CONTACT_AUTOMATIC_SINGLE_SURFACE_MORTAR_ID",
+          "prefix": [
+               "*CONTACT_AUTOMATIC_SINGLE_SURFACE_MORTAR_ID",
+               "CONTACT_AUTOMATIC_SINGLE_SURFACE_MORTAR_ID"
+          ]
+     },
      "*CONTACT_AUTOMATIC_SURFACE_TO_SURFACE_ID": {
           "body": [
                "*CONTACT_AUTOMATIC_SURFACE_TO_SURFACE_ID",
@@ -774,6 +947,25 @@
           "prefix": [
                "*CONTACT_AUTOMATIC_SURFACE_TO_SURFACE_ID",
                "CONTACT_AUTOMATIC_SURFACE_TO_SURFACE_ID"
+          ]
+     },
+     "*CONTACT_AUTOMATIC_SURFACE_TO_SURFACE_MORTAR_ID": {
+          "body": [
+               "*CONTACT_AUTOMATIC_SURFACE_TO_SURFACE_MORTAR_ID",
+               "$#     cid                                                                 title",
+               "",
+               "$#    ssid      msid     sstyp     mstyp    sboxid    mboxid       spr       mpr",
+               "",
+               "$#      fs        fd        dc        vc       vdc    penchk        bt        dt",
+               "",
+               "$#     sfs       sfm       sst       mst      sfst      sfmt       fsf       vsf",
+               "",
+               "$"
+          ],
+          "description": "CONTACT_AUTOMATIC_SURFACE_TO_SURFACE_MORTAR_ID",
+          "prefix": [
+               "*CONTACT_AUTOMATIC_SURFACE_TO_SURFACE_MORTAR_ID",
+               "CONTACT_AUTOMATIC_SURFACE_TO_SURFACE_MORTAR_ID"
           ]
      },
      "*CONTACT_FORCE_TRANSDUCER_PENALTY_ID": {
@@ -827,6 +1019,34 @@
                "CONTACT_TIED_SHELL_EDGE_TO_SURFACE_BEAM_OFFSET_ID"
           ]
      },
+     "*CONTROL_ACCURACY": {
+          "body": [
+               "*CONTROL_ACCURACY",
+               "$#     osu       inn    pidosu      iacc",
+               "",
+               "$"
+          ],
+          "description": "CONTROL_ACCURACY",
+          "prefix": [
+               "*CONTROL_ACCURACY",
+               "CONTROL_ACCURACY"
+          ]
+     },
+     "*CONTROL_ALE": {
+          "body": [
+               "*CONTROL_ALE",
+               "$#     dct      nadv      meth      afac      bfac      cfac      dfac      efac",
+               "",
+               "$#   start       end     aafac     vfact    vlimit       ebc      pref",
+               "",
+               "$"
+          ],
+          "description": "CONTROL_ALE",
+          "prefix": [
+               "*CONTROL_ALE",
+               "CONTROL_ALE"
+          ]
+     },
      "*CONTROL_BULK_VISCOSITY": {
           "body": [
                "*CONTROL_BULK_VISCOSITY",
@@ -876,6 +1096,132 @@
                "CONTROL_CPM"
           ]
      },
+     "*CONTROL_ENERGY": {
+          "body": [
+               "*CONTROL_ENERGY",
+               "$#    hgen      rwen    slnten     rylen",
+               "",
+               "$"
+          ],
+          "description": "CONTROL_ENERGY",
+          "prefix": [
+               "*CONTROL_ENERGY",
+               "CONTROL_ENERGY"
+          ]
+     },
+     "*CONTROL_HOURGLASS": {
+          "body": [
+               "*CONTROL_HOURGLASS",
+               "$#     ihq        qh",
+               "",
+               "$"
+          ],
+          "description": "CONTROL_HOURGLASS",
+          "prefix": [
+               "*CONTROL_HOURGLASS",
+               "CONTROL_HOURGLASS"
+          ]
+     },
+     "*CONTROL_IMPLICIT_AUTO": {
+          "body": [
+               "*CONTROL_IMPLICIT_AUTO",
+               "$#   iauto    iteopt    itewin     dtmin     dtmax     dtexp     kfail    kcycle",
+               "",
+               "$"
+          ],
+          "description": "CONTROL_IMPLICIT_AUTO",
+          "prefix": [
+               "*CONTROL_IMPLICIT_AUTO",
+               "CONTROL_IMPLICIT_AUTO"
+          ]
+     },
+     "*CONTROL_IMPLICIT_BUCKLE": {
+          "body": [
+               "*CONTROL_IMPLICIT_BUCKLE",
+               "$#   nmode",
+               "",
+               "$"
+          ],
+          "description": "CONTROL_IMPLICIT_BUCKLE",
+          "prefix": [
+               "*CONTROL_IMPLICIT_BUCKLE",
+               "CONTROL_IMPLICIT_BUCKLE"
+          ]
+     },
+     "*CONTROL_IMPLICIT_DYNAMICS": {
+          "body": [
+               "*CONTROL_IMPLICIT_DYNAMICS",
+               "$#   imass     gamma      beta",
+               "",
+               "$"
+          ],
+          "description": "CONTROL_IMPLICIT_DYNAMICS",
+          "prefix": [
+               "*CONTROL_IMPLICIT_DYNAMICS",
+               "CONTROL_IMPLICIT_DYNAMICS"
+          ]
+     },
+     "*CONTROL_IMPLICIT_EIGENVALUE": {
+          "body": [
+               "*CONTROL_IMPLICIT_EIGENVALUE",
+               "$#    neig    center     lflag    lftend     rflag    rhtend    eigmth    shfscl",
+               "",
+               "$#   solid     ibeam    ishell   itshell    mstres    evdump   mstrscl",
+               "",
+               "$"
+          ],
+          "description": "CONTROL_IMPLICIT_EIGENVALUE",
+          "prefix": [
+               "*CONTROL_IMPLICIT_EIGENVALUE",
+               "CONTROL_IMPLICIT_EIGENVALUE"
+          ]
+     },
+     "*CONTROL_IMPLICIT_GENERAL": {
+          "body": [
+               "*CONTROL_IMPLICIT_GENERAL",
+               "$#  imflag       dt0    imform      nsbs       igs     cnstn      form    zero_v",
+               "         1                   2         1         2",
+               "$"
+          ],
+          "description": "CONTROL_IMPLICIT_GENERAL",
+          "prefix": [
+               "*CONTROL_IMPLICIT_GENERAL",
+               "CONTROL_IMPLICIT_GENERAL"
+          ]
+     },
+     "*CONTROL_IMPLICIT_SOLUTION": {
+          "body": [
+               "*CONTROL_IMPLICIT_SOLUTION",
+               "$#  nsolvr    ilimit    maxref     dctol     ectol     rctol     lstol    abstol",
+               "        12         6        12    1.0e-3    1.0e-2                       1.0e-20",
+               "$#   dnorm    diverg     istif   nlprint    nlnorm   d3itctl     cpchk",
+               "         1                             3         4         1",
+               "$#  arcctl    arcdir    arclen    arcmth    arcdmp    arcpsi    arcalf    arctim",
+               "",
+               "$#   lsmtd     lsdir      irad      srad      awgt      sred",
+               "         4"
+          ],
+          "description": "CONTROL_IMPLICIT_SOLUTION",
+          "prefix": [
+               "*CONTROL_IMPLICIT_SOLUTION",
+               "CONTROL_IMPLICIT_SOLUTION"
+          ]
+     },
+     "*CONTROL_IMPLICIT_SOLVER": {
+          "body": [
+               "*CONTROL_IMPLICIT_SOLVER",
+               "$#  lsolvr   prntflg    negeig     order      drcm    drcprm    autospc    aspctl",
+               "",
+               "$#  lcpack",
+               "",
+               "$"
+          ],
+          "description": "CONTROL_IMPLICIT_SOLVER",
+          "prefix": [
+               "*CONTROL_IMPLICIT_SOLVER",
+               "CONTROL_IMPLICIT_SOLVER"
+          ]
+     },
      "*CONTROL_MPP_DECOMPOSITION_ARRANGE_PARTS": {
           "body": [
                "*CONTROL_MPP_DECOMPOSITION_ARRANGE_PARTS",
@@ -911,6 +1257,34 @@
           "prefix": [
                "*CONTROL_MPP_DECOMPOSITION_PARTSET_DISTRIBUTE",
                "CONTROL_MPP_DECOMPOSITION_PARTSET_DISTRIBUTE"
+          ]
+     },
+     "*CONTROL_OUTPUT": {
+          "body": [
+               "*CONTROL_OUTPUT",
+               "$#   npopt    neecho    nrefup    iaccop     opifs    ipnint    ikedit    iflush",
+               "",
+               "$#   iprtf",
+               "",
+               "$"
+          ],
+          "description": "CONTROL_OUTPUT",
+          "prefix": [
+               "*CONTROL_OUTPUT",
+               "CONTROL_OUTPUT"
+          ]
+     },
+     "*CONTROL_PARALLEL": {
+          "body": [
+               "*CONTROL_PARALLEL",
+               "$#    ncpu    numrhs     const      para",
+               "",
+               "$"
+          ],
+          "description": "CONTROL_PARALLEL",
+          "prefix": [
+               "*CONTROL_PARALLEL",
+               "CONTROL_PARALLEL"
           ]
      },
      "*CONTROL_RIGID": {
@@ -958,6 +1332,19 @@
                "CONTROL_SOLID"
           ]
      },
+     "*CONTROL_SOLUTION": {
+          "body": [
+               "*CONTROL_SOLUTION",
+               "$#    soln       nlq     isnan     lcint",
+               "",
+               "$"
+          ],
+          "description": "CONTROL_SOLUTION",
+          "prefix": [
+               "*CONTROL_SOLUTION",
+               "CONTROL_SOLUTION"
+          ]
+     },
      "*CONTROL_TERMINATION": {
           "body": [
                "*CONTROL_TERMINATION",
@@ -969,6 +1356,45 @@
           "prefix": [
                "*CONTROL_TERMINATION",
                "CONTROL_TERMINATION"
+          ]
+     },
+     "*CONTROL_THERMAL_NONLINEAR": {
+          "body": [
+               "*CONTROL_THERMAL_NONLINEAR",
+               "$#  refmax       tol       dcp",
+               "",
+               "$"
+          ],
+          "description": "CONTROL_THERMAL_NONLINEAR",
+          "prefix": [
+               "*CONTROL_THERMAL_NONLINEAR",
+               "CONTROL_THERMAL_NONLINEAR"
+          ]
+     },
+     "*CONTROL_THERMAL_SOLVER": {
+          "body": [
+               "*CONTROL_THERMAL_SOLVER",
+               "$#   atype     ptype    solver     cgtol       gpt    eqheat     fwork       sbc",
+               "",
+               "$"
+          ],
+          "description": "CONTROL_THERMAL_SOLVER",
+          "prefix": [
+               "*CONTROL_THERMAL_SOLVER",
+               "CONTROL_THERMAL_SOLVER"
+          ]
+     },
+     "*CONTROL_THERMAL_TIMESTEP": {
+          "body": [
+               "*CONTROL_THERMAL_TIMESTEP",
+               "$#      ts       tip       its      tmin      tmax     dtemp      tscp",
+               "",
+               "$"
+          ],
+          "description": "CONTROL_THERMAL_TIMESTEP",
+          "prefix": [
+               "*CONTROL_THERMAL_TIMESTEP",
+               "CONTROL_THERMAL_TIMESTEP"
           ]
      },
      "*CONTROL_TIMESTEP": {
@@ -1092,6 +1518,19 @@
                "DATABASE_ABSTAT"
           ]
      },
+     "*DATABASE_BINARY_D3DUMP": {
+          "body": [
+               "*DATABASE_BINARY_D3DUMP",
+               "$#    cycl      lcdt      beam     npltc    psetid",
+               "",
+               "$"
+          ],
+          "description": "DATABASE_BINARY_D3DUMP",
+          "prefix": [
+               "*DATABASE_BINARY_D3DUMP",
+               "DATABASE_BINARY_D3DUMP"
+          ]
+     },
      "*DATABASE_BINARY_D3PLOT": {
           "body": [
                "*DATABASE_BINARY_D3PLOT",
@@ -1107,6 +1546,19 @@
                "DATABASE_BINARY_D3PLOT"
           ]
      },
+     "*DATABASE_BINARY_D3THDT": {
+          "body": [
+               "*DATABASE_BINARY_D3THDT",
+               "$#    cycl      lcdt      beam     npltc    psetid",
+               "",
+               "$"
+          ],
+          "description": "DATABASE_BINARY_D3THDT",
+          "prefix": [
+               "*DATABASE_BINARY_D3THDT",
+               "DATABASE_BINARY_D3THDT"
+          ]
+     },
      "*DATABASE_BINARY_INTFOR": {
           "body": [
                "*DATABASE_BINARY_INTFOR",
@@ -1120,6 +1572,19 @@
           "prefix": [
                "*DATABASE_BINARY_INTFOR",
                "DATABASE_BINARY_INTFOR"
+          ]
+     },
+     "*DATABASE_BINARY_RUNRSF": {
+          "body": [
+               "*DATABASE_BINARY_RUNRSF",
+               "$#    cycl        nr      beam     npltc    psetid",
+               "",
+               "$"
+          ],
+          "description": "DATABASE_BINARY_RUNRSF",
+          "prefix": [
+               "*DATABASE_BINARY_RUNRSF",
+               "DATABASE_BINARY_RUNRSF"
           ]
      },
      "*DATABASE_BNDOUT": {
@@ -1148,6 +1613,23 @@
           "prefix": [
                "*DATABASE_CPM_SENSOR",
                "DATABASE_CPM_SENSOR"
+          ]
+     },
+     "*DATABASE_CROSS_SECTION_PLANE_ID": {
+          "body": [
+               "*DATABASE_CROSS_SECTION_PLANE_ID",
+               "$#    csid                                                                 title",
+               "",
+               "$#    psid       xct       yct       zct       xch       ych       zch    radius",
+               "",
+               "$#    xhev      yhev      zhev      lenl      lenm        id     itype",
+               "",
+               "$"
+          ],
+          "description": "DATABASE_CROSS_SECTION_PLANE_ID",
+          "prefix": [
+               "*DATABASE_CROSS_SECTION_PLANE_ID",
+               "DATABASE_CROSS_SECTION_PLANE_ID"
           ]
      },
      "*DATABASE_CROSS_SECTION_SET": {
@@ -1277,6 +1759,19 @@
                "DATABASE_GLSTAT"
           ]
      },
+     "*DATABASE_HISTORY_BEAM": {
+          "body": [
+               "*DATABASE_HISTORY_BEAM",
+               "$#    eid1      eid2      eid3      eid4       ei5      eid6      eid7      eid8",
+               "",
+               "$"
+          ],
+          "description": "DATABASE_HISTORY_BEAM",
+          "prefix": [
+               "*DATABASE_HISTORY_BEAM",
+               "DATABASE_HISTORY_BEAM"
+          ]
+     },
      "*DATABASE_HISTORY_NODE": {
           "body": [
                "*DATABASE_HISTORY_NODE",
@@ -1301,6 +1796,45 @@
           "prefix": [
                "*DATABASE_HISTORY_NODE_LOCAL",
                "DATABASE_HISTORY_NODE_LOCAL"
+          ]
+     },
+     "*DATABASE_HISTORY_SHELL": {
+          "body": [
+               "*DATABASE_HISTORY_SHELL",
+               "$#    eid1      eid2      eid3      eid4       ei5      eid6      eid7      eid8",
+               "",
+               "$"
+          ],
+          "description": "DATABASE_HISTORY_SHELL",
+          "prefix": [
+               "*DATABASE_HISTORY_SHELL",
+               "DATABASE_HISTORY_SHELL"
+          ]
+     },
+     "*DATABASE_HISTORY_SOLID": {
+          "body": [
+               "*DATABASE_HISTORY_SOLID",
+               "$#    eid1      eid2      eid3      eid4       ei5      eid6      eid7      eid8",
+               "",
+               "$"
+          ],
+          "description": "DATABASE_HISTORY_SOLID",
+          "prefix": [
+               "*DATABASE_HISTORY_SOLID",
+               "DATABASE_HISTORY_SOLID"
+          ]
+     },
+     "*DATABASE_HISTORY_TSHELL": {
+          "body": [
+               "*DATABASE_HISTORY_TSHELL",
+               "$#     id1       id2       id3       id4       id5       id6       id7       id8",
+               "",
+               "$"
+          ],
+          "description": "DATABASE_HISTORY_TSHELL",
+          "prefix": [
+               "*DATABASE_HISTORY_TSHELL",
+               "DATABASE_HISTORY_TSHELL"
           ]
      },
      "*DATABASE_JNTFORC": {
@@ -1340,6 +1874,19 @@
           "prefix": [
                "*DATABASE_NCFORC",
                "DATABASE_NCFORC"
+          ]
+     },
+     "*DATABASE_NODAL_FORCE_GROUP": {
+          "body": [
+               "*DATABASE_NODAL_FORCE_GROUP",
+               "$#    nsid       cid",
+               "",
+               "$"
+          ],
+          "description": "DATABASE_NODAL_FORCE_GROUP",
+          "prefix": [
+               "*DATABASE_NODAL_FORCE_GROUP",
+               "DATABASE_NODAL_FORCE_GROUP"
           ]
      },
      "*DATABASE_NODFOR": {
@@ -1394,6 +1941,19 @@
                "DATABASE_RCFORC"
           ]
      },
+     "*DATABASE_RWFORC": {
+          "body": [
+               "*DATABASE_RWFORC",
+               "$#      dt    binary",
+               "",
+               "$"
+          ],
+          "description": "DATABASE_RWFORC",
+          "prefix": [
+               "*DATABASE_RWFORC",
+               "DATABASE_RWFORC"
+          ]
+     },
      "*DATABASE_SBTOUT": {
           "body": [
                "*DATABASE_SBTOUT",
@@ -1444,6 +2004,32 @@
           "prefix": [
                "*DATABASE_SPCFORC",
                "DATABASE_SPCFORC"
+          ]
+     },
+     "*DATABASE_SWFORC": {
+          "body": [
+               "*DATABASE_SWFORC",
+               "$#      dt    binary      lcur     ioopt",
+               "",
+               "$"
+          ],
+          "description": "DATABASE_SWFORC",
+          "prefix": [
+               "*DATABASE_SWFORC",
+               "DATABASE_SWFORC"
+          ]
+     },
+     "*DATABASE_TPRINT": {
+          "body": [
+               "*DATABASE_TPRINT",
+               "$#      dt    binary      lcur     ioopt",
+               "",
+               "$"
+          ],
+          "description": "DATABASE_TPRINT",
+          "prefix": [
+               "*DATABASE_TPRINT",
+               "DATABASE_TPRINT"
           ]
      },
      "*DEFINE_BOX": {
@@ -1502,6 +2088,23 @@
           "prefix": [
                "*DEFINE_COORDINATE_SYSTEM",
                "DEFINE_COORDINATE_SYSTEM"
+          ]
+     },
+     "*DEFINE_COORDINATE_SYSTEM_TITLE": {
+          "body": [
+               "*DEFINE_COORDINATE_SYSTEM_TITLE",
+               "$# title",
+               "",
+               "$#     cid        xo        yo        zo        xl        yl        zl",
+               "",
+               "$#      xp        yp        zp",
+               "",
+               "$"
+          ],
+          "description": "DEFINE_COORDINATE_SYSTEM_TITLE",
+          "prefix": [
+               "*DEFINE_COORDINATE_SYSTEM_TITLE",
+               "DEFINE_COORDINATE_SYSTEM_TITLE"
           ]
      },
      "*DEFINE_COORDINATE_VECTOR": {
@@ -2151,6 +2754,32 @@
                "ELEMENT_SHELL"
           ]
      },
+     "*ELEMENT_SOLID": {
+          "body": [
+               "*ELEMENT_SOLID",
+               "$#   eid     pid      n1      n2      n3      n4      n5      n6      n7      n8",
+               "",
+               "$"
+          ],
+          "description": "ELEMENT_SOLID",
+          "prefix": [
+               "*ELEMENT_SOLID",
+               "ELEMENT_SOLID"
+          ]
+     },
+     "*ELEMENT_TSHELL": {
+          "body": [
+               "*ELEMENT_TSHELL",
+               "$#   eid     pid      n1      n2      n3      n4      n5      n6      n7      n8",
+               "",
+               "$"
+          ],
+          "description": "ELEMENT_TSHELL",
+          "prefix": [
+               "*ELEMENT_TSHELL",
+               "ELEMENT_TSHELL"
+          ]
+     },
      "*END": {
           "body": [
                "*END"
@@ -2230,6 +2859,19 @@
                "INCLUDE_TRANSFORM"
           ]
      },
+     "*INITIAL_AXIAL_FORCE_BEAM": {
+          "body": [
+               "*INITIAL_AXIAL_FORCE_BEAM",
+               "$#    bsid      lcid     scale     kbend",
+               "",
+               "$"
+          ],
+          "description": "INITIAL_AXIAL_FORCE_BEAM",
+          "prefix": [
+               "*INITIAL_AXIAL_FORCE_BEAM",
+               "INITIAL_AXIAL_FORCE_BEAM"
+          ]
+     },
      "*INITIAL_FOAM_REFERENCE_GEOMETRY": {
           "body": [
                "*INITIAL_FOAM_REFERENCE_GEOMETRY",
@@ -2241,6 +2883,32 @@
           "prefix": [
                "*INITIAL_FOAM_REFERENCE_GEOMETRY",
                "INITIAL_FOAM_REFERENCE_GEOMETRY"
+          ]
+     },
+     "*INITIAL_STRESS_SECTION": {
+          "body": [
+               "*INITIAL_STRESS_SECTION",
+               "$#   issid      csid      lcid      psid       vid   izshear",
+               "",
+               "$"
+          ],
+          "description": "INITIAL_STRESS_SECTION",
+          "prefix": [
+               "*INITIAL_STRESS_SECTION",
+               "INITIAL_STRESS_SECTION"
+          ]
+     },
+     "*INITIAL_TEMPERATURE_SET": {
+          "body": [
+               "*INITIAL_TEMPERATURE_SET",
+               "$#    nsid      temp       loc",
+               "",
+               "$"
+          ],
+          "description": "INITIAL_TEMPERATURE_SET",
+          "prefix": [
+               "*INITIAL_TEMPERATURE_SET",
+               "INITIAL_TEMPERATURE_SET"
           ]
      },
      "*INITIAL_VELOCITY": {
@@ -2397,6 +3065,60 @@
                "LOAD_RIGID_BODY"
           ]
      },
+     "*LOAD_SEGMENT": {
+          "body": [
+               "*LOAD_SEGMENT",
+               "$#    lcid        sf        at        n1        n2        n3        n4",
+               "",
+               "$"
+          ],
+          "description": "LOAD_SEGMENT",
+          "prefix": [
+               "*LOAD_SEGMENT",
+               "LOAD_SEGMENT"
+          ]
+     },
+     "*LOAD_SEGMENT_SET_ID": {
+          "body": [
+               "*LOAD_SEGMENT_SET_ID",
+               "$#      id                                                               heading",
+               "",
+               "$#    ssid      lcid        sf        at",
+               "",
+               "$"
+          ],
+          "description": "LOAD_SEGMENT_SET_ID",
+          "prefix": [
+               "*LOAD_SEGMENT_SET_ID",
+               "LOAD_SEGMENT_SET_ID"
+          ]
+     },
+     "*LOAD_THERMAL_LOAD_CURVE": {
+          "body": [
+               "*LOAD_THERMAL_LOAD_CURVE",
+               "$#    lcid    lciddr",
+               "",
+               "$"
+          ],
+          "description": "LOAD_THERMAL_LOAD_CURVE",
+          "prefix": [
+               "*LOAD_THERMAL_LOAD_CURVE",
+               "LOAD_THERMAL_LOAD_CURVE"
+          ]
+     },
+     "*LOAD_THERMAL_VARIABLE_NODE": {
+          "body": [
+               "*LOAD_THERMAL_VARIABLE_NODE",
+               "$#     nid        ts        tb      lcid",
+               "",
+               "$"
+          ],
+          "description": "LOAD_THERMAL_VARIABLE_NODE",
+          "prefix": [
+               "*LOAD_THERMAL_VARIABLE_NODE",
+               "LOAD_THERMAL_VARIABLE_NODE"
+          ]
+     },
      "*MAT_1DOF_GENERALIZED_SPRING_TITLE": {
           "body": [
                "*MAT_1DOF_GENERALIZED_SPRING_TITLE",
@@ -2446,6 +3168,27 @@
           "prefix": [
                "*MAT_ADD_EROSION",
                "MAT_ADD_EROSION"
+          ]
+     },
+     "*MAT_ADD_EROSION_TITLE": {
+          "body": [
+               "*MAT_ADD_EROSION_TITLE",
+               "$# title",
+               "",
+               "$#     mid      excl    mxpres     mneps    effeps    voleps    numfip       ncs",
+               "",
+               "$#  mnpres     sigp1     sigvm     mxeps     epssh     sigth   impulse    failtm",
+               "",
+               "$#    idam    dmgtyp     lcsdg     ecrit    dmgexp     dcrit    fadexp    lcregd",
+               "",
+               "$#   lcfld             epsthin    engcrt    radcrt",
+               "",
+               "$"
+          ],
+          "description": "MAT_ADD_EROSION_TITLE",
+          "prefix": [
+               "*MAT_ADD_EROSION_TITLE",
+               "MAT_ADD_EROSION_TITLE"
           ]
      },
      "*MAT_CABLE_DISCRETE_BEAM_TITLE": {
@@ -2508,6 +3251,31 @@
           "prefix": [
                "*MAT_ELASTIC_6DOF_SPRING_DISCRETE_BEAM_TITLE",
                "MAT_ELASTIC_6DOF_SPRING_DISCRETE_BEAM_TITLE"
+          ]
+     },
+     "*MAT_ELASTIC_PLASTIC_THERMAL": {
+          "body": [
+               "*MAT_ELASTIC_PLASTIC_THERMAL",
+               "$#     mid        ro",
+               "",
+               "$#      t1        t2        t3        t4        t5        t6        t7        t8",
+               "",
+               "$#      e1        e2        e3        e4        e5        e6        e7        e8",
+               "",
+               "$#     pr1       pr2       pr3       pr4       pr5       pr6       pr7       pr8",
+               "",
+               "$#  alpha1    alpha2    alpha3    alpha4    alpha5    alpha6    alpha7    alpha8",
+               "",
+               "$#   sigy1     sigy2     sigy3     sigy4     sigy5     sigy6     sigy7     sigy8",
+               "",
+               "$#   etan1     etan2     etan3     etan4     etan5     etan6     etan7     etan8",
+               "",
+               "$"
+          ],
+          "description": "MAT_ELASTIC_PLASTIC_THERMAL",
+          "prefix": [
+               "*MAT_ELASTIC_PLASTIC_THERMAL",
+               "MAT_ELASTIC_PLASTIC_THERMAL"
           ]
      },
      "*MAT_ELASTIC_SPRING_DISCRETE_BEAM_TITLE": {
@@ -2884,6 +3652,55 @@
                "MAT_SID_DAMPER_DISCRETE_BEAM_TITLE"
           ]
      },
+     "*MAT_SIMPLIFIED_JOHNSON_COOK_TITLE": {
+          "body": [
+               "*MAT_SIMPLIFIED_JOHNSON_COOK_TITLE",
+               "$# title",
+               "",
+               "$#     mid        ro         e        pr        vp",
+               "",
+               "$#       a         b         n         c    psfail    sigmax    sigsat      epso",
+               "",
+               "$"
+          ],
+          "description": "MAT_SIMPLIFIED_JOHNSON_COOK_TITLE",
+          "prefix": [
+               "*MAT_SIMPLIFIED_JOHNSON_COOK_TITLE",
+               "MAT_SIMPLIFIED_JOHNSON_COOK_TITLE"
+          ]
+     },
+     "*MAT_SPOTWELD": {
+          "body": [
+               "*MAT_SPOTWELD",
+               "$#     mid        ro         e        pr      sigy        eh        dt     tfail",
+               "",
+               "$#   efail       nrr       nrs       nrt       mrr       mss       mtt        nf",
+               "",
+               "$"
+          ],
+          "description": "MAT_SPOTWELD",
+          "prefix": [
+               "*MAT_SPOTWELD",
+               "MAT_SPOTWELD"
+          ]
+     },
+     "*MAT_SPOTWELD_TITLE": {
+          "body": [
+               "*MAT_SPOTWELD_TITLE",
+               "$# title",
+               "",
+               "$#     mid        ro         e        pr      sigy        eh        dt     tfail",
+               "",
+               "$#   efail       nrr       nrs       nrt       mrr       mss       mtt        nf",
+               "",
+               "$"
+          ],
+          "description": "MAT_SPOTWELD_TITLE",
+          "prefix": [
+               "*MAT_SPOTWELD_TITLE",
+               "MAT_SPOTWELD_TITLE"
+          ]
+     },
      "*MAT_SPRING_ELASTIC_TITLE": {
           "body": [
                "*MAT_SPRING_ELASTIC_TITLE",
@@ -2942,6 +3759,21 @@
           "prefix": [
                "*MAT_SPRING_NONLINEAR_ELASTIC_TITLE",
                "MAT_SPRING_NONLINEAR_ELASTIC_TITLE"
+          ]
+     },
+     "*MAT_THERMAL_ISOTROPIC": {
+          "body": [
+               "*MAT_THERMAL_ISOTROPIC",
+               "$#    tmid       tro     tgrlc    tgmult",
+               "",
+               "$#      hc        tc",
+               "",
+               "$"
+          ],
+          "description": "MAT_THERMAL_ISOTROPIC",
+          "prefix": [
+               "*MAT_THERMAL_ISOTROPIC",
+               "MAT_THERMAL_ISOTROPIC"
           ]
      },
      "*NODE": {
@@ -3277,6 +4109,19 @@
                "SECTION_SOLID_TITLE"
           ]
      },
+     "*SECTION_TSHELL": {
+          "body": [
+               "*SECTION_TSHELL",
+               "$#   secid    elform      shrf       nip     propt   qr/irid     icomp    tshear",
+               "",
+               "$"
+          ],
+          "description": "SECTION_TSHELL",
+          "prefix": [
+               "*SECTION_TSHELL",
+               "SECTION_TSHELL"
+          ]
+     },
      "*SENSOR_CONTROL": {
           "body": [
                "*SENSOR_CONTROL",
@@ -3457,6 +4302,21 @@
           "prefix": [
                "*SENSOR_SWITCH_SHELL_TO_VENT",
                "SENSOR_SWITCH_SHELL_TO_VENT"
+          ]
+     },
+     "*SET_BEAM": {
+          "body": [
+               "*SET_BEAM",
+               "$#     sid",
+               "",
+               "$#      k1        k2        k3        k4        k5        k6        k7        k8",
+               "",
+               "$"
+          ],
+          "description": "SET_BEAM",
+          "prefix": [
+               "*SET_BEAM",
+               "SET_BEAM"
           ]
      },
      "*SET_NODE_ADD_ADVANCED_TITLE": {
@@ -3691,6 +4551,23 @@
           "prefix": [
                "*SET_PART_LIST_TITLE",
                "SET_PART_LIST_TITLE"
+          ]
+     },
+     "*SET_SEGMENT_TITLE": {
+          "body": [
+               "*SET_SEGMENT_TITLE",
+               "$# title",
+               "",
+               "$#     sid       da1       da2       da3       da4",
+               "",
+               "$#      n1        n2        n3        n4        a1        a2        a3        a4",
+               "",
+               "$"
+          ],
+          "description": "SET_SEGMENT_TITLE",
+          "prefix": [
+               "*SET_SEGMENT_TITLE",
+               "SET_SEGMENT_TITLE"
           ]
      },
      "*SET_SHELL_ADD_TITLE": {
