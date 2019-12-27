@@ -9,7 +9,7 @@
 		"url": "https://github.com/osullivryan/vscode-lsdyna"
 	},
     "icon": "images/LS_DYNA_geo_metro.png",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "engines": {
         "vscode": "^1.30.0"
     },
@@ -20,7 +20,7 @@
         "languages": [{
             "id": "lsdyna",
             "aliases": ["LS-Dyna", "lsdyna"],
-            "extensions": [".k",".key",".dyna",".part",".mesh",".matdef"],
+            "extensions": [".k",".key",".dyna"],
             "configuration": "./language-configuration.json"
         }],
         "grammars": [{
