@@ -1,24 +1,4 @@
 {
-     "DynaLineSpacer": {
-          "prefix": "lsline",
-          "scope": "lsdyna",
-          "body": [
-              "$---+----1----+----2----+----3----+----4----+----5----+----6----+----7----+----8"
-          ],
-          "description": "LS-Dyna Card Header and Spacer"
-      },
-      "DynaHeaderBox": {
-          "prefix": "lsbox",
-          "scope": "lsdyna",
-          "body": [
-              "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$",
-              "$                                                                              $",
-              "$                                       |                                      $",
-              "$                                                                              $",
-              "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
-          ],
-          "description": "LS-Dyna Header Box"
-      },
      "*AIRBAG_ADIABATIC_GAS_MODEL_ID": {
           "body": [
                "*AIRBAG_ADIABATIC_GAS_MODEL_ID",
@@ -32,7 +12,10 @@
                ""
           ],
           "description": "AIRBAG_ADIABATIC_GAS_MODEL_ID",
-          "prefix": "*AIRBAG_ADIABATIC_GAS_MODEL_ID"
+          "prefix": [
+               "*AIRBAG_ADIABATIC_GAS_MODEL_ID",
+               "AIRBAG_ADIABATIC_GAS_MODEL_ID"
+          ]
      },
      "*AIRBAG_HYBRID_ID": {
           "body": [
@@ -58,31 +41,40 @@
                "$"
           ],
           "description": "AIRBAG_HYBRID_ID",
-          "prefix": "*AIRBAG_HYBRID_ID"
+          "prefix": [
+               "*AIRBAG_HYBRID_ID",
+               "AIRBAG_HYBRID_ID"
+          ]
      },
      "*AIRBAG_INTERACTION": {
           "body": [
                "*AIRBAG_INTERACTION",
                "$#     ab1       ab2      area        sf       pid      lcid     iflow",
-               "                                   1.0                            0",
+               "         $1          $2                  1.0         $3                    0",
                "$"
           ],
           "description": "AIRBAG_INTERACTION",
-          "prefix": "*AIRBAG_INTERACTION"
+          "prefix": [
+               "*AIRBAG_INTERACTION",
+               "AIRBAG_INTERACTION"
+          ]
      },
      "*AIRBAG_LOAD_CURVE_ID": {
           "body": [
                "*AIRBAG_LOAD_CURVE_ID",
                "$#    abid heading",
-               "",
+               "         $1",
                "$#     sid    sidtyp      rbid      vsca      psca      vini       mwd      spsf",
-               "",
+               "         $2          $3",
                "$#   stime      lcid        ro        pe         t        t0",
                "",
                "$"
           ],
           "description": "AIRBAG_LOAD_CURVE_ID",
-          "prefix": "*AIRBAG_LOAD_CURVE_ID"
+          "prefix": [
+               "*AIRBAG_LOAD_CURVE_ID",
+               "AIRBAG_LOAD_CURVE_ID"
+          ]
      },
      "*AIRBAG_PARTICLE_ID": {
           "body": [
@@ -108,27 +100,36 @@
                "$"
           ],
           "description": "AIRBAG_PARTICLE_ID",
-          "prefix": "*AIRBAG_PARTICLE_ID"
+          "prefix": [
+               "*AIRBAG_PARTICLE_ID",
+               "AIRBAG_PARTICLE_ID"
+          ]
      },
      "*AIRBAG_REFERENCE_GEOMETRY": {
           "body": [
                "*AIRBAG_REFERENCE_GEOMETRY",
                "$#   nid               x               y               z      tc      rc",
-               "                    0.0             0.0             0.0",
+               "       $1              0.0             0.0             0.0",
                "$"
           ],
           "description": "AIRBAG_REFERENCE_GEOMETRY",
-          "prefix": "*AIRBAG_REFERENCE_GEOMETRY"
+          "prefix": [
+               "*AIRBAG_REFERENCE_GEOMETRY",
+               "AIRBAG_REFERENCE_GEOMETRY"
+          ]
      },
      "*AIRBAG_SHELL_REFERENCE_GEOMETRY": {
           "body": [
                "*AIRBAG_SHELL_REFERENCE_GEOMETRY",
                "$#   eid     pid      n1      n2      n3      n4      n5      n6      n7      n8",
-               "",
+               "       $1        $2        $3",
                "$"
           ],
           "description": "AIRBAG_SHELL_REFERENCE_GEOMETRY",
-          "prefix": "*AIRBAG_SHELL_REFERENCE_GEOMETRY"
+          "prefix": [
+               "*AIRBAG_SHELL_REFERENCE_GEOMETRY",
+               "AIRBAG_SHELL_REFERENCE_GEOMETRY"
+          ]
      },
      "*AIRBAG_SIMPLE_AIRBAG_MODEL_VOLUME_ID": {
           "body": [
@@ -145,7 +146,10 @@
                ""
           ],
           "description": "AIRBAG_SIMPLE_AIRBAG_MODEL_VOLUME_ID",
-          "prefix": "*AIRBAG_SIMPLE_AIRBAG_MODEL_VOLUME_ID"
+          "prefix": [
+               "*AIRBAG_SIMPLE_AIRBAG_MODEL_VOLUME_ID",
+               "AIRBAG_SIMPLE_AIRBAG_MODEL_VOLUME_ID"
+          ]
      },
      "*AIRBAG_SIMPLE_PRESSURE_VOLUME_ID": {
           "body": [
@@ -160,140 +164,176 @@
                ""
           ],
           "description": "AIRBAG_SIMPLE_PRESSURE_VOLUME_ID",
-          "prefix": "*AIRBAG_SIMPLE_PRESSURE_VOLUME_ID"
+          "prefix": [
+               "*AIRBAG_SIMPLE_PRESSURE_VOLUME_ID",
+               "AIRBAG_SIMPLE_PRESSURE_VOLUME_ID"
+          ]
      },
      "*BOUNDARY_PRESCRIBED_FINAL_GEOMETRY": {
           "body": [
                "*BOUNDARY_PRESCRIBED_FINAL_GEOMETRY",
                "$#  bpfgid     lcidf    deathd",
-               "",
+               "         $1          $2",
                "$#   nid               x               y               z    lcid          death",
-               "",
+               "       $3",
                "$"
           ],
           "description": "BOUNDARY_PRESCRIBED_FINAL_GEOMETRY",
-          "prefix": "*BOUNDARY_PRESCRIBED_FINAL_GEOMETRY"
+          "prefix": [
+               "*BOUNDARY_PRESCRIBED_FINAL_GEOMETRY",
+               "BOUNDARY_PRESCRIBED_FINAL_GEOMETRY"
+          ]
      },
      "*BOUNDARY_PRESCRIBED_MOTION_NODE": {
           "body": [
                "*BOUNDARY_PRESCRIBED_MOTION_NODE",
                "$#  typeid       dof       vad      lcid        sf       vid     death     birth",
-               "                                           1.0",
+               "         $1          $2          $3          $4        1.0",
                "$"
           ],
           "description": "BOUNDARY_PRESCRIBED_MOTION_NODE",
-          "prefix": "*BOUNDARY_PRESCRIBED_MOTION_NODE"
+          "prefix": [
+               "*BOUNDARY_PRESCRIBED_MOTION_NODE",
+               "BOUNDARY_PRESCRIBED_MOTION_NODE"
+          ]
      },
      "*BOUNDARY_PRESCRIBED_MOTION_RIGID": {
           "body": [
                "*BOUNDARY_PRESCRIBED_MOTION_RIGID",
                "$#  typeid       dof       vad      lcid        sf       vid     death     birth",
-               "                  1         2                1.0",
-               "                  2         2                1.0",
-               "                  3         2                1.0",
-               "                  5         2                1.0",
-               "                  6         2                1.0",
-               "                  7         2                1.0",
+               "         $1          1         2         $2        1.0",
+               "         $3          2         2         $4        1.0",
+               "         $5          3         2         $6        1.0",
+               "         $7          5         2         $8        1.0",
+               "         $9          6         2         $10        1.0",
+               "         $11          7         2         $12        1.0",
                "$",
                "*DEFINE_CURVE_TITLE",
                "$# title",
                "Boundary",
                "$#    lcid      sidr       sfa       sfo      offa      offo    dattyp",
-               "                  0       1.0       1.0       0.0       0.0",
+               "         $13          0       1.0       1.0       0.0       0.0",
                "$#                a1                  o1",
                "                 0.0                 0.0",
                "              1000.0                 0.0",
                "$"
           ],
           "description": "BOUNDARY_PRESCRIBED_MOTION_RIGID",
-          "prefix": "*BOUNDARY_PRESCRIBED_MOTION_RIGID"
+          "prefix": [
+               "*BOUNDARY_PRESCRIBED_MOTION_RIGID",
+               "BOUNDARY_PRESCRIBED_MOTION_RIGID"
+          ]
      },
      "*BOUNDARY_PRESCRIBED_MOTION_SET": {
           "body": [
                "*BOUNDARY_PRESCRIBED_MOTION_SET",
                "$#  typeid       dof       vad      lcid        sf       vid     death     birth",
-               "                                           1.0",
+               "         $1          $2          $3          $4        1.0",
                "$"
           ],
           "description": "BOUNDARY_PRESCRIBED_MOTION_SET",
-          "prefix": "*BOUNDARY_PRESCRIBED_MOTION_SET"
+          "prefix": [
+               "*BOUNDARY_PRESCRIBED_MOTION_SET",
+               "BOUNDARY_PRESCRIBED_MOTION_SET"
+          ]
      },
      "*BOUNDARY_SPC_NODE": {
           "body": [
                "*BOUNDARY_SPC_NODE",
                "$#     nid       cid      dofx      dofy      dofz     dofrx     dofry     dofrz",
-               "                  0         1         1         1         1         1         1",
+               "         $1          0         1         1         1         1         1         1",
                "$"
           ],
           "description": "BOUNDARY_SPC_NODE",
-          "prefix": "*BOUNDARY_SPC_NODE"
+          "prefix": [
+               "*BOUNDARY_SPC_NODE",
+               "BOUNDARY_SPC_NODE"
+          ]
      },
      "*BOUNDARY_SPC_SET": {
           "body": [
                "*BOUNDARY_SPC_SET",
                "$#    nsid       cid      dofx      dofy      dofz     dofrx     dofry     dofrz",
-               "                  0         1         1         1         1         1         1",
+               "         $1          0         1         1         1         1         1         1",
                "$"
           ],
           "description": "BOUNDARY_SPC_SET",
-          "prefix": "*BOUNDARY_SPC_SET"
+          "prefix": [
+               "*BOUNDARY_SPC_SET",
+               "BOUNDARY_SPC_SET"
+          ]
      },
      "*COMMENT": {
           "body": [
                "*COMMENT"
           ],
           "description": "COMMENT",
-          "prefix": "*COMMENT"
+          "prefix": [
+               "*COMMENT",
+               "COMMENT"
+          ]
      },
      "*CONSTRAINED_EXTRA_NODES_NODE": {
           "body": [
                "*CONSTRAINED_EXTRA_NODES_NODE",
                "$#     pid       nid     iflag",
-               "",
+               "         $1          $2          $3",
                "$"
           ],
           "description": "CONSTRAINED_EXTRA_NODES_NODE",
-          "prefix": "*CONSTRAINED_EXTRA_NODES_NODE"
+          "prefix": [
+               "*CONSTRAINED_EXTRA_NODES_NODE",
+               "CONSTRAINED_EXTRA_NODES_NODE"
+          ]
      },
      "*CONSTRAINED_EXTRA_NODES_SET": {
           "body": [
                "*CONSTRAINED_EXTRA_NODES_SET",
                "$#     pid      nsid     iflag",
-               "",
+               "         $1          $2          $3",
                "$"
           ],
           "description": "CONSTRAINED_EXTRA_NODES_SET",
-          "prefix": "*CONSTRAINED_EXTRA_NODES_SET"
+          "prefix": [
+               "*CONSTRAINED_EXTRA_NODES_SET",
+               "CONSTRAINED_EXTRA_NODES_SET"
+          ]
      },
      "*CONSTRAINED_JOINT_CONSTANT_VELOCITY_ID": {
           "body": [
                "*CONSTRAINED_JOINT_CONSTANT_VELOCITY_ID",
                "$#     jid heading",
-               "          title",
+               "         $2  $1",
                "$#      n1        n2        n3        n4        n5        n6       rps      damp",
                "",
                "$"
           ],
           "description": "CONSTRAINED_JOINT_CONSTANT_VELOCITY_ID",
-          "prefix": "*CONSTRAINED_JOINT_CONSTANT_VELOCITY_ID"
+          "prefix": [
+               "*CONSTRAINED_JOINT_CONSTANT_VELOCITY_ID",
+               "CONSTRAINED_JOINT_CONSTANT_VELOCITY_ID"
+          ]
      },
      "*CONSTRAINED_JOINT_CYLINDRICAL_ID": {
           "body": [
                "*CONSTRAINED_JOINT_CYLINDRICAL_ID",
                "$#     jid heading",
-               "          title",
+               "         $2  $1",
                "$#      n1        n2        n3        n4        n5        n6       rps      damp",
                "",
                "$"
           ],
           "description": "CONSTRAINED_JOINT_CYLINDRICAL_ID",
-          "prefix": "*CONSTRAINED_JOINT_CYLINDRICAL_ID"
+          "prefix": [
+               "*CONSTRAINED_JOINT_CYLINDRICAL_ID",
+               "CONSTRAINED_JOINT_CYLINDRICAL_ID"
+          ]
      },
      "*CONSTRAINED_JOINT_GEARS_ID": {
           "body": [
                "*CONSTRAINED_JOINT_GEARS_ID",
                "$#     jid heading",
-               "          title",
+               "         $2  $1",
                "$#      n1        n2        n3        n4        n5        n6       rps      damp",
                "",
                "$#   param      lcid      type        r1",
@@ -301,37 +341,46 @@
                "$"
           ],
           "description": "CONSTRAINED_JOINT_GEARS_ID",
-          "prefix": "*CONSTRAINED_JOINT_GEARS_ID"
+          "prefix": [
+               "*CONSTRAINED_JOINT_GEARS_ID",
+               "CONSTRAINED_JOINT_GEARS_ID"
+          ]
      },
      "*CONSTRAINED_JOINT_LOCKING_ID": {
           "body": [
                "*CONSTRAINED_JOINT_LOCKING_ID",
                "$#     jid heading",
-               "          title",
+               "         $2  $1",
                "$#      n1        n2        n3        n4        n5        n6       rps      damp",
                "",
                "$"
           ],
           "description": "CONSTRAINED_JOINT_LOCKING_ID",
-          "prefix": "*CONSTRAINED_JOINT_LOCKING_ID"
+          "prefix": [
+               "*CONSTRAINED_JOINT_LOCKING_ID",
+               "CONSTRAINED_JOINT_LOCKING_ID"
+          ]
      },
      "*CONSTRAINED_JOINT_PLANAR_ID": {
           "body": [
                "*CONSTRAINED_JOINT_PLANAR_ID",
                "$#     jid heading",
-               "          title",
+               "         $2  $1",
                "$#      n1        n2        n3        n4        n5        n6       rps      damp",
                "",
                "$"
           ],
           "description": "CONSTRAINED_JOINT_PLANAR_ID",
-          "prefix": "*CONSTRAINED_JOINT_PLANAR_ID"
+          "prefix": [
+               "*CONSTRAINED_JOINT_PLANAR_ID",
+               "CONSTRAINED_JOINT_PLANAR_ID"
+          ]
      },
      "*CONSTRAINED_JOINT_PULLEY_ID": {
           "body": [
                "*CONSTRAINED_JOINT_PULLEY_ID",
                "$#     jid heading",
-               "          title",
+               "         $2  $1",
                "$#      n1        n2        n3        n4        n5        n6       rps      damp",
                "",
                "$#   param      lcid      type        r1",
@@ -339,13 +388,16 @@
                "$"
           ],
           "description": "CONSTRAINED_JOINT_PULLEY_ID",
-          "prefix": "*CONSTRAINED_JOINT_PULLEY_ID"
+          "prefix": [
+               "*CONSTRAINED_JOINT_PULLEY_ID",
+               "CONSTRAINED_JOINT_PULLEY_ID"
+          ]
      },
      "*CONSTRAINED_JOINT_RACK_AND_PINION_ID": {
           "body": [
                "*CONSTRAINED_JOINT_RACK_AND_PINION_ID",
                "$#     jid heading",
-               "          title",
+               "         $2  $1",
                "$#      n1        n2        n3        n4        n5        n6       rps      damp",
                "",
                "$#   param      lcid      type        r1",
@@ -353,25 +405,31 @@
                "$"
           ],
           "description": "CONSTRAINED_JOINT_RACK_AND_PINION_ID",
-          "prefix": "*CONSTRAINED_JOINT_RACK_AND_PINION_ID"
+          "prefix": [
+               "*CONSTRAINED_JOINT_RACK_AND_PINION_ID",
+               "CONSTRAINED_JOINT_RACK_AND_PINION_ID"
+          ]
      },
      "*CONSTRAINED_JOINT_REVOLUTE_ID": {
           "body": [
                "*CONSTRAINED_JOINT_REVOLUTE_ID",
                "$#     jid heading",
-               "          title",
+               "         $2  $1",
                "$#      n1        n2        n3        n4        n5        n6       rps      damp",
                "",
                "$"
           ],
           "description": "CONSTRAINED_JOINT_REVOLUTE_ID",
-          "prefix": "*CONSTRAINED_JOINT_REVOLUTE_ID"
+          "prefix": [
+               "*CONSTRAINED_JOINT_REVOLUTE_ID",
+               "CONSTRAINED_JOINT_REVOLUTE_ID"
+          ]
      },
      "*CONSTRAINED_JOINT_ROTATIONAL_MOTOR_ID": {
           "body": [
                "*CONSTRAINED_JOINT_ROTATIONAL_MOTOR_ID",
                "$#     jid heading",
-               "          title",
+               "         $2  $1",
                "$#      n1        n2        n3        n4        n5        n6       rps      damp",
                "",
                "$#   param      lcid      type        r1",
@@ -379,13 +437,16 @@
                "$"
           ],
           "description": "CONSTRAINED_JOINT_ROTATIONAL_MOTOR_ID",
-          "prefix": "*CONSTRAINED_JOINT_ROTATIONAL_MOTOR_ID"
+          "prefix": [
+               "*CONSTRAINED_JOINT_ROTATIONAL_MOTOR_ID",
+               "CONSTRAINED_JOINT_ROTATIONAL_MOTOR_ID"
+          ]
      },
      "*CONSTRAINED_JOINT_SCREW_ID": {
           "body": [
                "*CONSTRAINED_JOINT_SCREW_ID",
                "$#     jid heading",
-               "          title",
+               "         $2  $1",
                "$#      n1        n2        n3        n4        n5        n6       rps      damp",
                "",
                "$#   param      lcid      type        r1",
@@ -393,25 +454,31 @@
                "$"
           ],
           "description": "CONSTRAINED_JOINT_SCREW_ID",
-          "prefix": "*CONSTRAINED_JOINT_SCREW_ID"
+          "prefix": [
+               "*CONSTRAINED_JOINT_SCREW_ID",
+               "CONSTRAINED_JOINT_SCREW_ID"
+          ]
      },
      "*CONSTRAINED_JOINT_SPHERICAL_ID": {
           "body": [
                "*CONSTRAINED_JOINT_SPHERICAL_ID",
                "$#     jid heading",
-               "          title",
+               "         $2  $1",
                "$#      n1        n2        n3        n4        n5        n6       rps      damp",
                "",
                "$"
           ],
           "description": "CONSTRAINED_JOINT_SPHERICAL_ID",
-          "prefix": "*CONSTRAINED_JOINT_SPHERICAL_ID"
+          "prefix": [
+               "*CONSTRAINED_JOINT_SPHERICAL_ID",
+               "CONSTRAINED_JOINT_SPHERICAL_ID"
+          ]
      },
      "*CONSTRAINED_JOINT_STIFFNESS_FLEXION-TORSION_TITLE": {
           "body": [
                "*CONSTRAINED_JOINT_STIFFNESS_FLEXION-TORSION_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#    jsid      pida      pidb      cida      cidb       jid",
                "",
                "$#  lcidal     lcidg    lcidbt   dlcidal    dlcidg   dlcidbt",
@@ -424,13 +491,16 @@
                ""
           ],
           "description": "CONSTRAINED_JOINT_STIFFNESS_FLEXION-TORSION_TITLE",
-          "prefix": "*CONSTRAINED_JOINT_STIFFNESS_FLEXION-TORSION_TITLE"
+          "prefix": [
+               "*CONSTRAINED_JOINT_STIFFNESS_FLEXION-TORSION_TITLE",
+               "CONSTRAINED_JOINT_STIFFNESS_FLEXION-TORSION_TITLE"
+          ]
      },
      "*CONSTRAINED_JOINT_STIFFNESS_GENERALIZED_TITLE": {
           "body": [
                "*CONSTRAINED_JOINT_STIFFNESS_GENERALIZED_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#    jsid      pida      pidb      cida      cidb       jid",
                "",
                "$#  lcidph     lcidt    lcidps   dlcidph    dlcidt   dlcidps",
@@ -442,13 +512,16 @@
                "$"
           ],
           "description": "CONSTRAINED_JOINT_STIFFNESS_GENERALIZED_TITLE",
-          "prefix": "*CONSTRAINED_JOINT_STIFFNESS_GENERALIZED_TITLE"
+          "prefix": [
+               "*CONSTRAINED_JOINT_STIFFNESS_GENERALIZED_TITLE",
+               "CONSTRAINED_JOINT_STIFFNESS_GENERALIZED_TITLE"
+          ]
      },
      "*CONSTRAINED_JOINT_STIFFNESS_TRANSLATIONAL_TITLE": {
           "body": [
                "*CONSTRAINED_JOINT_STIFFNESS_TRANSLATIONAL_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#    jsid      pida      pidb      cida      cidb       jid",
                "",
                "$#   lcidx     lcidy     lcidz    dlcidx    dlcidy    dlcidz",
@@ -460,25 +533,31 @@
                "$"
           ],
           "description": "CONSTRAINED_JOINT_STIFFNESS_TRANSLATIONAL_TITLE",
-          "prefix": "*CONSTRAINED_JOINT_STIFFNESS_TRANSLATIONAL_TITLE"
+          "prefix": [
+               "*CONSTRAINED_JOINT_STIFFNESS_TRANSLATIONAL_TITLE",
+               "CONSTRAINED_JOINT_STIFFNESS_TRANSLATIONAL_TITLE"
+          ]
      },
      "*CONSTRAINED_JOINT_TRANSLATIONAL_ID": {
           "body": [
                "*CONSTRAINED_JOINT_TRANSLATIONAL_ID",
                "$#     jid heading",
-               "          title",
+               "         $2  $1",
                "$#      n1        n2        n3        n4        n5        n6       rps      damp",
                "",
                "$"
           ],
           "description": "CONSTRAINED_JOINT_TRANSLATIONAL_ID",
-          "prefix": "*CONSTRAINED_JOINT_TRANSLATIONAL_ID"
+          "prefix": [
+               "*CONSTRAINED_JOINT_TRANSLATIONAL_ID",
+               "CONSTRAINED_JOINT_TRANSLATIONAL_ID"
+          ]
      },
      "*CONSTRAINED_JOINT_TRANSLATIONAL_MOTOR_ID": {
           "body": [
                "*CONSTRAINED_JOINT_TRANSLATIONAL_MOTOR_ID",
                "$#     jid heading",
-               "          title",
+               "         $2  $1",
                "$#      n1        n2        n3        n4        n5        n6       rps      damp",
                "",
                "$#   param      lcid      type        r1",
@@ -486,71 +565,89 @@
                "$"
           ],
           "description": "CONSTRAINED_JOINT_TRANSLATIONAL_MOTOR_ID",
-          "prefix": "*CONSTRAINED_JOINT_TRANSLATIONAL_MOTOR_ID"
+          "prefix": [
+               "*CONSTRAINED_JOINT_TRANSLATIONAL_MOTOR_ID",
+               "CONSTRAINED_JOINT_TRANSLATIONAL_MOTOR_ID"
+          ]
      },
      "*CONSTRAINED_JOINT_UNIVERSAL_ID": {
           "body": [
                "*CONSTRAINED_JOINT_UNIVERSAL_ID",
                "$#     jid heading",
-               "          title",
+               "         $2  $1",
                "$#      n1        n2        n3        n4        n5        n6       rps      damp",
                "",
                "$"
           ],
           "description": "CONSTRAINED_JOINT_UNIVERSAL_ID",
-          "prefix": "*CONSTRAINED_JOINT_UNIVERSAL_ID"
+          "prefix": [
+               "*CONSTRAINED_JOINT_UNIVERSAL_ID",
+               "CONSTRAINED_JOINT_UNIVERSAL_ID"
+          ]
      },
      "*CONSTRAINED_NODAL_RIGID_BODY": {
           "body": [
                "*CONSTRAINED_NODAL_RIGID_BODY",
                "$#     pid       cid      nsid     pnode      iprt    drflag    rrflag",
-               "",
+               "         $1",
                "$"
           ],
           "description": "CONSTRAINED_NODAL_RIGID_BODY",
-          "prefix": "*CONSTRAINED_NODAL_RIGID_BODY"
+          "prefix": [
+               "*CONSTRAINED_NODAL_RIGID_BODY",
+               "CONSTRAINED_NODAL_RIGID_BODY"
+          ]
      },
      "*CONSTRAINED_NODAL_RIGID_BODY_SPC": {
           "body": [
                "*CONSTRAINED_NODAL_RIGID_BODY_SPC",
                "$#     pid       cid      nsid     pnode      iprt    drflag    rrflag",
-               "",
+               "         $1",
                "$#     cmo      con1      con2",
                "         1         7         7",
                "$"
           ],
           "description": "CONSTRAINED_NODAL_RIGID_BODY_SPC",
-          "prefix": "*CONSTRAINED_NODAL_RIGID_BODY_SPC"
+          "prefix": [
+               "*CONSTRAINED_NODAL_RIGID_BODY_SPC",
+               "CONSTRAINED_NODAL_RIGID_BODY_SPC"
+          ]
      },
      "*CONSTRAINED_NODE_SET": {
           "body": [
                "*CONSTRAINED_NODE_SET",
                "$#    nsid       dof        tf",
-               "",
+               "         $1          $2",
                "$"
           ],
           "description": "CONSTRAINED_NODE_SET",
-          "prefix": "*CONSTRAINED_NODE_SET"
+          "prefix": [
+               "*CONSTRAINED_NODE_SET",
+               "CONSTRAINED_NODE_SET"
+          ]
      },
      "*CONSTRAINED_RIGID_BODIES": {
           "body": [
                "*CONSTRAINED_RIGID_BODIES",
                "$#    pidm      pids     iflag",
-               "",
+               "         $1          $2          $3",
                "$"
           ],
           "description": "CONSTRAINED_RIGID_BODIES",
-          "prefix": "*CONSTRAINED_RIGID_BODIES"
+          "prefix": [
+               "*CONSTRAINED_RIGID_BODIES",
+               "CONSTRAINED_RIGID_BODIES"
+          ]
      },
      "*CONTACT_AIRBAG_SINGLE_SURFACE_ID": {
           "body": [
                "*CONTACT_AIRBAG_SINGLE_SURFACE_ID",
                "$#     cid title",
-               "          title",
+               "         $2  $1",
                "$#    ssid      msid     sstyp     mstyp    sboxid    mboxid       spr       mpr",
-               "                            2",
+               "         $3                    2",
                "$#      fs        fd        dc        vc       vdc     pench        bt        dt",
-               "                                            20.0",
+               "         $4          $5                           20.0",
                "$#     sfs       sfm       sst       mst      sfst      sfmt       fsf       vsf",
                "",
                "$#    soft    sofscl    lcidab    maxpar     sbopt     depth     bsort    frcfrq",
@@ -564,17 +661,20 @@
                "$"
           ],
           "description": "CONTACT_AIRBAG_SINGLE_SURFACE_ID",
-          "prefix": "*CONTACT_AIRBAG_SINGLE_SURFACE_ID"
+          "prefix": [
+               "*CONTACT_AIRBAG_SINGLE_SURFACE_ID",
+               "CONTACT_AIRBAG_SINGLE_SURFACE_ID"
+          ]
      },
      "*CONTACT_AUTOMATIC_GENERAL_INTERIOR_ID": {
           "body": [
                "*CONTACT_AUTOMATIC_GENERAL_INTERIOR_ID",
                "$#     cid title",
-               "          title",
+               "         $2  $1",
                "$#    ssid      msid     sstyp     mstyp    sboxid    mboxid       spr       mpr",
-               "",
+               "         $3                    $4",
                "$#      fs        fd        dc        vc       vdc    penchk        bt        dt",
-               "                                            20.0",
+               "         $5          $6                           20.0",
                "$#     sfs       sfm       sst       mst      sfst      sfmt       fsf       vsf",
                "",
                "$#    soft    sofscl    lcidab    maxpar     sbopt     depth     bsort    frcfrq",
@@ -588,19 +688,22 @@
                "$"
           ],
           "description": "CONTACT_AUTOMATIC_GENERAL_INTERIOR_ID",
-          "prefix": "*CONTACT_AUTOMATIC_GENERAL_INTERIOR_ID"
+          "prefix": [
+               "*CONTACT_AUTOMATIC_GENERAL_INTERIOR_ID",
+               "CONTACT_AUTOMATIC_GENERAL_INTERIOR_ID"
+          ]
      },
      "*CONTACT_AUTOMATIC_GENERAL_MPP_ID": {
           "body": [
                "*CONTACT_AUTOMATIC_GENERAL_MPP_ID",
                "$#     cid title",
-               "          title",
+               "         $2  $1",
                "$#  ignore      bckt    lcbckt    ns2trk   inititr    paramx              caprm8",
                "                                                                               0",
                "$#    ssid      msid     sstyp     mstyp    sboxid    mboxid       spr       mpr",
-               "",
+               "         $3                    $4",
                "$#      fs        fd        dc        vc       vdc    penchk        bt        dt",
-               "                                            20.0",
+               "         $5          $6                           20.0",
                "$#     sfs       sfm       sst       mst      sfst      sfmt       fsf       vsf",
                "",
                "$#    soft    sofscl    lcidab    maxpar     sbopt     depth     bsort    frcfrq",
@@ -614,17 +717,20 @@
                "$"
           ],
           "description": "CONTACT_AUTOMATIC_GENERAL_MPP_ID",
-          "prefix": "*CONTACT_AUTOMATIC_GENERAL_MPP_ID"
+          "prefix": [
+               "*CONTACT_AUTOMATIC_GENERAL_MPP_ID",
+               "CONTACT_AUTOMATIC_GENERAL_MPP_ID"
+          ]
      },
      "*CONTACT_AUTOMATIC_SINGLE_SURFACE_ID": {
           "body": [
                "*CONTACT_AUTOMATIC_SINGLE_SURFACE_ID",
                "$#     cid title",
-               "          title",
+               "         $2  $1",
                "$#    ssid      msid     sstyp     mstyp    sboxid    mboxid       spr       mpr",
-               "",
+               "         $3                    $4",
                "$#      fs        fd        dc        vc       vdc    penchk        bt        dt",
-               "                                            20.0",
+               "         $5          $6                           20.0",
                "$#     sfs       sfm       sst       mst      sfst      sfmt       fsf       vsf",
                "",
                "$#    soft    sofscl    lcidab    maxpar     sbopt     depth     bsort    frcfrq",
@@ -638,15 +744,18 @@
                "$"
           ],
           "description": "CONTACT_AUTOMATIC_SINGLE_SURFACE_ID",
-          "prefix": "*CONTACT_AUTOMATIC_SINGLE_SURFACE_ID"
+          "prefix": [
+               "*CONTACT_AUTOMATIC_SINGLE_SURFACE_ID",
+               "CONTACT_AUTOMATIC_SINGLE_SURFACE_ID"
+          ]
      },
      "*CONTACT_AUTOMATIC_SURFACE_TO_SURFACE_ID": {
           "body": [
                "*CONTACT_AUTOMATIC_SURFACE_TO_SURFACE_ID",
                "$#     cid title",
-               "          title",
+               "         $2  $1",
                "$#    ssid      msid     sstyp     mstyp    sboxid    mboxid       spr       mpr",
-               "",
+               "         $3          $4          $5          $6",
                "$#      fs        fd        dc        vc       vdc    penchk        bt        dt",
                "       0.1       0.1                          20.0",
                "$#     sfs       sfm       sst       mst      sfst      sfmt       fsf       vsf",
@@ -662,15 +771,18 @@
                "$"
           ],
           "description": "CONTACT_AUTOMATIC_SURFACE_TO_SURFACE_ID",
-          "prefix": "*CONTACT_AUTOMATIC_SURFACE_TO_SURFACE_ID"
+          "prefix": [
+               "*CONTACT_AUTOMATIC_SURFACE_TO_SURFACE_ID",
+               "CONTACT_AUTOMATIC_SURFACE_TO_SURFACE_ID"
+          ]
      },
      "*CONTACT_FORCE_TRANSDUCER_PENALTY_ID": {
           "body": [
                "*CONTACT_FORCE_TRANSDUCER_PENALTY_ID",
                "$#     cid title",
-               "          title",
+               "         $2  $1",
                "$#    ssid      msid     sstyp     mstyp    sboxid    mboxid       spr       mpr",
-               "",
+               "         $3          $4          $5          $6",
                "$#      fs        fd        dc        vc       vdc    penchk        bt        dt",
                "",
                "$#     sfs       sfm       sst       mst      sfst      sfmt       fsf       vsf",
@@ -678,33 +790,42 @@
                "$"
           ],
           "description": "CONTACT_FORCE_TRANSDUCER_PENALTY_ID",
-          "prefix": "*CONTACT_FORCE_TRANSDUCER_PENALTY_ID"
+          "prefix": [
+               "*CONTACT_FORCE_TRANSDUCER_PENALTY_ID",
+               "CONTACT_FORCE_TRANSDUCER_PENALTY_ID"
+          ]
      },
      "*CONTACT_INTERIOR": {
           "body": [
                "*CONTACT_INTERIOR",
                "$#    psid",
-               "",
+               "         $1",
                "$"
           ],
           "description": "CONTACT_INTERIOR",
-          "prefix": "*CONTACT_INTERIOR"
+          "prefix": [
+               "*CONTACT_INTERIOR",
+               "CONTACT_INTERIOR"
+          ]
      },
      "*CONTACT_TIED_SHELL_EDGE_TO_SURFACE_BEAM_OFFSET_ID": {
           "body": [
                "*CONTACT_TIED_SHELL_EDGE_TO_SURFACE_BEAM_OFFSET_ID",
                "$#     cid title",
-               "          title",
+               "         $2  $1",
                "$#    ssid      msid     sstyp     mstyp    sboxid    mboxid       spr       mpr",
-               "",
+               "         $3          $4          $5          $6",
                "$#      fs        fd        dc        vc       vdc    penchk        bt        dt",
                "",
                "$#     sfs       sfm       sst       mst      sfst      sfmt       fsf       vsf",
-               "                                      -",
+               "                                      -?",
                "$"
           ],
           "description": "CONTACT_TIED_SHELL_EDGE_TO_SURFACE_BEAM_OFFSET_ID",
-          "prefix": "*CONTACT_TIED_SHELL_EDGE_TO_SURFACE_BEAM_OFFSET_ID"
+          "prefix": [
+               "*CONTACT_TIED_SHELL_EDGE_TO_SURFACE_BEAM_OFFSET_ID",
+               "CONTACT_TIED_SHELL_EDGE_TO_SURFACE_BEAM_OFFSET_ID"
+          ]
      },
      "*CONTROL_BULK_VISCOSITY": {
           "body": [
@@ -714,7 +835,10 @@
                "$"
           ],
           "description": "CONTROL_BULK_VISCOSITY",
-          "prefix": "*CONTROL_BULK_VISCOSITY"
+          "prefix": [
+               "*CONTROL_BULK_VISCOSITY",
+               "CONTROL_BULK_VISCOSITY"
+          ]
      },
      "*CONTROL_CONTACT": {
           "body": [
@@ -734,7 +858,10 @@
                "$"
           ],
           "description": "CONTROL_CONTACT",
-          "prefix": "*CONTROL_CONTACT"
+          "prefix": [
+               "*CONTROL_CONTACT",
+               "CONTROL_CONTACT"
+          ]
      },
      "*CONTROL_CPM": {
           "body": [
@@ -744,17 +871,23 @@
                "$"
           ],
           "description": "CONTROL_CPM",
-          "prefix": "*CONTROL_CPM"
+          "prefix": [
+               "*CONTROL_CPM",
+               "CONTROL_CPM"
+          ]
      },
      "*CONTROL_MPP_DECOMPOSITION_ARRANGE_PARTS": {
           "body": [
                "*CONTROL_MPP_DECOMPOSITION_ARRANGE_PARTS",
                "$#      id      type",
-               "                  1",
+               "         $1          1",
                "$"
           ],
           "description": "CONTROL_MPP_DECOMPOSITION_ARRANGE_PARTS",
-          "prefix": "*CONTROL_MPP_DECOMPOSITION_ARRANGE_PARTS"
+          "prefix": [
+               "*CONTROL_MPP_DECOMPOSITION_ARRANGE_PARTS",
+               "CONTROL_MPP_DECOMPOSITION_ARRANGE_PARTS"
+          ]
      },
      "*CONTROL_MPP_DECOMPOSITION_BAGREF": {
           "body": [
@@ -762,17 +895,23 @@
                "$"
           ],
           "description": "CONTROL_MPP_DECOMPOSITION_BAGREF",
-          "prefix": "*CONTROL_MPP_DECOMPOSITION_BAGREF"
+          "prefix": [
+               "*CONTROL_MPP_DECOMPOSITION_BAGREF",
+               "CONTROL_MPP_DECOMPOSITION_BAGREF"
+          ]
      },
      "*CONTROL_MPP_DECOMPOSITION_PARTSET_DISTRIBUTE": {
           "body": [
                "*CONTROL_MPP_DECOMPOSITION_PARTSET_DISTRIBUTE",
                "$#     id1       id2       id3       id4       id5       id6       id7       id8",
-               "",
+               "         $1",
                "$"
           ],
           "description": "CONTROL_MPP_DECOMPOSITION_PARTSET_DISTRIBUTE",
-          "prefix": "*CONTROL_MPP_DECOMPOSITION_PARTSET_DISTRIBUTE"
+          "prefix": [
+               "*CONTROL_MPP_DECOMPOSITION_PARTSET_DISTRIBUTE",
+               "CONTROL_MPP_DECOMPOSITION_PARTSET_DISTRIBUTE"
+          ]
      },
      "*CONTROL_RIGID": {
           "body": [
@@ -782,7 +921,10 @@
                "$"
           ],
           "description": "CONTROL_RIGID",
-          "prefix": "*CONTROL_RIGID"
+          "prefix": [
+               "*CONTROL_RIGID",
+               "CONTROL_RIGID"
+          ]
      },
      "*CONTROL_SHELL": {
           "body": [
@@ -798,7 +940,10 @@
                "$"
           ],
           "description": "CONTROL_SHELL",
-          "prefix": "*CONTROL_SHELL"
+          "prefix": [
+               "*CONTROL_SHELL",
+               "CONTROL_SHELL"
+          ]
      },
      "*CONTROL_SOLID": {
           "body": [
@@ -808,207 +953,267 @@
                "$"
           ],
           "description": "CONTROL_SOLID",
-          "prefix": "*CONTROL_SOLID"
+          "prefix": [
+               "*CONTROL_SOLID",
+               "CONTROL_SOLID"
+          ]
      },
      "*CONTROL_TERMINATION": {
           "body": [
                "*CONTROL_TERMINATION",
                "$#  endtim    endcyc     dtmin    endeng    endmas     nosol",
-               "",
+               "         $1",
                "$"
           ],
           "description": "CONTROL_TERMINATION",
-          "prefix": "*CONTROL_TERMINATION"
+          "prefix": [
+               "*CONTROL_TERMINATION",
+               "CONTROL_TERMINATION"
+          ]
      },
      "*CONTROL_TIMESTEP": {
           "body": [
                "*CONTROL_TIMESTEP",
                "$#  dtinit    tssfac      isdo    tslimt     dt2ms     lctim     erode     ms1st",
-               "                 0.9                            -",
+               "                 0.9                            -?",
                "$"
           ],
           "description": "CONTROL_TIMESTEP",
-          "prefix": "*CONTROL_TIMESTEP"
+          "prefix": [
+               "*CONTROL_TIMESTEP",
+               "CONTROL_TIMESTEP"
+          ]
      },
      "*DAMPING_FREQUENCY_RANGE": {
           "body": [
                "*DAMPING_FREQUENCY_RANGE",
                "$#   cdamp      flow     fhigh      psid",
-               "",
+               "         $1          $2          $3          $4",
                "$"
           ],
           "description": "DAMPING_FREQUENCY_RANGE",
-          "prefix": "*DAMPING_FREQUENCY_RANGE"
+          "prefix": [
+               "*DAMPING_FREQUENCY_RANGE",
+               "DAMPING_FREQUENCY_RANGE"
+          ]
      },
      "*DAMPING_GLOBAL": {
           "body": [
                "*DAMPING_GLOBAL",
                "$#    lcid    valdmp       stx       sty       stz       srx       sry       srz",
-               "",
+               "         $1",
                "$"
           ],
           "description": "DAMPING_GLOBAL",
-          "prefix": "*DAMPING_GLOBAL"
+          "prefix": [
+               "*DAMPING_GLOBAL",
+               "DAMPING_GLOBAL"
+          ]
      },
      "*DAMPING_MASS": {
           "body": [
                "*DAMPING_MASS",
                "$#     pid      lcid        sf      flag",
-               "                         1.0         1",
+               "         $1          $2        1.0         1",
                "$#     stx       sty       stz       srx       sry       srz",
                "",
                "$"
           ],
           "description": "DAMPING_MASS",
-          "prefix": "*DAMPING_MASS"
+          "prefix": [
+               "*DAMPING_MASS",
+               "DAMPING_MASS"
+          ]
      },
      "*DAMPING_MASS_SET": {
           "body": [
                "*DAMPING_MASS_SET",
                "$#    psid      lcid        sf      flag",
-               "                         1.0         1",
+               "         $1          $2        1.0         1",
                "$#     stx       sty       stz       srx       sry       srz",
                "",
                "$"
           ],
           "description": "DAMPING_MASS_SET",
-          "prefix": "*DAMPING_MASS_SET"
+          "prefix": [
+               "*DAMPING_MASS_SET",
+               "DAMPING_MASS_SET"
+          ]
      },
      "*DAMPING_PART_STIFFNESS": {
           "body": [
                "*DAMPING_PART_STIFFNESS",
                "$#     pid      coef",
-               "",
+               "         $1          $2",
                "$"
           ],
           "description": "DAMPING_PART_STIFFNESS",
-          "prefix": "*DAMPING_PART_STIFFNESS"
+          "prefix": [
+               "*DAMPING_PART_STIFFNESS",
+               "DAMPING_PART_STIFFNESS"
+          ]
      },
      "*DAMPING_PART_STIFFNESS_SET": {
           "body": [
                "*DAMPING_PART_STIFFNESS_SET",
                "$#    psid      coef",
-               "",
+               "         $1          $2",
                "$"
           ],
           "description": "DAMPING_PART_STIFFNESS_SET",
-          "prefix": "*DAMPING_PART_STIFFNESS_SET"
+          "prefix": [
+               "*DAMPING_PART_STIFFNESS_SET",
+               "DAMPING_PART_STIFFNESS_SET"
+          ]
      },
      "*DAMPING_RELATIVE": {
           "body": [
                "*DAMPING_RELATIVE",
                "$#   cdamp      freq     pidrb      psid",
-               "",
+               "         $1          $2          $3          $4",
                "$"
           ],
           "description": "DAMPING_RELATIVE",
-          "prefix": "*DAMPING_RELATIVE"
+          "prefix": [
+               "*DAMPING_RELATIVE",
+               "DAMPING_RELATIVE"
+          ]
      },
      "*DATABASE_ABSTAT": {
           "body": [
                "*DATABASE_ABSTAT",
                "$#      dt    binary      lcur     ioopt",
-               "                  2",
+               "         $1          2",
                "$"
           ],
           "description": "DATABASE_ABSTAT",
-          "prefix": "*DATABASE_ABSTAT"
+          "prefix": [
+               "*DATABASE_ABSTAT",
+               "DATABASE_ABSTAT"
+          ]
      },
      "*DATABASE_BINARY_D3PLOT": {
           "body": [
                "*DATABASE_BINARY_D3PLOT",
                "$#      dt      lcdt      beam     npltc    psetid",
-               "",
+               "         $1",
                "$#   loopt",
                "",
                "$"
           ],
           "description": "DATABASE_BINARY_D3PLOT",
-          "prefix": "*DATABASE_BINARY_D3PLOT"
+          "prefix": [
+               "*DATABASE_BINARY_D3PLOT",
+               "DATABASE_BINARY_D3PLOT"
+          ]
      },
      "*DATABASE_BINARY_INTFOR": {
           "body": [
                "*DATABASE_BINARY_INTFOR",
                "$#      dt      lcdt      beam     npltc    psetid",
-               "",
+               "         $1",
                "$#   loopt",
                "",
                "$"
           ],
           "description": "DATABASE_BINARY_INTFOR",
-          "prefix": "*DATABASE_BINARY_INTFOR"
+          "prefix": [
+               "*DATABASE_BINARY_INTFOR",
+               "DATABASE_BINARY_INTFOR"
+          ]
      },
      "*DATABASE_BNDOUT": {
           "body": [
                "*DATABASE_BNDOUT",
                "$#      dt    binary      lcur     ioopt",
-               "                  2",
+               "         $1          2",
                "$"
           ],
           "description": "DATABASE_BNDOUT",
-          "prefix": "*DATABASE_BNDOUT"
+          "prefix": [
+               "*DATABASE_BNDOUT",
+               "DATABASE_BNDOUT"
+          ]
      },
      "*DATABASE_CPM_SENSOR": {
           "body": [
                "*DATABASE_CPM_SENSOR",
                "$#      dt    binary",
-               "",
+               "         $1",
                "$#   segid    offset      r/lx    len/ly        lz",
                "",
                "$"
           ],
           "description": "DATABASE_CPM_SENSOR",
-          "prefix": "*DATABASE_CPM_SENSOR"
+          "prefix": [
+               "*DATABASE_CPM_SENSOR",
+               "DATABASE_CPM_SENSOR"
+          ]
      },
      "*DATABASE_CROSS_SECTION_SET": {
           "body": [
                "*DATABASE_CROSS_SECTION_SET",
                "$#    nsid      hsid      bsid      ssid      tsid      dsid        id     itype",
-               "",
+               "         $1",
                "$"
           ],
           "description": "DATABASE_CROSS_SECTION_SET",
-          "prefix": "*DATABASE_CROSS_SECTION_SET"
+          "prefix": [
+               "*DATABASE_CROSS_SECTION_SET",
+               "DATABASE_CROSS_SECTION_SET"
+          ]
      },
      "*DATABASE_CURVOUT": {
           "body": [
                "*DATABASE_CURVOUT",
                "$#      dt    binary      lcur     ioopt",
-               "                  2",
+               "         $1          2",
                "$"
           ],
           "description": "DATABASE_CURVOUT",
-          "prefix": "*DATABASE_CURVOUT"
+          "prefix": [
+               "*DATABASE_CURVOUT",
+               "DATABASE_CURVOUT"
+          ]
      },
      "*DATABASE_DEFORC": {
           "body": [
                "*DATABASE_DEFORC",
                "$#      dt    binary      lcur     ioopt",
-               "                  2",
+               "         $1          2",
                "$"
           ],
           "description": "DATABASE_DEFORC",
-          "prefix": "*DATABASE_DEFORC"
+          "prefix": [
+               "*DATABASE_DEFORC",
+               "DATABASE_DEFORC"
+          ]
      },
      "*DATABASE_DISBOUT": {
           "body": [
                "*DATABASE_DISBOUT",
                "$#      dt    binary      lcur     ioopt",
-               "                  2",
+               "         $1          2",
                "$"
           ],
           "description": "DATABASE_DISBOUT",
-          "prefix": "*DATABASE_DISBOUT"
+          "prefix": [
+               "*DATABASE_DISBOUT",
+               "DATABASE_DISBOUT"
+          ]
      },
      "*DATABASE_ELOUT": {
           "body": [
                "*DATABASE_ELOUT",
                "$#      dt    binary      lcur     ioopt",
-               "                  2",
+               "         $1          2",
                "$"
           ],
           "description": "DATABASE_ELOUT",
-          "prefix": "*DATABASE_ELOUT"
+          "prefix": [
+               "*DATABASE_ELOUT",
+               "DATABASE_ELOUT"
+          ]
      },
      "*DATABASE_EXTENT_BINARY": {
           "body": [
@@ -1024,7 +1229,10 @@
                "$"
           ],
           "description": "DATABASE_EXTENT_BINARY",
-          "prefix": "*DATABASE_EXTENT_BINARY"
+          "prefix": [
+               "*DATABASE_EXTENT_BINARY",
+               "DATABASE_EXTENT_BINARY"
+          ]
      },
      "*DATABASE_EXTENT_D3PART": {
           "body": [
@@ -1038,7 +1246,10 @@
                "$"
           ],
           "description": "DATABASE_EXTENT_D3PART",
-          "prefix": "*DATABASE_EXTENT_D3PART"
+          "prefix": [
+               "*DATABASE_EXTENT_D3PART",
+               "DATABASE_EXTENT_D3PART"
+          ]
      },
      "*DATABASE_FORMAT": {
           "body": [
@@ -1048,147 +1259,192 @@
                "$"
           ],
           "description": "DATABASE_FORMAT",
-          "prefix": "*DATABASE_FORMAT"
+          "prefix": [
+               "*DATABASE_FORMAT",
+               "DATABASE_FORMAT"
+          ]
      },
      "*DATABASE_GLSTAT": {
           "body": [
                "*DATABASE_GLSTAT",
                "$#      dt    binary      lcur     ioopt",
-               "                  2",
+               "         $1          2",
                "$"
           ],
           "description": "DATABASE_GLSTAT",
-          "prefix": "*DATABASE_GLSTAT"
+          "prefix": [
+               "*DATABASE_GLSTAT",
+               "DATABASE_GLSTAT"
+          ]
      },
      "*DATABASE_HISTORY_NODE": {
           "body": [
                "*DATABASE_HISTORY_NODE",
                "$#     id1       id2       id3       id4       id5       id6       id7       id8",
-               "",
+               "         $1",
                "$"
           ],
           "description": "DATABASE_HISTORY_NODE",
-          "prefix": "*DATABASE_HISTORY_NODE"
+          "prefix": [
+               "*DATABASE_HISTORY_NODE",
+               "DATABASE_HISTORY_NODE"
+          ]
      },
      "*DATABASE_HISTORY_NODE_LOCAL": {
           "body": [
                "*DATABASE_HISTORY_NODE_LOCAL",
                "$#      id       cid       ref       hfo",
-               "                                    0",
+               "         $1          $2          $3          0",
                "$"
           ],
           "description": "DATABASE_HISTORY_NODE_LOCAL",
-          "prefix": "*DATABASE_HISTORY_NODE_LOCAL"
+          "prefix": [
+               "*DATABASE_HISTORY_NODE_LOCAL",
+               "DATABASE_HISTORY_NODE_LOCAL"
+          ]
      },
      "*DATABASE_JNTFORC": {
           "body": [
                "*DATABASE_JNTFORC",
                "$#      dt    binary      lcur     ioopt",
-               "                  2",
+               "         $1          2",
                "$"
           ],
           "description": "DATABASE_JNTFORC",
-          "prefix": "*DATABASE_JNTFORC"
+          "prefix": [
+               "*DATABASE_JNTFORC",
+               "DATABASE_JNTFORC"
+          ]
      },
      "*DATABASE_MATSUM": {
           "body": [
                "*DATABASE_MATSUM",
                "$#      dt    binary      lcur     ioopt",
-               "                  2",
+               "         $1          2",
                "$"
           ],
           "description": "DATABASE_MATSUM",
-          "prefix": "*DATABASE_MATSUM"
+          "prefix": [
+               "*DATABASE_MATSUM",
+               "DATABASE_MATSUM"
+          ]
      },
      "*DATABASE_NCFORC": {
           "body": [
                "*DATABASE_NCFORC",
                "$#      dt    binary      lcur     ioopt",
-               "                  2",
+               "         $1          2",
                "$"
           ],
           "description": "DATABASE_NCFORC",
-          "prefix": "*DATABASE_NCFORC"
+          "prefix": [
+               "*DATABASE_NCFORC",
+               "DATABASE_NCFORC"
+          ]
      },
      "*DATABASE_NODFOR": {
           "body": [
                "*DATABASE_NODFOR",
                "$#      dt    binary      lcur     ioopt",
-               "                  2",
+               "         $1          2",
                "$"
           ],
           "description": "DATABASE_NODFOR",
-          "prefix": "*DATABASE_NODFOR"
+          "prefix": [
+               "*DATABASE_NODFOR",
+               "DATABASE_NODFOR"
+          ]
      },
      "*DATABASE_NODOUT": {
           "body": [
                "*DATABASE_NODOUT",
                "$#      dt    binary      lcur     ioopt",
-               "                  2",
+               "         $1          2",
                "$"
           ],
           "description": "DATABASE_NODOUT",
-          "prefix": "*DATABASE_NODOUT"
+          "prefix": [
+               "*DATABASE_NODOUT",
+               "DATABASE_NODOUT"
+          ]
      },
      "*DATABASE_RBDOUT": {
           "body": [
                "*DATABASE_RBDOUT",
                "$#      dt    binary      lcur     ioopt",
-               "                  2",
+               "         $1          2",
                "$"
           ],
           "description": "DATABASE_RBDOUT",
-          "prefix": "*DATABASE_RBDOUT"
+          "prefix": [
+               "*DATABASE_RBDOUT",
+               "DATABASE_RBDOUT"
+          ]
      },
      "*DATABASE_RCFORC": {
           "body": [
                "*DATABASE_RCFORC",
                "$#      dt    binary      lcur     ioopt",
-               "                  2",
+               "         $1          2",
                "$"
           ],
           "description": "DATABASE_RCFORC",
-          "prefix": "*DATABASE_RCFORC"
+          "prefix": [
+               "*DATABASE_RCFORC",
+               "DATABASE_RCFORC"
+          ]
      },
      "*DATABASE_SBTOUT": {
           "body": [
                "*DATABASE_SBTOUT",
                "$#      dt    binary      lcur     ioopt",
-               "                  2",
+               "         $1          2",
                "$"
           ],
           "description": "DATABASE_SBTOUT",
-          "prefix": "*DATABASE_SBTOUT"
+          "prefix": [
+               "*DATABASE_SBTOUT",
+               "DATABASE_SBTOUT"
+          ]
      },
      "*DATABASE_SECFORC": {
           "body": [
                "*DATABASE_SECFORC",
                "$#      dt    binary      lcur     ioopt",
-               "                  2",
+               "         $1          2",
                "$"
           ],
           "description": "DATABASE_SECFORC",
-          "prefix": "*DATABASE_SECFORC"
+          "prefix": [
+               "*DATABASE_SECFORC",
+               "DATABASE_SECFORC"
+          ]
      },
      "*DATABASE_SLEOUT": {
           "body": [
                "*DATABASE_SLEOUT",
                "$#      dt    binary      lcur     ioopt",
-               "                  2",
+               "         $1          2",
                "$"
           ],
           "description": "DATABASE_SLEOUT",
-          "prefix": "*DATABASE_SLEOUT"
+          "prefix": [
+               "*DATABASE_SLEOUT",
+               "DATABASE_SLEOUT"
+          ]
      },
      "*DATABASE_SPCFORC": {
           "body": [
                "*DATABASE_SPCFORC",
                "$#      dt    binary      lcur     ioopt",
-               "                  2",
+               "         $1          2",
                "$"
           ],
           "description": "DATABASE_SPCFORC",
-          "prefix": "*DATABASE_SPCFORC"
+          "prefix": [
+               "*DATABASE_SPCFORC",
+               "DATABASE_SPCFORC"
+          ]
      },
      "*DEFINE_BOX": {
           "body": [
@@ -1198,7 +1454,10 @@
                "$"
           ],
           "description": "DEFINE_BOX",
-          "prefix": "*DEFINE_BOX"
+          "prefix": [
+               "*DEFINE_BOX",
+               "DEFINE_BOX"
+          ]
      },
      "*DEFINE_BOX_LOCAL": {
           "body": [
@@ -1212,389 +1471,482 @@
                "$"
           ],
           "description": "DEFINE_BOX_LOCAL",
-          "prefix": "*DEFINE_BOX_LOCAL"
+          "prefix": [
+               "*DEFINE_BOX_LOCAL",
+               "DEFINE_BOX_LOCAL"
+          ]
      },
      "*DEFINE_COORDINATE_NODES": {
           "body": [
                "*DEFINE_COORDINATE_NODES",
                "$#     cid        n1        n2        n3      flag       dir",
-               "                                                       X",
+               "         $1          $2          $3          $4                    X",
                "$"
           ],
           "description": "DEFINE_COORDINATE_NODES",
-          "prefix": "*DEFINE_COORDINATE_NODES"
+          "prefix": [
+               "*DEFINE_COORDINATE_NODES",
+               "DEFINE_COORDINATE_NODES"
+          ]
      },
      "*DEFINE_COORDINATE_SYSTEM": {
           "body": [
                "*DEFINE_COORDINATE_SYSTEM",
                "$#     cid        x0        y0        z0        xl        yl        zl",
-               "",
+               "         $1",
                "$#      xp        yp        zp",
-               "",
+               "         $2",
                "$"
           ],
           "description": "DEFINE_COORDINATE_SYSTEM",
-          "prefix": "*DEFINE_COORDINATE_SYSTEM"
+          "prefix": [
+               "*DEFINE_COORDINATE_SYSTEM",
+               "DEFINE_COORDINATE_SYSTEM"
+          ]
      },
      "*DEFINE_COORDINATE_VECTOR": {
           "body": [
                "*DEFINE_COORDINATE_VECTOR",
                "$#     cid        xx        yx        zx        xv        yv        zv       nid",
-               "",
+               "         $1          $2          $3          $4          $5          $6          $7",
                "$"
           ],
           "description": "DEFINE_COORDINATE_VECTOR",
-          "prefix": "*DEFINE_COORDINATE_VECTOR"
+          "prefix": [
+               "*DEFINE_COORDINATE_VECTOR",
+               "DEFINE_COORDINATE_VECTOR"
+          ]
      },
      "*DEFINE_CPM_BAG_INTERACTION": {
           "body": [
                "*DEFINE_CPM_BAG_INTERACTION",
                "$#  bagId1    bagId2",
-               "",
+               "         $1          $2",
                "$"
           ],
           "description": "DEFINE_CPM_BAG_INTERACTION",
-          "prefix": "*DEFINE_CPM_BAG_INTERACTION"
+          "prefix": [
+               "*DEFINE_CPM_BAG_INTERACTION",
+               "DEFINE_CPM_BAG_INTERACTION"
+          ]
      },
      "*DEFINE_CPM_CHAMBER": {
           "body": [
                "*DEFINE_CPM_CHAMBER",
                "$#      id      nchm",
-               "",
+               "         $1          $2",
                "$#    sid1      sid2    ninter    chm_id",
-               "",
+               "         $3          $4",
                "$#    sid3    itype3     tochm",
-               "",
+               "         $5          $6          $7",
                "$"
           ],
           "description": "DEFINE_CPM_CHAMBER",
-          "prefix": "*DEFINE_CPM_CHAMBER"
+          "prefix": [
+               "*DEFINE_CPM_CHAMBER",
+               "DEFINE_CPM_CHAMBER"
+          ]
      },
      "*DEFINE_CPM_VENT": {
           "body": [
                "*DEFINE_CPM_VENT",
                "$#      id       c23    lctc23    lcpc23     enh_v      ppop     c23up      iopt",
-               "",
+               "         $1          $2",
                "$#      jt      ids1      ids2     iopt1",
                "",
                "$"
           ],
           "description": "DEFINE_CPM_VENT",
-          "prefix": "*DEFINE_CPM_VENT"
+          "prefix": [
+               "*DEFINE_CPM_VENT",
+               "DEFINE_CPM_VENT"
+          ]
      },
      "*DEFINE_CURVE_DUPLICATE_TITLE": {
           "body": [
                "*DEFINE_CURVE_DUPLICATE_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#    lcid     rlcid       sfa       sfo      offa      offo",
-               "                         1.0       1.0       0.0       0.0",
+               "         $2          $3        1.0       1.0       0.0       0.0",
                "$"
           ],
           "description": "DEFINE_CURVE_DUPLICATE_TITLE",
-          "prefix": "*DEFINE_CURVE_DUPLICATE_TITLE"
+          "prefix": [
+               "*DEFINE_CURVE_DUPLICATE_TITLE",
+               "DEFINE_CURVE_DUPLICATE_TITLE"
+          ]
      },
      "*DEFINE_CURVE_FUNCTION_TITLE": {
           "body": [
                "*DEFINE_CURVE_FUNCTION_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#    lcid      sidr",
-               "",
+               "         $2",
                "$# function",
-               "function",
+               "",
                "$"
           ],
           "description": "DEFINE_CURVE_FUNCTION_TITLE",
-          "prefix": "*DEFINE_CURVE_FUNCTION_TITLE"
+          "prefix": [
+               "*DEFINE_CURVE_FUNCTION_TITLE",
+               "DEFINE_CURVE_FUNCTION_TITLE"
+          ]
      },
      "*DEFINE_CURVE_SMOOTH_TITLE": {
           "body": [
                "*DEFINE_CURVE_SMOOTH_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#    lcid      sidr      dist    tstart      tend     trise        v0",
-               "                  0",
+               "         $2          0         $3          $4          $5          $6          $7",
                "$"
           ],
           "description": "DEFINE_CURVE_SMOOTH_TITLE",
-          "prefix": "*DEFINE_CURVE_SMOOTH_TITLE"
+          "prefix": [
+               "*DEFINE_CURVE_SMOOTH_TITLE",
+               "DEFINE_CURVE_SMOOTH_TITLE"
+          ]
      },
      "*DEFINE_CURVE_TITLE": {
           "body": [
                "*DEFINE_CURVE_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#    lcid      sidr       sfa       sfo      offa      offo    dattyp",
-               "                  0       1.0       1.0       0.0       0.0",
+               "         $2          0       1.0       1.0       0.0       0.0",
                "$#                a1                  o1",
                "                 0.0                 0.0",
                "                 1.0                 1.0",
                "$"
           ],
           "description": "DEFINE_CURVE_TITLE",
-          "prefix": "*DEFINE_CURVE_TITLE"
+          "prefix": [
+               "*DEFINE_CURVE_TITLE",
+               "DEFINE_CURVE_TITLE"
+          ]
      },
      "*DEFINE_ELEMENT_DEATH_BEAM": {
           "body": [
                "*DEFINE_ELEMENT_DEATH_BEAM",
                "$#     eid      time     boxid     inout",
-               "",
+               "         $1          $2",
                "$"
           ],
           "description": "DEFINE_ELEMENT_DEATH_BEAM",
-          "prefix": "*DEFINE_ELEMENT_DEATH_BEAM"
+          "prefix": [
+               "*DEFINE_ELEMENT_DEATH_BEAM",
+               "DEFINE_ELEMENT_DEATH_BEAM"
+          ]
      },
      "*DEFINE_ELEMENT_DEATH_BEAM_SET": {
           "body": [
                "*DEFINE_ELEMENT_DEATH_BEAM_SET",
                "$#     sid      time     boxid     inout",
-               "",
+               "         $1          $2",
                "$"
           ],
           "description": "DEFINE_ELEMENT_DEATH_BEAM_SET",
-          "prefix": "*DEFINE_ELEMENT_DEATH_BEAM_SET"
+          "prefix": [
+               "*DEFINE_ELEMENT_DEATH_BEAM_SET",
+               "DEFINE_ELEMENT_DEATH_BEAM_SET"
+          ]
      },
      "*DEFINE_ELEMENT_DEATH_SHELL": {
           "body": [
                "*DEFINE_ELEMENT_DEATH_SHELL",
                "$#     eid      time     boxid     inout",
-               "",
+               "         $1          $2",
                "$"
           ],
           "description": "DEFINE_ELEMENT_DEATH_SHELL",
-          "prefix": "*DEFINE_ELEMENT_DEATH_SHELL"
+          "prefix": [
+               "*DEFINE_ELEMENT_DEATH_SHELL",
+               "DEFINE_ELEMENT_DEATH_SHELL"
+          ]
      },
      "*DEFINE_ELEMENT_DEATH_SHELL_SET": {
           "body": [
                "*DEFINE_ELEMENT_DEATH_SHELL_SET",
                "$#     sid      time     boxid     inout",
-               "",
+               "         $1          $2",
                "$"
           ],
           "description": "DEFINE_ELEMENT_DEATH_SHELL_SET",
-          "prefix": "*DEFINE_ELEMENT_DEATH_SHELL_SET"
+          "prefix": [
+               "*DEFINE_ELEMENT_DEATH_SHELL_SET",
+               "DEFINE_ELEMENT_DEATH_SHELL_SET"
+          ]
      },
      "*DEFINE_ELEMENT_DEATH_SOLID": {
           "body": [
                "*DEFINE_ELEMENT_DEATH_SOLID",
                "$#     eid      time     boxid     inout",
-               "",
+               "         $1          $2",
                "$"
           ],
           "description": "DEFINE_ELEMENT_DEATH_SOLID",
-          "prefix": "*DEFINE_ELEMENT_DEATH_SOLID"
+          "prefix": [
+               "*DEFINE_ELEMENT_DEATH_SOLID",
+               "DEFINE_ELEMENT_DEATH_SOLID"
+          ]
      },
      "*DEFINE_ELEMENT_DEATH_SOLID_SET": {
           "body": [
                "*DEFINE_ELEMENT_DEATH_SOLID_SET",
                "$#     sid      time     boxid     inout",
-               "",
+               "         $1          $2",
                "$"
           ],
           "description": "DEFINE_ELEMENT_DEATH_SOLID_SET",
-          "prefix": "*DEFINE_ELEMENT_DEATH_SOLID_SET"
+          "prefix": [
+               "*DEFINE_ELEMENT_DEATH_SOLID_SET",
+               "DEFINE_ELEMENT_DEATH_SOLID_SET"
+          ]
      },
      "*DEFINE_ELEMENT_DEATH_THICK_SHELL": {
           "body": [
                "*DEFINE_ELEMENT_DEATH_THICK_SHELL",
                "$#     eid      time     boxid     inout",
-               "",
+               "         $1          $2",
                "$"
           ],
           "description": "DEFINE_ELEMENT_DEATH_THICK_SHELL",
-          "prefix": "*DEFINE_ELEMENT_DEATH_THICK_SHELL"
+          "prefix": [
+               "*DEFINE_ELEMENT_DEATH_THICK_SHELL",
+               "DEFINE_ELEMENT_DEATH_THICK_SHELL"
+          ]
      },
      "*DEFINE_ELEMENT_DEATH_THICK_SHELL_SET": {
           "body": [
                "*DEFINE_ELEMENT_DEATH_THICK_SHELL_SET",
                "$#     sid      time     boxid     inout",
-               "",
+               "         $1          $2",
                "$"
           ],
           "description": "DEFINE_ELEMENT_DEATH_THICK_SHELL_SET",
-          "prefix": "*DEFINE_ELEMENT_DEATH_THICK_SHELL_SET"
+          "prefix": [
+               "*DEFINE_ELEMENT_DEATH_THICK_SHELL_SET",
+               "DEFINE_ELEMENT_DEATH_THICK_SHELL_SET"
+          ]
      },
      "*DEFINE_FRICTION": {
           "body": [
                "*DEFINE_FRICTION",
                "$#      id      fs_d      fd_d      dc_d      vc_d",
-               "",
+               "         $1",
                "$#   pid_i     pid_j     fs_ij     fd_ij     dc_ij     vc_ij    ptypei    ptypej",
-               "",
+               "         $2",
                "$"
           ],
           "description": "DEFINE_FRICTION",
-          "prefix": "*DEFINE_FRICTION"
+          "prefix": [
+               "*DEFINE_FRICTION",
+               "DEFINE_FRICTION"
+          ]
      },
      "*DEFINE_FUNCTION": {
           "body": [
                "*DEFINE_FUNCTION",
                "$#     fid heading",
-               "",
+               "         $1",
                "$# function",
-               "function",
+               "",
                "$"
           ],
           "description": "DEFINE_FUNCTION",
-          "prefix": "*DEFINE_FUNCTION"
+          "prefix": [
+               "*DEFINE_FUNCTION",
+               "DEFINE_FUNCTION"
+          ]
      },
      "*DEFINE_FUNCTION_TABULATED": {
           "body": [
                "*DEFINE_FUNCTION_TABULATED",
                "$#     fid heading",
-               "",
+               "         $1",
                "$# function",
-               "function",
-               "$#                a1                  o1",
                "",
+               "$#                a1                  o1",
+               "                   $2                    $3",
                "$"
           ],
           "description": "DEFINE_FUNCTION_TABULATED",
-          "prefix": "*DEFINE_FUNCTION_TABULATED"
+          "prefix": [
+               "*DEFINE_FUNCTION_TABULATED",
+               "DEFINE_FUNCTION_TABULATED"
+          ]
      },
      "*DEFINE_SD_ORIENTATION": {
           "body": [
                "*DEFINE_SD_ORIENTATION",
                "$#     vid       iop        xt        yt        zt      nid1      nid2",
-               "",
+               "         $1",
                "$"
           ],
           "description": "DEFINE_SD_ORIENTATION",
-          "prefix": "*DEFINE_SD_ORIENTATION"
+          "prefix": [
+               "*DEFINE_SD_ORIENTATION",
+               "DEFINE_SD_ORIENTATION"
+          ]
      },
      "*DEFINE_TABLE_2D_TITLE": {
           "body": [
                "*DEFINE_TABLE_2D_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#    tbid       sfa      offa",
-               "",
+               "         $2",
                "$#             value             curveId",
-               "",
-               "",
+               "                   $3                    $4",
+               "                   $5                    $6",
                "$"
           ],
           "description": "DEFINE_TABLE_2D_TITLE",
-          "prefix": "*DEFINE_TABLE_2D_TITLE"
+          "prefix": [
+               "*DEFINE_TABLE_2D_TITLE",
+               "DEFINE_TABLE_2D_TITLE"
+          ]
      },
      "*DEFINE_TABLE_3D_TITLE": {
           "body": [
                "*DEFINE_TABLE_3D_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#    tbid       sfa      offa",
-               "",
+               "         $2",
                "$#             value             tableId",
-               "",
-               "",
+               "                   $3                    $4",
+               "                   $5                    $6",
                "$"
           ],
           "description": "DEFINE_TABLE_3D_TITLE",
-          "prefix": "*DEFINE_TABLE_3D_TITLE"
+          "prefix": [
+               "*DEFINE_TABLE_3D_TITLE",
+               "DEFINE_TABLE_3D_TITLE"
+          ]
      },
      "*DEFINE_TABLE_TITLE": {
           "body": [
                "*DEFINE_TABLE_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#    tbid       sfa      offa",
-               "",
+               "         $2",
                "$#             value",
-               "",
-               "",
+               "                   $3",
+               "                   $4",
                "$"
           ],
           "description": "DEFINE_TABLE_TITLE",
-          "prefix": "*DEFINE_TABLE_TITLE"
+          "prefix": [
+               "*DEFINE_TABLE_TITLE",
+               "DEFINE_TABLE_TITLE"
+          ]
      },
      "*DEFINE_TRANSFORMATION_TITLE": {
           "body": [
                "*DEFINE_TRANSFORMATION_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#  tranid",
-               "",
+               "         $2",
                "$#  option        a1        a2        a3",
-               "    TRANSL",
+               "    TRANSL         $3          $4          $5",
                "$-------------------------------------------------------------------------------",
                "$#  option        a1        a2        a3",
-               "     SCALE",
+               "     SCALE         $6          $7          $8",
                "$-------------------------------------------------------------------------------",
                "$#  option        a1        a2        a3        a4        a5        a6        a7",
-               "    ROTATE",
+               "    ROTATE         $9          $10          $11          $12          $13          $14          $15",
                "$-------------------------------------------------------------------------------",
                "$#  option        a1        a2        a3        a4",
-               "     POINT         1",
-               "     POINT         2",
+               "     POINT         1         $16          $17          $18",
+               "     POINT         2         $19          $20          $21",
                "$#  option        a1        a2        a3",
-               "    ROTATE         1         2",
+               "    ROTATE         1         2         $22",
                "$-------------------------------------------------------------------------------",
                "$#  option        a1        a2        a3        a4",
-               "     POINT         1",
-               "     POINT         2",
-               "     POINT         3",
-               "     POINT         4",
-               "     POINT         5",
-               "     POINT         6",
+               "     POINT         1         $23          $24          $25",
+               "     POINT         2         $26          $27          $28",
+               "     POINT         3         $29          $30          $31",
+               "     POINT         4         $32          $33          $34",
+               "     POINT         5         $35          $36          $37",
+               "     POINT         6         $38          $39          $40",
                "$#  option        a1        a2        a3        a4        a5        a6",
                "     POS6P         1         2         3         4         5         6",
                "$"
           ],
           "description": "DEFINE_TRANSFORMATION_TITLE",
-          "prefix": "*DEFINE_TRANSFORMATION_TITLE"
+          "prefix": [
+               "*DEFINE_TRANSFORMATION_TITLE",
+               "DEFINE_TRANSFORMATION_TITLE"
+          ]
      },
      "*DEFINE_VECTOR_NODES": {
           "body": [
                "*DEFINE_VECTOR_NODES",
                "$#     vid     nodet     nodeh",
-               "",
+               "         $1          $2          $3",
                "$"
           ],
           "description": "DEFINE_VECTOR_NODES",
-          "prefix": "*DEFINE_VECTOR_NODES"
+          "prefix": [
+               "*DEFINE_VECTOR_NODES",
+               "DEFINE_VECTOR_NODES"
+          ]
      },
      "*DEFINE_VECTOR_TITLE": {
           "body": [
                "*DEFINE_VECTOR_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     vid        xt        yt        zt        xh        yh        zh       cid",
-               "",
+               "         $2          $3          $4          $5          $6          $7          $8",
                "$"
           ],
           "description": "DEFINE_VECTOR_TITLE",
-          "prefix": "*DEFINE_VECTOR_TITLE"
+          "prefix": [
+               "*DEFINE_VECTOR_TITLE",
+               "DEFINE_VECTOR_TITLE"
+          ]
      },
      "*DEFORMABLE_TO_RIGID": {
           "body": [
                "*DEFORMABLE_TO_RIGID",
                "$#     pid       mrb     ptype",
-               "",
+               "         $1",
                "$"
           ],
           "description": "DEFORMABLE_TO_RIGID",
-          "prefix": "*DEFORMABLE_TO_RIGID"
+          "prefix": [
+               "*DEFORMABLE_TO_RIGID",
+               "DEFORMABLE_TO_RIGID"
+          ]
      },
      "*DEFORMABLE_TO_RIGID_AUTOMATIC": {
           "body": [
                "*DEFORMABLE_TO_RIGID_AUTOMATIC",
                "$#   swset      code     time1     time2     time3     entno     relsw    paired",
-               "",
+               "         $1",
                "$#    nrbf      ncsf       rwf     dtmax       d2r       r2d    offset",
-               "",
+               "                                                           $2",
                "$#     pid",
                "",
                "$"
           ],
           "description": "DEFORMABLE_TO_RIGID_AUTOMATIC",
-          "prefix": "*DEFORMABLE_TO_RIGID_AUTOMATIC"
+          "prefix": [
+               "*DEFORMABLE_TO_RIGID_AUTOMATIC",
+               "DEFORMABLE_TO_RIGID_AUTOMATIC"
+          ]
      },
      "*DEFORMABLE_TO_RIGID_INERTIA": {
           "body": [
                "*DEFORMABLE_TO_RIGID_INERTIA",
                "$#     pid",
-               "",
+               "         $1",
                "$#      xc        yc        zc        tm",
                "",
                "$#     ixx       ixy       ixz       iyy       iyz       izz",
@@ -1602,164 +1954,212 @@
                "$"
           ],
           "description": "DEFORMABLE_TO_RIGID_INERTIA",
-          "prefix": "*DEFORMABLE_TO_RIGID_INERTIA"
+          "prefix": [
+               "*DEFORMABLE_TO_RIGID_INERTIA",
+               "DEFORMABLE_TO_RIGID_INERTIA"
+          ]
      },
      "*ELEMENT_BEAM": {
           "body": [
                "*ELEMENT_BEAM",
                "$    eid     pid      n1      n2      n3     rt1     rr1     rt2     rr2   local",
-               "",
+               "       $1        $2        $3        $4        $5",
                "$"
           ],
           "description": "ELEMENT_BEAM",
-          "prefix": "*ELEMENT_BEAM"
+          "prefix": [
+               "*ELEMENT_BEAM",
+               "ELEMENT_BEAM"
+          ]
      },
      "*ELEMENT_DISCRETE": {
           "body": [
                "*ELEMENT_DISCRETE",
                "$#   eid     pid      n1      n2     vid               s      pf          offset",
-               "",
+               "       $1        $2        $3        $4",
                "$"
           ],
           "description": "ELEMENT_DISCRETE",
-          "prefix": "*ELEMENT_DISCRETE"
+          "prefix": [
+               "*ELEMENT_DISCRETE",
+               "ELEMENT_DISCRETE"
+          ]
      },
      "*ELEMENT_INERTIA": {
           "body": [
                "*ELEMENT_INERTIA",
                "$#   eid     nid     cid",
-               "",
+               "       $1        $2",
                "$#     ixx       ixy       ixz       iyy       iyz       izz         m",
                "",
                "$"
           ],
           "description": "ELEMENT_INERTIA",
-          "prefix": "*ELEMENT_INERTIA"
+          "prefix": [
+               "*ELEMENT_INERTIA",
+               "ELEMENT_INERTIA"
+          ]
      },
      "*ELEMENT_MASS": {
           "body": [
                "*ELEMENT_MASS",
                "$#   eid      id            mass     pid",
-               "",
+               "       $1        $2                $3",
                "$"
           ],
           "description": "ELEMENT_MASS",
-          "prefix": "*ELEMENT_MASS"
+          "prefix": [
+               "*ELEMENT_MASS",
+               "ELEMENT_MASS"
+          ]
      },
      "*ELEMENT_MASS_PART": {
           "body": [
                "*ELEMENT_MASS_PART",
                "$#    id         addmass         finmass            lcid",
-               "",
+               "       $1                $2                $3",
                "$"
           ],
           "description": "ELEMENT_MASS_PART",
-          "prefix": "*ELEMENT_MASS_PART"
+          "prefix": [
+               "*ELEMENT_MASS_PART",
+               "ELEMENT_MASS_PART"
+          ]
      },
      "*ELEMENT_MASS_PART_SET": {
           "body": [
                "*ELEMENT_MASS_PART_SET",
                "$#    id         addmass         finmass            lcid",
-               "",
+               "       $1                $2                $3",
                "$"
           ],
           "description": "ELEMENT_MASS_PART_SET",
-          "prefix": "*ELEMENT_MASS_PART_SET"
+          "prefix": [
+               "*ELEMENT_MASS_PART_SET",
+               "ELEMENT_MASS_PART_SET"
+          ]
      },
      "*ELEMENT_PLOTEL": {
           "body": [
                "*ELEMENT_PLOTEL",
                "$    eid      n1      n2",
-               "",
+               "       $1        $2        $3",
                "$"
           ],
           "description": "ELEMENT_PLOTEL",
-          "prefix": "*ELEMENT_PLOTEL"
+          "prefix": [
+               "*ELEMENT_PLOTEL",
+               "ELEMENT_PLOTEL"
+          ]
      },
      "*ELEMENT_SEATBELT": {
           "body": [
                "*ELEMENT_SEATBELT",
                "$#   eid     pid      n1      n2   sbrid            slen      n3      n4",
-               "",
+               "       $1        $2        $3",
                "$"
           ],
           "description": "ELEMENT_SEATBELT",
-          "prefix": "*ELEMENT_SEATBELT"
+          "prefix": [
+               "*ELEMENT_SEATBELT",
+               "ELEMENT_SEATBELT"
+          ]
      },
      "*ELEMENT_SEATBELT_ACCELEROMETER": {
           "body": [
                "*ELEMENT_SEATBELT_ACCELEROMETER",
                "$#  sbacid      nid1      nid2      nid3     igrav    intopt      mass",
-               "",
+               "         $1",
                "$"
           ],
           "description": "ELEMENT_SEATBELT_ACCELEROMETER",
-          "prefix": "*ELEMENT_SEATBELT_ACCELEROMETER"
+          "prefix": [
+               "*ELEMENT_SEATBELT_ACCELEROMETER",
+               "ELEMENT_SEATBELT_ACCELEROMETER"
+          ]
      },
      "*ELEMENT_SEATBELT_PRETENSIONER": {
           "body": [
                "*ELEMENT_SEATBELT_PRETENSIONER",
                "$#  sbprid    sbprty    sbsid1    sbsid2    sbsid3    sbsid4",
-               "",
+               "         $1",
                "$#   sbrid      time    ptlcid    lmtfrc",
                "",
                "$"
           ],
           "description": "ELEMENT_SEATBELT_PRETENSIONER",
-          "prefix": "*ELEMENT_SEATBELT_PRETENSIONER"
+          "prefix": [
+               "*ELEMENT_SEATBELT_PRETENSIONER",
+               "ELEMENT_SEATBELT_PRETENSIONER"
+          ]
      },
      "*ELEMENT_SEATBELT_RETRACTOR": {
           "body": [
                "*ELEMENT_SEATBELT_RETRACTOR",
                "$#   sbrid    sbrnid      sbid      sid1      sid2      sid3      sid4",
-               "",
+               "         $1",
                "$#    tdel      pull     llcid     ulcid      lfed",
                "",
                "$"
           ],
           "description": "ELEMENT_SEATBELT_RETRACTOR",
-          "prefix": "*ELEMENT_SEATBELT_RETRACTOR"
+          "prefix": [
+               "*ELEMENT_SEATBELT_RETRACTOR",
+               "ELEMENT_SEATBELT_RETRACTOR"
+          ]
      },
      "*ELEMENT_SEATBELT_SENSOR": {
           "body": [
                "*ELEMENT_SEATBELT_SENSOR",
                "$#   sbsid    sbstyp     sbsfl",
-               "                  3",
+               "         $1          3",
                "$#    time",
-               "",
+               "         $2",
                "$"
           ],
           "description": "ELEMENT_SEATBELT_SENSOR",
-          "prefix": "*ELEMENT_SEATBELT_SENSOR"
+          "prefix": [
+               "*ELEMENT_SEATBELT_SENSOR",
+               "ELEMENT_SEATBELT_SENSOR"
+          ]
      },
      "*ELEMENT_SEATBELT_SLIPRING": {
           "body": [
                "*ELEMENT_SEATBELT_SLIPRING",
                "$# sbsrid1     sdid1     sbid2        fc    sbrnid     ltime       fcs      onid",
-               "",
+               "         $1          $2          $3          $4          $5",
                "$#       k    funcid    direct        dc              lcnffd    lcnffs",
                "",
                "$"
           ],
           "description": "ELEMENT_SEATBELT_SLIPRING",
-          "prefix": "*ELEMENT_SEATBELT_SLIPRING"
+          "prefix": [
+               "*ELEMENT_SEATBELT_SLIPRING",
+               "ELEMENT_SEATBELT_SLIPRING"
+          ]
      },
      "*ELEMENT_SHELL": {
           "body": [
                "*ELEMENT_SHELL",
                "$#   eid     pid      n1      n2      n3      n4      n5      n6      n7      n8",
-               "",
+               "       $1        $2        $3",
                "$"
           ],
           "description": "ELEMENT_SHELL",
-          "prefix": "*ELEMENT_SHELL"
+          "prefix": [
+               "*ELEMENT_SHELL",
+               "ELEMENT_SHELL"
+          ]
      },
      "*END": {
           "body": [
                "*END"
           ],
           "description": "END",
-          "prefix": "*END"
+          "prefix": [
+               "*END",
+               "END"
+          ]
      },
      "*HOURGLASS": {
           "body": [
@@ -1769,39 +2169,51 @@
                "$"
           ],
           "description": "HOURGLASS",
-          "prefix": "*HOURGLASS"
+          "prefix": [
+               "*HOURGLASS",
+               "HOURGLASS"
+          ]
      },
      "*INCLUDE": {
           "body": [
                "*INCLUDE",
-               "path",
+               " $1",
                "$"
           ],
           "description": "INCLUDE",
-          "prefix": "*INCLUDE"
+          "prefix": [
+               "*INCLUDE",
+               "INCLUDE"
+          ]
      },
      "*INCLUDE_PATH": {
           "body": [
                "*INCLUDE_PATH",
-               "path",
+               " $1",
                "$"
           ],
           "description": "INCLUDE_PATH",
-          "prefix": "*INCLUDE_PATH"
+          "prefix": [
+               "*INCLUDE_PATH",
+               "INCLUDE_PATH"
+          ]
      },
      "*INCLUDE_PATH_RELATIVE": {
           "body": [
                "*INCLUDE_PATH_RELATIVE",
-               "path",
+               " $1",
                "$"
           ],
           "description": "INCLUDE_PATH_RELATIVE",
-          "prefix": "*INCLUDE_PATH_RELATIVE"
+          "prefix": [
+               "*INCLUDE_PATH_RELATIVE",
+               "INCLUDE_PATH_RELATIVE"
+          ]
      },
      "*INCLUDE_TRANSFORM": {
           "body": [
                "*INCLUDE_TRANSFORM",
-               "path",
+               " $1",
                "$#  idnoff    ideoff    idpoff    idmoff    idsoff    idfoff    iddoff",
                "",
                "$#  idroff",
@@ -1813,90 +2225,117 @@
                "$"
           ],
           "description": "INCLUDE_TRANSFORM",
-          "prefix": "*INCLUDE_TRANSFORM"
+          "prefix": [
+               "*INCLUDE_TRANSFORM",
+               "INCLUDE_TRANSFORM"
+          ]
      },
      "*INITIAL_FOAM_REFERENCE_GEOMETRY": {
           "body": [
                "*INITIAL_FOAM_REFERENCE_GEOMETRY",
                "$#   nid               x               y               z",
-               "",
+               "         $1",
                "$"
           ],
           "description": "INITIAL_FOAM_REFERENCE_GEOMETRY",
-          "prefix": "*INITIAL_FOAM_REFERENCE_GEOMETRY"
+          "prefix": [
+               "*INITIAL_FOAM_REFERENCE_GEOMETRY",
+               "INITIAL_FOAM_REFERENCE_GEOMETRY"
+          ]
      },
      "*INITIAL_VELOCITY": {
           "body": [
                "*INITIAL_VELOCITY",
                "$#    nsid    nsidex     boxid    irigid      icid",
-               "",
+               "         $1          $2",
                "$#      vx        vy        vz       vxr       vyr       vzr",
-               "",
+               "         $3",
                "$#     vxe       vye       vze      vxre      vyre      vzre",
-               "",
+               "         $4",
                "$"
           ],
           "description": "INITIAL_VELOCITY",
-          "prefix": "*INITIAL_VELOCITY"
+          "prefix": [
+               "*INITIAL_VELOCITY",
+               "INITIAL_VELOCITY"
+          ]
      },
      "*INITIAL_VELOCITY_GENERATION": {
           "body": [
                "*INITIAL_VELOCITY_GENERATION",
                "$#      id      styp     omega        vx        vy        vz     ivatn      icid",
-               "                                                                  1",
+               "         $1          $2          $3                                        1",
                "$#      xc        yc        zc        nx        ny        nz     phase    irigid",
-               "",
+               "         $4          $5          $6          $7          $8          $9",
                "$"
           ],
           "description": "INITIAL_VELOCITY_GENERATION",
-          "prefix": "*INITIAL_VELOCITY_GENERATION"
+          "prefix": [
+               "*INITIAL_VELOCITY_GENERATION",
+               "INITIAL_VELOCITY_GENERATION"
+          ]
      },
      "*INITIAL_VELOCITY_GENERATION_START_TIME": {
           "body": [
                "*INITIAL_VELOCITY_GENERATION_START_TIME",
                "$#   stime",
-               "",
+               "         $1",
                "$"
           ],
           "description": "INITIAL_VELOCITY_GENERATION_START_TIME",
-          "prefix": "*INITIAL_VELOCITY_GENERATION_START_TIME"
+          "prefix": [
+               "*INITIAL_VELOCITY_GENERATION_START_TIME",
+               "INITIAL_VELOCITY_GENERATION_START_TIME"
+          ]
      },
      "*INITIAL_VELOCITY_NODE": {
           "body": [
                "*INITIAL_VELOCITY_NODE",
                "$#     nid        vx        vy        vz       vxr       vyr       vzr      icid",
-               "",
+               "         $1",
                "$"
           ],
           "description": "INITIAL_VELOCITY_NODE",
-          "prefix": "*INITIAL_VELOCITY_NODE"
+          "prefix": [
+               "*INITIAL_VELOCITY_NODE",
+               "INITIAL_VELOCITY_NODE"
+          ]
      },
      "*INITIAL_VELOCITY_RIGID_BODY": {
           "body": [
                "*INITIAL_VELOCITY_RIGID_BODY",
                "$#     pid        vx        vy        vz       vxr       vyr       vzr      icid",
-               "",
+               "         $1",
                "$"
           ],
           "description": "INITIAL_VELOCITY_RIGID_BODY",
-          "prefix": "*INITIAL_VELOCITY_RIGID_BODY"
+          "prefix": [
+               "*INITIAL_VELOCITY_RIGID_BODY",
+               "INITIAL_VELOCITY_RIGID_BODY"
+          ]
      },
      "*INTERFACE_SPRINGBACK_LSDYNA": {
           "body": [
                "*INTERFACE_SPRINGBACK_LSDYNA",
                "$#    psid      nshv     ftype               ftnsr    nthhsv             intstrn",
-               "                            0",
+               "         $1                    0",
                "$"
           ],
           "description": "INTERFACE_SPRINGBACK_LSDYNA",
-          "prefix": "*INTERFACE_SPRINGBACK_LSDYNA"
+          "prefix": [
+               "*INTERFACE_SPRINGBACK_LSDYNA",
+               "INTERFACE_SPRINGBACK_LSDYNA"
+          ]
      },
      "*KEYWORD": {
           "body": [
                "*KEYWORD"
           ],
           "description": "KEYWORD",
-          "prefix": "*KEYWORD"
+          "prefix": [
+               "*KEYWORD",
+               "KEYWORD"
+          ]
      },
      "*LOAD_BODY_Z": {
           "body": [
@@ -1914,69 +2353,87 @@
                "$"
           ],
           "description": "LOAD_BODY_Z",
-          "prefix": "*LOAD_BODY_Z"
+          "prefix": [
+               "*LOAD_BODY_Z",
+               "LOAD_BODY_Z"
+          ]
      },
      "*LOAD_NODE_POINT": {
           "body": [
                "*LOAD_NODE_POINT",
                "$#     nid       dof      lcid        sf       cid        m1        m2        m3",
-               "                                  1.0",
+               "         $1          $2          $3        1.0",
                "$"
           ],
           "description": "LOAD_NODE_POINT",
-          "prefix": "*LOAD_NODE_POINT"
+          "prefix": [
+               "*LOAD_NODE_POINT",
+               "LOAD_NODE_POINT"
+          ]
      },
      "*LOAD_NODE_SET": {
           "body": [
                "*LOAD_NODE_SET",
                "$#    nsid       dof      lcid        sf       cid        m1        m2        m3",
-               "                                  1.0",
+               "         $1          $2          $3        1.0",
                "$"
           ],
           "description": "LOAD_NODE_SET",
-          "prefix": "*LOAD_NODE_SET"
+          "prefix": [
+               "*LOAD_NODE_SET",
+               "LOAD_NODE_SET"
+          ]
      },
      "*LOAD_RIGID_BODY": {
           "body": [
                "*LOAD_RIGID_BODY",
                "$#     pid       dof      lcid        sf       cid        m1        m2        m3",
-               "                                  1.0",
+               "         $1          $2          $3        1.0",
                "$"
           ],
           "description": "LOAD_RIGID_BODY",
-          "prefix": "*LOAD_RIGID_BODY"
+          "prefix": [
+               "*LOAD_RIGID_BODY",
+               "LOAD_RIGID_BODY"
+          ]
      },
      "*MAT_1DOF_GENERALIZED_SPRING_TITLE": {
           "body": [
                "*MAT_1DOF_GENERALIZED_SPRING_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     mid        ro         k         c     scln1     scln2     dofn1     dofn2",
-               "",
+               "         $2          $3",
                "$#    cid1      cid2",
                "",
                "$"
           ],
           "description": "MAT_1DOF_GENERALIZED_SPRING_TITLE",
-          "prefix": "*MAT_1DOF_GENERALIZED_SPRING_TITLE"
+          "prefix": [
+               "*MAT_1DOF_GENERALIZED_SPRING_TITLE",
+               "MAT_1DOF_GENERALIZED_SPRING_TITLE"
+          ]
      },
      "*MAT_ADD_AIRBAG_POROSITY_LEAKAGE_TITLE": {
           "body": [
                "*MAT_ADD_AIRBAG_POROSITY_LEAKAGE_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     mid       flc       fac       ela     fvopt        x0        x1",
-               "",
+               "         $2",
                "$"
           ],
           "description": "MAT_ADD_AIRBAG_POROSITY_LEAKAGE_TITLE",
-          "prefix": "*MAT_ADD_AIRBAG_POROSITY_LEAKAGE_TITLE"
+          "prefix": [
+               "*MAT_ADD_AIRBAG_POROSITY_LEAKAGE_TITLE",
+               "MAT_ADD_AIRBAG_POROSITY_LEAKAGE_TITLE"
+          ]
      },
      "*MAT_ADD_EROSION": {
           "body": [
                "*MAT_ADD_EROSION",
                "$#     mid      excl    mxpres     mneps    effeps    voleps    numfip       ncs",
-               "",
+               "         $1",
                "$#  mnpres     sigp1     sigvm     mxeps     epssh     sigth   impulse    failtm",
                "",
                "$#    idam    dmgtyp     lcsdg     ecrit    dmgexp     dcrit    fadexp    lcregd",
@@ -1986,105 +2443,129 @@
                "$"
           ],
           "description": "MAT_ADD_EROSION",
-          "prefix": "*MAT_ADD_EROSION"
+          "prefix": [
+               "*MAT_ADD_EROSION",
+               "MAT_ADD_EROSION"
+          ]
      },
      "*MAT_CABLE_DISCRETE_BEAM_TITLE": {
           "body": [
                "*MAT_CABLE_DISCRETE_BEAM_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     mid        ro         e      lcid        f0    tmaxf0     tramp     iread",
-               "",
+               "         $2          $3",
                "$#  output    tstart",
                "",
                "$"
           ],
           "description": "MAT_CABLE_DISCRETE_BEAM_TITLE",
-          "prefix": "*MAT_CABLE_DISCRETE_BEAM_TITLE"
+          "prefix": [
+               "*MAT_CABLE_DISCRETE_BEAM_TITLE",
+               "MAT_CABLE_DISCRETE_BEAM_TITLE"
+          ]
      },
      "*MAT_DAMPER_NONLINEAR_VISCOUS_TITLE": {
           "body": [
                "*MAT_DAMPER_NONLINEAR_VISCOUS_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     mid      ldcr",
-               "",
+               "         $2          $3",
                "$"
           ],
           "description": "MAT_DAMPER_NONLINEAR_VISCOUS_TITLE",
-          "prefix": "*MAT_DAMPER_NONLINEAR_VISCOUS_TITLE"
+          "prefix": [
+               "*MAT_DAMPER_NONLINEAR_VISCOUS_TITLE",
+               "MAT_DAMPER_NONLINEAR_VISCOUS_TITLE"
+          ]
      },
      "*MAT_DAMPER_VISCOUS_TITLE": {
           "body": [
                "*MAT_DAMPER_VISCOUS_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     mid        dc",
-               "",
+               "         $2          $3",
                "$"
           ],
           "description": "MAT_DAMPER_VISCOUS_TITLE",
-          "prefix": "*MAT_DAMPER_VISCOUS_TITLE"
+          "prefix": [
+               "*MAT_DAMPER_VISCOUS_TITLE",
+               "MAT_DAMPER_VISCOUS_TITLE"
+          ]
      },
      "*MAT_ELASTIC_6DOF_SPRING_DISCRETE_BEAM_TITLE": {
           "body": [
                "*MAT_ELASTIC_6DOF_SPRING_DISCRETE_BEAM_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     mid        ro     tpidr     tpids     tpidt     rpidr     rpids     rpidt",
-               "",
+               "         $2          $3",
                "$"
           ],
           "description": "MAT_ELASTIC_6DOF_SPRING_DISCRETE_BEAM_TITLE",
-          "prefix": "*MAT_ELASTIC_6DOF_SPRING_DISCRETE_BEAM_TITLE"
+          "prefix": [
+               "*MAT_ELASTIC_6DOF_SPRING_DISCRETE_BEAM_TITLE",
+               "MAT_ELASTIC_6DOF_SPRING_DISCRETE_BEAM_TITLE"
+          ]
      },
      "*MAT_ELASTIC_SPRING_DISCRETE_BEAM_TITLE": {
           "body": [
                "*MAT_ELASTIC_SPRING_DISCRETE_BEAM_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     mid        ro         k        f0         d       cdf       tdf",
-               "",
+               "         $2          $3          $4",
                "$#   flcid     hlcid        c1        c2       dle     glcid",
                "",
                "$"
           ],
           "description": "MAT_ELASTIC_SPRING_DISCRETE_BEAM_TITLE",
-          "prefix": "*MAT_ELASTIC_SPRING_DISCRETE_BEAM_TITLE"
+          "prefix": [
+               "*MAT_ELASTIC_SPRING_DISCRETE_BEAM_TITLE",
+               "MAT_ELASTIC_SPRING_DISCRETE_BEAM_TITLE"
+          ]
      },
      "*MAT_ELASTIC_TITLE": {
           "body": [
                "*MAT_ELASTIC_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     mid        ro         e        pr        da        db         k",
-               "",
+               "         $2          $3          $4          $5",
                "$"
           ],
           "description": "MAT_ELASTIC_TITLE",
-          "prefix": "*MAT_ELASTIC_TITLE"
+          "prefix": [
+               "*MAT_ELASTIC_TITLE",
+               "MAT_ELASTIC_TITLE"
+          ]
      },
      "*MAT_GENERAL_JOINT_DISCRETE_BEAM_TITLE": {
           "body": [
                "*MAT_GENERAL_JOINT_DISCRETE_BEAM_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     mid        ro        tr        ts        tt        rr        rs        rt",
-               "",
+               "         $2          $3",
                "$#    rpst      rpsr",
                "",
                "$"
           ],
           "description": "MAT_GENERAL_JOINT_DISCRETE_BEAM_TITLE",
-          "prefix": "*MAT_GENERAL_JOINT_DISCRETE_BEAM_TITLE"
+          "prefix": [
+               "*MAT_GENERAL_JOINT_DISCRETE_BEAM_TITLE",
+               "MAT_GENERAL_JOINT_DISCRETE_BEAM_TITLE"
+          ]
      },
      "*MAT_GENERAL_NONLINEAR_1DOF_DISCRETE_BEAM_TITLE": {
           "body": [
                "*MAT_GENERAL_NONLINEAR_1DOF_DISCRETE_BEAM_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     mid        ro         k   unldopt    offset     dampf",
-               "",
+               "         $2          $3",
                "$#   lcidt    lcidtu    lcidtd    lcidte",
                "",
                "$#  utfail    ucfail        iu",
@@ -2092,15 +2573,18 @@
                "$"
           ],
           "description": "MAT_GENERAL_NONLINEAR_1DOF_DISCRETE_BEAM_TITLE",
-          "prefix": "*MAT_GENERAL_NONLINEAR_1DOF_DISCRETE_BEAM_TITLE"
+          "prefix": [
+               "*MAT_GENERAL_NONLINEAR_1DOF_DISCRETE_BEAM_TITLE",
+               "MAT_GENERAL_NONLINEAR_1DOF_DISCRETE_BEAM_TITLE"
+          ]
      },
      "*MAT_GENERAL_NONLINEAR_6DOF_DISCRETE_BEAM_TITLE": {
           "body": [
                "*MAT_GENERAL_NONLINEAR_6DOF_DISCRETE_BEAM_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     mid        ro        kt        kr   unldopt    offset     dampf     iflag",
-               "",
+               "         $2          $3",
                "$#  lcidtr    lcidts    lcidtt    lcidrr    lcidrs    lcidrt",
                "",
                "$# lcidtur   lcidtus   lcidtut   lcidrur   lcidrus   lcidrut",
@@ -2118,15 +2602,18 @@
                "$"
           ],
           "description": "MAT_GENERAL_NONLINEAR_6DOF_DISCRETE_BEAM_TITLE",
-          "prefix": "*MAT_GENERAL_NONLINEAR_6DOF_DISCRETE_BEAM_TITLE"
+          "prefix": [
+               "*MAT_GENERAL_NONLINEAR_6DOF_DISCRETE_BEAM_TITLE",
+               "MAT_GENERAL_NONLINEAR_6DOF_DISCRETE_BEAM_TITLE"
+          ]
      },
      "*MAT_GENERAL_SPRING_DISCRETE_BEAM_TITLE": {
           "body": [
                "*MAT_GENERAL_SPRING_DISCRETE_BEAM_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     mid        ro",
-               "",
+               "         $2          $3",
                "$#     dof      type         k         d       cdf       tdf",
                "",
                "$#   flcid     hlcid        c1        c2       dle     glcid",
@@ -2134,55 +2621,67 @@
                "$"
           ],
           "description": "MAT_GENERAL_SPRING_DISCRETE_BEAM_TITLE",
-          "prefix": "*MAT_GENERAL_SPRING_DISCRETE_BEAM_TITLE"
+          "prefix": [
+               "*MAT_GENERAL_SPRING_DISCRETE_BEAM_TITLE",
+               "MAT_GENERAL_SPRING_DISCRETE_BEAM_TITLE"
+          ]
      },
      "*MAT_HYDRAULIC_GAS_DAMPER_DISCRETE_BEAM_TITLE": {
           "body": [
                "*MAT_HYDRAULIC_GAS_DAMPER_DISCRETE_BEAM_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     mid        ro        co         n        p0        pa        ap        kh",
-               "",
+               "         $2          $3",
                "$#    lcid        fr      sclf     clear",
                "",
                "$"
           ],
           "description": "MAT_HYDRAULIC_GAS_DAMPER_DISCRETE_BEAM_TITLE",
-          "prefix": "*MAT_HYDRAULIC_GAS_DAMPER_DISCRETE_BEAM_TITLE"
+          "prefix": [
+               "*MAT_HYDRAULIC_GAS_DAMPER_DISCRETE_BEAM_TITLE",
+               "MAT_HYDRAULIC_GAS_DAMPER_DISCRETE_BEAM_TITLE"
+          ]
      },
      "*MAT_INELASTIC_6DOF_SPRING_DISCRETE_BEAM_TITLE": {
           "body": [
                "*MAT_INELASTIC_6DOF_SPRING_DISCRETE_BEAM_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     mid        ro     tpidr     tpids     tpidt     rpidr     rpids     rpidt",
-               "",
+               "         $2          $3",
                "$"
           ],
           "description": "MAT_INELASTIC_6DOF_SPRING_DISCRETE_BEAM_TITLE",
-          "prefix": "*MAT_INELASTIC_6DOF_SPRING_DISCRETE_BEAM_TITLE"
+          "prefix": [
+               "*MAT_INELASTIC_6DOF_SPRING_DISCRETE_BEAM_TITLE",
+               "MAT_INELASTIC_6DOF_SPRING_DISCRETE_BEAM_TITLE"
+          ]
      },
      "*MAT_INELASTIC_SPRING_DISCRETE_BEAM_TITLE": {
           "body": [
                "*MAT_INELASTIC_SPRING_DISCRETE_BEAM_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     mid        ro         k        f0         d       cdf       tdf",
-               "",
+               "         $2          $3          $4",
                "$#   flcid     hlcid        c1        c2       dle     glcid",
                "",
                "$"
           ],
           "description": "MAT_INELASTIC_SPRING_DISCRETE_BEAM_TITLE",
-          "prefix": "*MAT_INELASTIC_SPRING_DISCRETE_BEAM_TITLE"
+          "prefix": [
+               "*MAT_INELASTIC_SPRING_DISCRETE_BEAM_TITLE",
+               "MAT_INELASTIC_SPRING_DISCRETE_BEAM_TITLE"
+          ]
      },
      "*MAT_LINEAR_ELASTIC_DISCRETE_BEAM_TITLE": {
           "body": [
                "*MAT_LINEAR_ELASTIC_DISCRETE_BEAM_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     mid        ro       tkr       tks       tkt       rkr       rks       rkt",
-               "",
+               "         $2          $3",
                "$#     tdr       tds       tdt       rdr       rds       rdt",
                "",
                "$#     for       fos       fot       mor       mos       mot",
@@ -2190,15 +2689,18 @@
                "$"
           ],
           "description": "MAT_LINEAR_ELASTIC_DISCRETE_BEAM_TITLE",
-          "prefix": "*MAT_LINEAR_ELASTIC_DISCRETE_BEAM_TITLE"
+          "prefix": [
+               "*MAT_LINEAR_ELASTIC_DISCRETE_BEAM_TITLE",
+               "MAT_LINEAR_ELASTIC_DISCRETE_BEAM_TITLE"
+          ]
      },
      "*MAT_NONLINEAR_ELASTIC_DISCRETE_BEAM_TITLE": {
           "body": [
                "*MAT_NONLINEAR_ELASTIC_DISCRETE_BEAM_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     mid        ro    lcidtr    lcidts    lcidtt    lcidrr    lcidrs    lcidrt",
-               "",
+               "         $2          $3",
                "$# lcidtdr   lcidtds   lcidtdt   lcidrdr   lcidrds   lcidrdt",
                "",
                "$#     for       fos       fot       mor       mos       mot",
@@ -2210,15 +2712,18 @@
                "$"
           ],
           "description": "MAT_NONLINEAR_ELASTIC_DISCRETE_BEAM_TITLE",
-          "prefix": "*MAT_NONLINEAR_ELASTIC_DISCRETE_BEAM_TITLE"
+          "prefix": [
+               "*MAT_NONLINEAR_ELASTIC_DISCRETE_BEAM_TITLE",
+               "MAT_NONLINEAR_ELASTIC_DISCRETE_BEAM_TITLE"
+          ]
      },
      "*MAT_NONLINEAR_PLASTIC_DISCRETE_BEAM_TITLE": {
           "body": [
                "*MAT_NONLINEAR_PLASTIC_DISCRETE_BEAM_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     mid        ro       tkr       tks       tkt       rkr       rks       rkt",
-               "",
+               "         $2          $3",
                "$#     rdr       rds       rdt       rdr       rds       rdt",
                "",
                "$#   lcpdr     lcpds     lcpdt     lcpmr     lcpms     lcpmt",
@@ -2232,29 +2737,35 @@
                "$"
           ],
           "description": "MAT_NONLINEAR_PLASTIC_DISCRETE_BEAM_TITLE",
-          "prefix": "*MAT_NONLINEAR_PLASTIC_DISCRETE_BEAM_TITLE"
+          "prefix": [
+               "*MAT_NONLINEAR_PLASTIC_DISCRETE_BEAM_TITLE",
+               "MAT_NONLINEAR_PLASTIC_DISCRETE_BEAM_TITLE"
+          ]
      },
      "*MAT_NULL_TITLE": {
           "body": [
                "*MAT_NULL_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     mid        ro        pc        mu     terod     cerod        ym        pr",
-               "",
+               "         $2          $3                                                  $4          $5",
                "$"
           ],
           "description": "MAT_NULL_TITLE",
-          "prefix": "*MAT_NULL_TITLE"
+          "prefix": [
+               "*MAT_NULL_TITLE",
+               "MAT_NULL_TITLE"
+          ]
      },
      "*MAT_PIECEWISE_LINEAR_PLASTICITY_TITLE": {
           "body": [
                "*MAT_PIECEWISE_LINEAR_PLASTICITY_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     mid        ro         e        pr      sigy      etan      fail      tdel",
-               "",
+               "         $2          $3          $4          $5",
                "$#       c         p      lcss      lcsr        vp",
-               "",
+               "                             $6",
                "$#    eps1      eps2      eps3      eps4      eps5      eps6      eps7      eps8",
                "",
                "$#     es1       es2       es3       es4       es5       es6       es7       es8",
@@ -2262,41 +2773,50 @@
                "$"
           ],
           "description": "MAT_PIECEWISE_LINEAR_PLASTICITY_TITLE",
-          "prefix": "*MAT_PIECEWISE_LINEAR_PLASTICITY_TITLE"
+          "prefix": [
+               "*MAT_PIECEWISE_LINEAR_PLASTICITY_TITLE",
+               "MAT_PIECEWISE_LINEAR_PLASTICITY_TITLE"
+          ]
      },
      "*MAT_PLASTIC_KINEMATIC_TITLE": {
           "body": [
                "*MAT_PLASTIC_KINEMATIC_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     mid        ro         e        pr      sigy      etan      beta",
-               "",
+               "         $2          $3          $4          $5",
                "$#     src       srp        fs        vp",
                "",
                "$"
           ],
           "description": "MAT_PLASTIC_KINEMATIC_TITLE",
-          "prefix": "*MAT_PLASTIC_KINEMATIC_TITLE"
+          "prefix": [
+               "*MAT_PLASTIC_KINEMATIC_TITLE",
+               "MAT_PLASTIC_KINEMATIC_TITLE"
+          ]
      },
      "*MAT_RESULTANT_PLASTICITY_TITLE": {
           "body": [
                "*MAT_RESULTANT_PLASTICITY_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     mid        ro         e        pr      sigy      etan",
-               "",
+               "         $2          $3          $4          $5",
                "$"
           ],
           "description": "MAT_RESULTANT_PLASTICITY_TITLE",
-          "prefix": "*MAT_RESULTANT_PLASTICITY_TITLE"
+          "prefix": [
+               "*MAT_RESULTANT_PLASTICITY_TITLE",
+               "MAT_RESULTANT_PLASTICITY_TITLE"
+          ]
      },
      "*MAT_RIGID_TITLE": {
           "body": [
                "*MAT_RIGID_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     mid        ro         e        pr         n    couple         m     alias",
-               "",
+               "         $2          $3          $4          $5",
                "$#     cmo      con1      con2",
                "",
                "$#lco or a1       a2        a3        v1        v2        v3",
@@ -2304,45 +2824,54 @@
                "$"
           ],
           "description": "MAT_RIGID_TITLE",
-          "prefix": "*MAT_RIGID_TITLE"
+          "prefix": [
+               "*MAT_RIGID_TITLE",
+               "MAT_RIGID_TITLE"
+          ]
      },
      "*MAT_SAMP-1": {
           "body": [
                "*MAT_SAMP-1",
                "$# title",
-               "title",
+               "$1",
                "$#     mid        ro      bulk      gmod      emod       nue    rbcfac    numint",
-               "",
+               "         $2          $3          $4          $5          $6          $7          $8",
                "$#  lcid-T    lcid-C    lcid-S    lcid-B      nuep    lcid-P              incdam",
-               "",
+               "         $9          $10          $11          $12          $13          $14",
                "$#  lcid-D    epfail    deprpt  lcid_tri   lcid_lc",
-               "",
+               "         $15          $16          $17          $18          $19",
                "$#   miter      mips             incfail     iconv      asaf",
-               "",
+               "         $20          $21                    $22          $23          $24",
                "$"
           ],
           "description": "MAT_SAMP-1",
-          "prefix": "*MAT_SAMP-1"
+          "prefix": [
+               "*MAT_SAMP-1",
+               "MAT_SAMP-1"
+          ]
      },
      "*MAT_SEATBELT_TITLE": {
           "body": [
                "*MAT_SEATBELT_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     mid      mpul     llcid     ulcid      lmin       cse      damp",
-               "                                                    2.0",
+               "         $2          $3          $4          $5          $6        2.0",
                "$"
           ],
           "description": "MAT_SEATBELT_TITLE",
-          "prefix": "*MAT_SEATBELT_TITLE"
+          "prefix": [
+               "*MAT_SEATBELT_TITLE",
+               "MAT_SEATBELT_TITLE"
+          ]
      },
      "*MAT_SID_DAMPER_DISCRETE_BEAM_TITLE": {
           "body": [
                "*MAT_SID_DAMPER_DISCRETE_BEAM_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     mid        ro        st         d         r         h         k         c",
-               "",
+               "         $2          $3",
                "$#      c3       stf      rhof        c1        c2     lcidf     lcidd        s0",
                "",
                "$#   orfloc   orfrad        sf        dc",
@@ -2350,239 +2879,305 @@
                "$"
           ],
           "description": "MAT_SID_DAMPER_DISCRETE_BEAM_TITLE",
-          "prefix": "*MAT_SID_DAMPER_DISCRETE_BEAM_TITLE"
+          "prefix": [
+               "*MAT_SID_DAMPER_DISCRETE_BEAM_TITLE",
+               "MAT_SID_DAMPER_DISCRETE_BEAM_TITLE"
+          ]
      },
      "*MAT_SPRING_ELASTIC_TITLE": {
           "body": [
                "*MAT_SPRING_ELASTIC_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     mid         k",
-               "",
+               "         $2          $3",
                "$"
           ],
           "description": "MAT_SPRING_ELASTIC_TITLE",
-          "prefix": "*MAT_SPRING_ELASTIC_TITLE"
+          "prefix": [
+               "*MAT_SPRING_ELASTIC_TITLE",
+               "MAT_SPRING_ELASTIC_TITLE"
+          ]
      },
      "*MAT_SPRING_GENERAL_NONLINEAR_TITLE": {
           "body": [
                "*MAT_SPRING_GENERAL_NONLINEAR_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$      mid       lcd      lcdu      beta       tyi       cyi",
-               "",
+               "         $2          $3          $4",
                "$"
           ],
           "description": "MAT_SPRING_GENERAL_NONLINEAR_TITLE",
-          "prefix": "*MAT_SPRING_GENERAL_NONLINEAR_TITLE"
+          "prefix": [
+               "*MAT_SPRING_GENERAL_NONLINEAR_TITLE",
+               "MAT_SPRING_GENERAL_NONLINEAR_TITLE"
+          ]
      },
      "*MAT_SPRING_INELASTIC_TITLE": {
           "body": [
                "*MAT_SPRING_INELASTIC_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$      mid      lcfd        ku       ctf",
-               "",
+               "         $2          $3",
                "$"
           ],
           "description": "MAT_SPRING_INELASTIC_TITLE",
-          "prefix": "*MAT_SPRING_INELASTIC_TITLE"
+          "prefix": [
+               "*MAT_SPRING_INELASTIC_TITLE",
+               "MAT_SPRING_INELASTIC_TITLE"
+          ]
      },
      "*MAT_SPRING_NONLINEAR_ELASTIC_TITLE": {
           "body": [
                "*MAT_SPRING_NONLINEAR_ELASTIC_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     mid       lcd       lcr",
-               "",
+               "         $2          $3          $4",
                "$"
           ],
           "description": "MAT_SPRING_NONLINEAR_ELASTIC_TITLE",
-          "prefix": "*MAT_SPRING_NONLINEAR_ELASTIC_TITLE"
+          "prefix": [
+               "*MAT_SPRING_NONLINEAR_ELASTIC_TITLE",
+               "MAT_SPRING_NONLINEAR_ELASTIC_TITLE"
+          ]
      },
      "*NODE": {
           "body": [
                "*NODE",
                "$#   nid               x               y               z      tc      rc",
-               "                    0.0             0.0             0.0",
+               "       $1              0.0             0.0             0.0",
                "$"
           ],
           "description": "NODE",
-          "prefix": "*NODE"
+          "prefix": [
+               "*NODE",
+               "NODE"
+          ]
      },
      "*NODE_MERGE_SET": {
           "body": [
                "*NODE_MERGE_SET",
                "$#  nsid",
-               "",
+               "       $1",
                "$"
           ],
           "description": "NODE_MERGE_SET",
-          "prefix": "*NODE_MERGE_SET"
+          "prefix": [
+               "*NODE_MERGE_SET",
+               "NODE_MERGE_SET"
+          ]
      },
      "*NODE_MERGE_SET_TOLERANCE": {
           "body": [
                "*NODE_MERGE_SET_TOLERANCE",
                "$#  tolr",
-               "",
+               "       $1",
                "$"
           ],
           "description": "NODE_MERGE_SET_TOLERANCE",
-          "prefix": "*NODE_MERGE_SET_TOLERANCE"
+          "prefix": [
+               "*NODE_MERGE_SET_TOLERANCE",
+               "NODE_MERGE_SET_TOLERANCE"
+          ]
      },
      "*NODE_TRANSFORM": {
           "body": [
                "*NODE_TRANSFORM",
                "$#   trsid      nsid",
-               "",
+               "         $1          $2",
                "$"
           ],
           "description": "NODE_TRANSFORM",
-          "prefix": "*NODE_TRANSFORM"
+          "prefix": [
+               "*NODE_TRANSFORM",
+               "NODE_TRANSFORM"
+          ]
      },
      "*PARAMETER": {
           "body": [
                "*PARAMETER",
                "$#    name       val",
-               "",
+               "         $1          $2",
                "$"
           ],
           "description": "PARAMETER",
-          "prefix": "*PARAMETER"
+          "prefix": [
+               "*PARAMETER",
+               "PARAMETER"
+          ]
      },
      "*PARAMETER_DUPLICATION": {
           "body": [
                "*PARAMETER_DUPLICATION",
                "$#   dflag",
-               "",
+               "         $1",
                "$"
           ],
           "description": "PARAMETER_DUPLICATION",
-          "prefix": "*PARAMETER_DUPLICATION"
+          "prefix": [
+               "*PARAMETER_DUPLICATION",
+               "PARAMETER_DUPLICATION"
+          ]
      },
      "*PARAMETER_EXPRESSION": {
           "body": [
                "*PARAMETER_EXPRESSION",
                "$#    name expression",
-               "",
+               "         $1  $2",
                "$"
           ],
           "description": "PARAMETER_EXPRESSION",
-          "prefix": "*PARAMETER_EXPRESSION"
+          "prefix": [
+               "*PARAMETER_EXPRESSION",
+               "PARAMETER_EXPRESSION"
+          ]
      },
      "*PARAMETER_EXPRESSION_LOCAL": {
           "body": [
                "*PARAMETER_EXPRESSION_LOCAL",
                "$#    name expression",
-               "",
+               "         $1  $2",
                "$"
           ],
           "description": "PARAMETER_EXPRESSION_LOCAL",
-          "prefix": "*PARAMETER_EXPRESSION_LOCAL"
+          "prefix": [
+               "*PARAMETER_EXPRESSION_LOCAL",
+               "PARAMETER_EXPRESSION_LOCAL"
+          ]
      },
      "*PARAMETER_LOCAL": {
           "body": [
                "*PARAMETER_LOCAL",
                "$#    name       val",
-               "",
+               "         $1          $2",
                "$"
           ],
           "description": "PARAMETER_LOCAL",
-          "prefix": "*PARAMETER_LOCAL"
+          "prefix": [
+               "*PARAMETER_LOCAL",
+               "PARAMETER_LOCAL"
+          ]
      },
      "*PART": {
           "body": [
                "*PART",
                "$# title",
-               "title",
+               "$1",
                "$#     pid     secid       mid     eosid      hgid      grav    adpopt      tmid",
-               "",
+               "         $2          $3          $4",
                "$"
           ],
           "description": "PART",
-          "prefix": "*PART"
+          "prefix": [
+               "*PART",
+               "PART"
+          ]
      },
      "*PART_ANNEAL": {
           "body": [
                "*PART_ANNEAL",
                "$#     pid      time",
-               "",
+               "         $1",
                "$"
           ],
           "description": "PART_ANNEAL",
-          "prefix": "*PART_ANNEAL"
+          "prefix": [
+               "*PART_ANNEAL",
+               "PART_ANNEAL"
+          ]
      },
      "*PART_ANNEAL_SET": {
           "body": [
                "*PART_ANNEAL_SET",
                "$#    psid      time",
-               "",
+               "         $1",
                "$"
           ],
           "description": "PART_ANNEAL_SET",
-          "prefix": "*PART_ANNEAL_SET"
+          "prefix": [
+               "*PART_ANNEAL_SET",
+               "PART_ANNEAL_SET"
+          ]
      },
      "*PART_CONTACT": {
           "body": [
                "*PART_CONTACT",
                "$# title",
-               "title",
+               "$1",
                "$#     pid     secid       mid     eosid      hgid      grav    adpopt      tmid",
-               "",
+               "         $2          $3          $4",
                "$#      fs        fd        dc        vc      optt       sft       ssf",
                "",
                "$"
           ],
           "description": "PART_CONTACT",
-          "prefix": "*PART_CONTACT"
+          "prefix": [
+               "*PART_CONTACT",
+               "PART_CONTACT"
+          ]
      },
      "*PART_DUPLICATE": {
           "body": [
                "*PART_DUPLICATE",
                "$#   ptype    typeid    idpoff    ideoff    idnoff    tranid",
-               "",
+               "         $1",
                "$"
           ],
           "description": "PART_DUPLICATE",
-          "prefix": "*PART_DUPLICATE"
+          "prefix": [
+               "*PART_DUPLICATE",
+               "PART_DUPLICATE"
+          ]
      },
      "*PART_INERTIA": {
           "body": [
                "*PART_INERTIA",
                "$# title",
-               "title",
+               "$1",
                "$#     pid     secid       mid     eosid      hgid      grav    adpopt      tmid",
-               "",
+               "         $2          $3          $4",
                "$#      xc        yc        zc        tm      ircs    nodeid",
-               "",
+               "         $5          $6          $7          $8",
                "$#     ixx       ixy       ixz       iyy       iyz       izz",
-               "",
+               "         $9          $10          $11          $12          $13          $14",
                "$#     vtx       vty       vtz       vrx       vry       vrz",
                "",
                "$"
           ],
           "description": "PART_INERTIA",
-          "prefix": "*PART_INERTIA"
+          "prefix": [
+               "*PART_INERTIA",
+               "PART_INERTIA"
+          ]
      },
      "*PART_MOVE": {
           "body": [
                "*PART_MOVE",
                "$#   pid            xmov            ymov            zmov     cid   ifset",
-               "",
+               "       $1",
                "$"
           ],
           "description": "PART_MOVE",
-          "prefix": "*PART_MOVE"
+          "prefix": [
+               "*PART_MOVE",
+               "PART_MOVE"
+          ]
      },
      "*PART_SENSOR": {
           "body": [
                "*PART_SENSOR",
                "$#     pid      sida    active",
-               "",
+               "         $1          $2",
                "$"
           ],
           "description": "PART_SENSOR",
-          "prefix": "*PART_SENSOR"
+          "prefix": [
+               "*PART_SENSOR",
+               "PART_SENSOR"
+          ]
      },
      "*RIGIDWALL_PLANAR": {
           "body": [
@@ -2594,627 +3189,768 @@
                "$"
           ],
           "description": "RIGIDWALL_PLANAR",
-          "prefix": "*RIGIDWALL_PLANAR"
+          "prefix": [
+               "*RIGIDWALL_PLANAR",
+               "RIGIDWALL_PLANAR"
+          ]
      },
      "*SECTION_BEAM_TITLE": {
           "body": [
                "*SECTION_BEAM_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#   secid    elform      shrf   qr/irid       cst     scoor       nsm",
-               "                  6",
+               "         $2          6",
                "$#     vol      iner       cid        ca    offset     rrcon     srcon     trcon",
-               "",
+               "                                       $3",
                "$"
           ],
           "description": "SECTION_BEAM_TITLE",
-          "prefix": "*SECTION_BEAM_TITLE"
+          "prefix": [
+               "*SECTION_BEAM_TITLE",
+               "SECTION_BEAM_TITLE"
+          ]
      },
      "*SECTION_DISCRETE_TITLE": {
           "body": [
                "*SECTION_DISCRETE_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#   secid       dro        kd        v0        cl        fd",
-               "",
+               "         $2          $3",
                "$#     cdl       tdl",
                "",
                "$"
           ],
           "description": "SECTION_DISCRETE_TITLE",
-          "prefix": "*SECTION_DISCRETE_TITLE"
+          "prefix": [
+               "*SECTION_DISCRETE_TITLE",
+               "SECTION_DISCRETE_TITLE"
+          ]
      },
      "*SECTION_SEATBELT_TITLE": {
           "body": [
                "*SECTION_SEATBELT_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#   secid      area     thick",
-               "",
+               "         $2",
                "$"
           ],
           "description": "SECTION_SEATBELT_TITLE",
-          "prefix": "*SECTION_SEATBELT_TITLE"
+          "prefix": [
+               "*SECTION_SEATBELT_TITLE",
+               "SECTION_SEATBELT_TITLE"
+          ]
      },
      "*SECTION_SHELL_TITLE": {
           "body": [
                "*SECTION_SHELL_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#   secid    elform      shrf       nip     propt   qr/irid     icomp     setyp",
-               "                  9     0.833         1                             1",
+               "         $2          9     0.833         1                             1",
                "$#      t1        t2        t3        t4      nloc     marea      idof    edgset",
-               "",
+               "         $3",
                "$#      bi        bi        bi        bi        bi        bi        bi        bi",
                "       0.0      90.0",
                "$"
           ],
           "description": "SECTION_SHELL_TITLE",
-          "prefix": "*SECTION_SHELL_TITLE"
+          "prefix": [
+               "*SECTION_SHELL_TITLE",
+               "SECTION_SHELL_TITLE"
+          ]
      },
      "*SECTION_SOLID_TITLE": {
           "body": [
                "*SECTION_SOLID_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#   secid    elform       aet",
-               "                  1",
+               "         $2          1",
                "$"
           ],
           "description": "SECTION_SOLID_TITLE",
-          "prefix": "*SECTION_SOLID_TITLE"
+          "prefix": [
+               "*SECTION_SOLID_TITLE",
+               "SECTION_SOLID_TITLE"
+          ]
      },
      "*SENSOR_CONTROL": {
           "body": [
                "*SENSOR_CONTROL",
                "$#  cntlid      type    typrid   timeoff",
-               "",
+               "         $1          $2          $3",
                "$# initstt     swit1     swit2     swit3     swit4     swit5     swit6     swit7",
-               "  ON/OFF",
+               "  $4 ON/OFF?         $5",
                "$"
           ],
           "description": "SENSOR_CONTROL",
-          "prefix": "*SENSOR_CONTROL"
+          "prefix": [
+               "*SENSOR_CONTROL",
+               "SENSOR_CONTROL"
+          ]
      },
      "*SENSOR_CPM_AIRBAG": {
           "body": [
                "*SENSOR_CPM_AIRBAG",
                "$#   cpmid    switid    tbirth    tdeath       tdr     defps     rbpid",
-               "",
+               "         $1          $2          $3",
                "$"
           ],
           "description": "SENSOR_CPM_AIRBAG",
-          "prefix": "*SENSOR_CPM_AIRBAG"
+          "prefix": [
+               "*SENSOR_CPM_AIRBAG",
+               "SENSOR_CPM_AIRBAG"
+          ]
      },
      "*SENSOR_DEFINE_CALC-MATH": {
           "body": [
                "*SENSOR_DEFINE_CALC-MATH",
                "$#  sensid      calc     sens1     sens2     sens3     sens4     sens5     sens6",
-               "             ABSSUM",
-               "                MIN",
-               "                MAX",
-               "             MAXMAG",
-               "             MINMAG",
-               "           MULTIPLY",
-               "               SQRY",
-               "           SQRTSQRE",
-               "             SUMABS",
-               "                SUM",
+               "         $1     ABSSUM         $2",
+               "         $3        MIN         $4",
+               "         $5        MAX         $6",
+               "         $7     MAXMAG         $8",
+               "         $9     MINMAG         $10",
+               "         $11   MULTIPLY         $12",
+               "         $13       SQRY         $14",
+               "         $15   SQRTSQRE         $16",
+               "         $17     SUMABS         $18",
+               "         $19        SUM         $20",
                "$"
           ],
           "description": "SENSOR_DEFINE_CALC-MATH",
-          "prefix": "*SENSOR_DEFINE_CALC-MATH"
+          "prefix": [
+               "*SENSOR_DEFINE_CALC-MATH",
+               "SENSOR_DEFINE_CALC-MATH"
+          ]
      },
      "*SENSOR_DEFINE_ELEMENT": {
           "body": [
                "*SENSOR_DEFINE_ELEMENT",
                "$#  sensid     etype    elemid      comp     ctype     layer",
-               "",
+               "         $1          $2          $3          $4          $5          $6",
                "$"
           ],
           "description": "SENSOR_DEFINE_ELEMENT",
-          "prefix": "*SENSOR_DEFINE_ELEMENT"
+          "prefix": [
+               "*SENSOR_DEFINE_ELEMENT",
+               "SENSOR_DEFINE_ELEMENT"
+          ]
      },
      "*SENSOR_DEFINE_ELEMENT_SET": {
           "body": [
                "*SENSOR_DEFINE_ELEMENT_SET",
                "$#  sensid     etype    elemid      comp     ctype     layer",
-               "",
+               "         $1          $2          $3          $4          $5          $6",
                "$"
           ],
           "description": "SENSOR_DEFINE_ELEMENT_SET",
-          "prefix": "*SENSOR_DEFINE_ELEMENT_SET"
+          "prefix": [
+               "*SENSOR_DEFINE_ELEMENT_SET",
+               "SENSOR_DEFINE_ELEMENT_SET"
+          ]
      },
      "*SENSOR_DEFINE_FORCE": {
           "body": [
                "*SENSOR_DEFINE_FORCE",
                "$#  sensid     ftype    typeid       vid       crd",
-               "",
+               "         $1          $2          $3          $4          $5",
                "$"
           ],
           "description": "SENSOR_DEFINE_FORCE",
-          "prefix": "*SENSOR_DEFINE_FORCE"
+          "prefix": [
+               "*SENSOR_DEFINE_FORCE",
+               "SENSOR_DEFINE_FORCE"
+          ]
      },
      "*SENSOR_DEFINE_FUNCTION": {
           "body": [
                "*SENSOR_DEFINE_FUNCTION",
                "$#  sensid      func     sens1     sens2     sens3     sens4     sens5     sens6",
-               "",
+               "         $1",
                "$"
           ],
           "description": "SENSOR_DEFINE_FUNCTION",
-          "prefix": "*SENSOR_DEFINE_FUNCTION"
+          "prefix": [
+               "*SENSOR_DEFINE_FUNCTION",
+               "SENSOR_DEFINE_FUNCTION"
+          ]
      },
      "*SENSOR_DEFINE_MISC": {
           "body": [
                "*SENSOR_DEFINE_MISC",
                "$#  sensid     mtype                  i1        i2        i3        i4",
-               "",
+               "         $1",
                "$"
           ],
           "description": "SENSOR_DEFINE_MISC",
-          "prefix": "*SENSOR_DEFINE_MISC"
+          "prefix": [
+               "*SENSOR_DEFINE_MISC",
+               "SENSOR_DEFINE_MISC"
+          ]
      },
      "*SENSOR_DEFINE_NODE": {
           "body": [
                "*SENSOR_DEFINE_NODE",
                "$#  cntlid     node1     node2       vid       crd     ctype",
-               "",
+               "         $1          $2          $3          $4                    $5",
                "$"
           ],
           "description": "SENSOR_DEFINE_NODE",
-          "prefix": "*SENSOR_DEFINE_NODE"
+          "prefix": [
+               "*SENSOR_DEFINE_NODE",
+               "SENSOR_DEFINE_NODE"
+          ]
      },
      "*SENSOR_DEFINE_NODE_SET": {
           "body": [
                "*SENSOR_DEFINE_NODE_SET",
                "$#  cntlid     node1     node2       vid       crd     ctype",
-               "",
+               "         $1          $2          $3          $4                    $5",
                "$"
           ],
           "description": "SENSOR_DEFINE_NODE_SET",
-          "prefix": "*SENSOR_DEFINE_NODE_SET"
+          "prefix": [
+               "*SENSOR_DEFINE_NODE_SET",
+               "SENSOR_DEFINE_NODE_SET"
+          ]
      },
      "*SENSOR_SWITCH": {
           "body": [
                "*SENSOR_SWITCH",
                "$#  switid      type    sensid     logic     value   filtrid    timwin",
-               "                              LT/GT",
+               "         $1          $2          $3    $4 LT/GT?         $5",
                "$"
           ],
           "description": "SENSOR_SWITCH",
-          "prefix": "*SENSOR_SWITCH"
+          "prefix": [
+               "*SENSOR_SWITCH",
+               "SENSOR_SWITCH"
+          ]
      },
      "*SENSOR_SWITCH_CALC-LOGIC": {
           "body": [
                "*SENSOR_SWITCH_CALC-LOGIC",
                "$#  switid     swit1     swit2     swit3     swit4     swit5     swit6     swit7",
-               "",
+               "         $1          $2",
                "$"
           ],
           "description": "SENSOR_SWITCH_CALC-LOGIC",
-          "prefix": "*SENSOR_SWITCH_CALC-LOGIC"
+          "prefix": [
+               "*SENSOR_SWITCH_CALC-LOGIC",
+               "SENSOR_SWITCH_CALC-LOGIC"
+          ]
      },
      "*SENSOR_SWITCH_SHELL_TO_VENT": {
           "body": [
                "*SENSOR_SWITCH_SHELL_TO_VENT",
                "$#      id     itype       c23",
-               "",
+               "         $1",
                "$#    ssid     ftime      c23v",
                "",
                "$"
           ],
           "description": "SENSOR_SWITCH_SHELL_TO_VENT",
-          "prefix": "*SENSOR_SWITCH_SHELL_TO_VENT"
+          "prefix": [
+               "*SENSOR_SWITCH_SHELL_TO_VENT",
+               "SENSOR_SWITCH_SHELL_TO_VENT"
+          ]
      },
      "*SET_NODE_ADD_ADVANCED_TITLE": {
           "body": [
                "*SET_NODE_ADD_ADVANCED_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     sid       da1       da2       da3       da4    solver",
-               "",
+               "         $2",
                "$#    sid1     type1      sid2     type2      sid3     type3      sid4     type4",
-               "",
+               "         $3          $4",
                "$"
           ],
           "description": "SET_NODE_ADD_ADVANCED_TITLE",
-          "prefix": "*SET_NODE_ADD_ADVANCED_TITLE"
+          "prefix": [
+               "*SET_NODE_ADD_ADVANCED_TITLE",
+               "SET_NODE_ADD_ADVANCED_TITLE"
+          ]
      },
      "*SET_NODE_ADD_TITLE": {
           "body": [
                "*SET_NODE_ADD_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     sid       da1       da2       da3       da4    solver",
-               "",
+               "         $2",
                "$#   nsid1     nsid2     nsid3     nsid4     nsid5     nsid6     nsid7     nsid8",
-               "",
+               "         $3          $4",
                "$"
           ],
           "description": "SET_NODE_ADD_TITLE",
-          "prefix": "*SET_NODE_ADD_TITLE"
+          "prefix": [
+               "*SET_NODE_ADD_TITLE",
+               "SET_NODE_ADD_TITLE"
+          ]
      },
      "*SET_NODE_COLUMN_TITLE": {
           "body": [
                "*SET_NODE_COLUMN_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     sid       da1       da2       da3       da4    solver",
-               "",
+               "         $2",
                "$#     nid        a1        a2        a3        a4",
-               "",
+               "         $3",
                "$"
           ],
           "description": "SET_NODE_COLUMN_TITLE",
-          "prefix": "*SET_NODE_COLUMN_TITLE"
+          "prefix": [
+               "*SET_NODE_COLUMN_TITLE",
+               "SET_NODE_COLUMN_TITLE"
+          ]
      },
      "*SET_NODE_GENERAL_TITLE": {
           "body": [
                "*SET_NODE_GENERAL_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     sid       da1       da2       da3       da4    solver",
-               "",
+               "         $2",
                "$#  option        e1        e2        e3        e4        e5        e6        e7",
                "ALL",
-               "NODE",
-               "DNODE",
-               "PART",
-               "DPART",
-               "BOX",
-               "DBOX",
-               "VOL",
-               "DVOL",
-               "SET_SHELL",
-               "SET_SOLID",
-               "SET_BEAM",
-               "SET_TSHELL",
-               "SET_SPRING",
+               "NODE               $3",
+               "DNODE              $4",
+               "PART               $5",
+               "DPART              $6",
+               "BOX                $7",
+               "DBOX               $8",
+               "VOL                $9",
+               "DVOL               $10",
+               "SET_SHELL          $11",
+               "SET_SOLID          $12",
+               "SET_BEAM           $13",
+               "SET_TSHELL         $14",
+               "SET_SPRING         $15",
                "$"
           ],
           "description": "SET_NODE_GENERAL_TITLE",
-          "prefix": "*SET_NODE_GENERAL_TITLE"
+          "prefix": [
+               "*SET_NODE_GENERAL_TITLE",
+               "SET_NODE_GENERAL_TITLE"
+          ]
      },
      "*SET_NODE_INTERSECT_TITLE": {
           "body": [
                "*SET_NODE_INTERSECT_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     sid       da1       da2       da3       da4    solver",
-               "",
+               "         $2",
                "$#   nsid1     nsid2     nsid3     nsid4     nsid5     nsid6     nsid7     nsid8",
-               "",
+               "         $3          $4",
                "$"
           ],
           "description": "SET_NODE_INTERSECT_TITLE",
-          "prefix": "*SET_NODE_INTERSECT_TITLE"
+          "prefix": [
+               "*SET_NODE_INTERSECT_TITLE",
+               "SET_NODE_INTERSECT_TITLE"
+          ]
      },
      "*SET_NODE_LIST_GENERATE_INCREMENT_TITLE": {
           "body": [
                "*SET_NODE_LIST_GENERATE_INCREMENT_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     sid       da1       da2       da3       da4    solver",
-               "",
+               "         $2",
                "$#    bbeg      bend      incr",
-               "",
+               "         $3          $4          $5",
                "$"
           ],
           "description": "SET_NODE_LIST_GENERATE_INCREMENT_TITLE",
-          "prefix": "*SET_NODE_LIST_GENERATE_INCREMENT_TITLE"
+          "prefix": [
+               "*SET_NODE_LIST_GENERATE_INCREMENT_TITLE",
+               "SET_NODE_LIST_GENERATE_INCREMENT_TITLE"
+          ]
      },
      "*SET_NODE_LIST_GENERATE_TITLE": {
           "body": [
                "*SET_NODE_LIST_GENERATE_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     sid       da1       da2       da3       da4    solver",
-               "",
+               "         $2",
                "$#   b1beg     b1end     b2beg     b2end     b3beg     b3end     b4beg     b4end",
-               "",
+               "         $3          $4",
                "$"
           ],
           "description": "SET_NODE_LIST_GENERATE_TITLE",
-          "prefix": "*SET_NODE_LIST_GENERATE_TITLE"
+          "prefix": [
+               "*SET_NODE_LIST_GENERATE_TITLE",
+               "SET_NODE_LIST_GENERATE_TITLE"
+          ]
      },
      "*SET_NODE_LIST_TITLE": {
           "body": [
                "*SET_NODE_LIST_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     sid       da1       da2       da3       da4    solver",
-               "",
+               "         $2",
                "$#    nid1      nid2      nid3      nid4      nid5      nid6      nid7      nid8",
-               "",
+               "         $3",
                "$"
           ],
           "description": "SET_NODE_LIST_TITLE",
-          "prefix": "*SET_NODE_LIST_TITLE"
+          "prefix": [
+               "*SET_NODE_LIST_TITLE",
+               "SET_NODE_LIST_TITLE"
+          ]
      },
      "*SET_PART_ADD_TITLE": {
           "body": [
                "*SET_PART_ADD_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     sid       da1       da2       da3       da4    solver",
-               "",
+               "         $2",
                "$#   psid1     psid2     psid3     psid4     psid5     psid6     psid7     psid8",
-               "",
+               "         $3",
                "$"
           ],
           "description": "SET_PART_ADD_TITLE",
-          "prefix": "*SET_PART_ADD_TITLE"
+          "prefix": [
+               "*SET_PART_ADD_TITLE",
+               "SET_PART_ADD_TITLE"
+          ]
      },
      "*SET_PART_COLUMN_TITLE": {
           "body": [
                "*SET_PART_COLUMN_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     sid       da1       da2       da3       da4    solver",
-               "",
+               "         $2",
                "$#     pid        a1        a2        a3        a4",
-               "",
+               "         $3",
                "$"
           ],
           "description": "SET_PART_COLUMN_TITLE",
-          "prefix": "*SET_PART_COLUMN_TITLE"
+          "prefix": [
+               "*SET_PART_COLUMN_TITLE",
+               "SET_PART_COLUMN_TITLE"
+          ]
      },
      "*SET_PART_LIST_GENERATE_INCREMNET_TITLE": {
           "body": [
                "*SET_PART_LIST_GENERATE_INCREMNET_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     sid       da1       da2       da3       da4    solver",
-               "",
+               "         $2",
                "$#    bbeg      bend      incr",
-               "",
+               "         $3          $4          $5",
                "$"
           ],
           "description": "SET_PART_LIST_GENERATE_INCREMNET_TITLE",
-          "prefix": "*SET_PART_LIST_GENERATE_INCREMNET_TITLE"
+          "prefix": [
+               "*SET_PART_LIST_GENERATE_INCREMNET_TITLE",
+               "SET_PART_LIST_GENERATE_INCREMNET_TITLE"
+          ]
      },
      "*SET_PART_LIST_GENERATE_TITLE": {
           "body": [
                "*SET_PART_LIST_GENERATE_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     sid       da1       da2       da3       da4    solver",
-               "",
+               "         $2",
                "$#   b1beg     b1end     b2beg     b2end     b3beg     b3end     b4beg     b4end",
-               "",
+               "         $3          $4",
                "$"
           ],
           "description": "SET_PART_LIST_GENERATE_TITLE",
-          "prefix": "*SET_PART_LIST_GENERATE_TITLE"
+          "prefix": [
+               "*SET_PART_LIST_GENERATE_TITLE",
+               "SET_PART_LIST_GENERATE_TITLE"
+          ]
      },
      "*SET_PART_LIST_TITLE": {
           "body": [
                "*SET_PART_LIST_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     sid       da1       da2       da3       da4    solver",
-               "",
+               "         $2",
                "$#    pid1      pid2      pid3      pid4      pid5      pid6      pid7      pid8",
-               "",
+               "         $3",
                "$"
           ],
           "description": "SET_PART_LIST_TITLE",
-          "prefix": "*SET_PART_LIST_TITLE"
+          "prefix": [
+               "*SET_PART_LIST_TITLE",
+               "SET_PART_LIST_TITLE"
+          ]
      },
      "*SET_SHELL_ADD_TITLE": {
           "body": [
                "*SET_SHELL_ADD_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     sid       da1       da2       da3       da4    solver",
-               "",
+               "         $2",
                "$#   ssid1     ssid2     ssid3     ssid4     ssid5     ssid6     ssid7     ssid8",
-               "",
+               "         $3          $4",
                "$"
           ],
           "description": "SET_SHELL_ADD_TITLE",
-          "prefix": "*SET_SHELL_ADD_TITLE"
+          "prefix": [
+               "*SET_SHELL_ADD_TITLE",
+               "SET_SHELL_ADD_TITLE"
+          ]
      },
      "*SET_SHELL_COLUMN_TITLE": {
           "body": [
                "*SET_SHELL_COLUMN_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     sid       da1       da2       da3       da4    solver",
-               "",
+               "         $2",
                "$#     eid        a1        a2        a3        a4",
-               "",
+               "         $3",
                "$"
           ],
           "description": "SET_SHELL_COLUMN_TITLE",
-          "prefix": "*SET_SHELL_COLUMN_TITLE"
+          "prefix": [
+               "*SET_SHELL_COLUMN_TITLE",
+               "SET_SHELL_COLUMN_TITLE"
+          ]
      },
      "*SET_SHELL_GENERAL_TITLE": {
           "body": [
                "*SET_SHELL_GENERAL_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     sid    solver",
-               "",
+               "         $2",
                "$#  option        e1        e2        e3        e4        e5        e6        e7",
                "ALL",
-               "ELEM",
-               "DELEM",
-               "PART",
-               "DPART",
-               "BOX",
-               "DBOX",
+               "ELEM               $3",
+               "DELEM              $4",
+               "PART               $5",
+               "DPART              $6",
+               "BOX                $7",
+               "DBOX               $8",
                "$"
           ],
           "description": "SET_SHELL_GENERAL_TITLE",
-          "prefix": "*SET_SHELL_GENERAL_TITLE"
+          "prefix": [
+               "*SET_SHELL_GENERAL_TITLE",
+               "SET_SHELL_GENERAL_TITLE"
+          ]
      },
      "*SET_SHELL_INTERSECT_TITLE": {
           "body": [
                "*SET_SHELL_INTERSECT_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     sid       da1       da2       da3       da4    solver",
-               "",
+               "         $2",
                "$#   ssid1     ssid2     ssid3     ssid4     ssid5     ssid6     ssid7     ssid8",
-               "",
+               "         $3          $4",
                "$"
           ],
           "description": "SET_SHELL_INTERSECT_TITLE",
-          "prefix": "*SET_SHELL_INTERSECT_TITLE"
+          "prefix": [
+               "*SET_SHELL_INTERSECT_TITLE",
+               "SET_SHELL_INTERSECT_TITLE"
+          ]
      },
      "*SET_SHELL_LIST_GENERATE_INCREMENT_TITLE": {
           "body": [
                "*SET_SHELL_LIST_GENERATE_INCREMENT_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     sid       da1       da2       da3       da4    solver",
-               "",
+               "         $2",
                "$#    bbeg      bend      incr",
-               "",
+               "         $3          $4          $5",
                "$"
           ],
           "description": "SET_SHELL_LIST_GENERATE_INCREMENT_TITLE",
-          "prefix": "*SET_SHELL_LIST_GENERATE_INCREMENT_TITLE"
+          "prefix": [
+               "*SET_SHELL_LIST_GENERATE_INCREMENT_TITLE",
+               "SET_SHELL_LIST_GENERATE_INCREMENT_TITLE"
+          ]
      },
      "*SET_SHELL_LIST_GENERATE_TITLE": {
           "body": [
                "*SET_SHELL_LIST_GENERATE_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     sid       da1       da2       da3       da4    solver",
-               "",
+               "         $2",
                "$#   b1beg     b1end     b2beg     b2end     b3beg     b3end     b4beg     b4end",
-               "",
+               "         $3          $4",
                "$"
           ],
           "description": "SET_SHELL_LIST_GENERATE_TITLE",
-          "prefix": "*SET_SHELL_LIST_GENERATE_TITLE"
+          "prefix": [
+               "*SET_SHELL_LIST_GENERATE_TITLE",
+               "SET_SHELL_LIST_GENERATE_TITLE"
+          ]
      },
      "*SET_SHELL_LIST_TITLE": {
           "body": [
                "*SET_SHELL_LIST_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     sid       da1       da2       da3       da4    solver",
-               "",
+               "         $2",
                "$#    eid1      eid2      eid3      eid4      eid5      eid6      eid7      eid8",
-               "",
+               "         $3",
                "$"
           ],
           "description": "SET_SHELL_LIST_TITLE",
-          "prefix": "*SET_SHELL_LIST_TITLE"
+          "prefix": [
+               "*SET_SHELL_LIST_TITLE",
+               "SET_SHELL_LIST_TITLE"
+          ]
      },
      "*SET_SOLID_ADD_TITLE": {
           "body": [
                "*SET_SOLID_ADD_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     sid    solver",
-               "",
+               "         $2",
                "$#   ssid1     ssid2     ssid3     ssid4     ssid5     ssid6     ssid7     ssid8",
-               "",
+               "         $3          $4",
                "$"
           ],
           "description": "SET_SOLID_ADD_TITLE",
-          "prefix": "*SET_SOLID_ADD_TITLE"
+          "prefix": [
+               "*SET_SOLID_ADD_TITLE",
+               "SET_SOLID_ADD_TITLE"
+          ]
      },
      "*SET_SOLID_GENERAL_TITLE": {
           "body": [
                "*SET_SOLID_GENERAL_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     sid    solver",
-               "",
+               "         $2",
                "$#  option        e1        e2        e3        e4        e5        e6        e7",
                "ALL",
-               "PART",
-               "DPART",
-               "ELEM",
-               "DELEM",
-               "BOX",
-               "DBOX",
+               "PART               $3",
+               "DPART              $4",
+               "ELEM               $5",
+               "DELEM              $6",
+               "BOX                $7",
+               "DBOX               $8",
                "$"
           ],
           "description": "SET_SOLID_GENERAL_TITLE",
-          "prefix": "*SET_SOLID_GENERAL_TITLE"
+          "prefix": [
+               "*SET_SOLID_GENERAL_TITLE",
+               "SET_SOLID_GENERAL_TITLE"
+          ]
      },
      "*SET_SOLID_GENERATE_INCREMENT_TITLE": {
           "body": [
                "*SET_SOLID_GENERATE_INCREMENT_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     sid    solver",
-               "",
+               "         $2",
                "$#    bbeg      bend      incr",
-               "",
+               "         $3          $4",
                "$"
           ],
           "description": "SET_SOLID_GENERATE_INCREMENT_TITLE",
-          "prefix": "*SET_SOLID_GENERATE_INCREMENT_TITLE"
+          "prefix": [
+               "*SET_SOLID_GENERATE_INCREMENT_TITLE",
+               "SET_SOLID_GENERATE_INCREMENT_TITLE"
+          ]
      },
      "*SET_SOLID_GENERATE_TITLE": {
           "body": [
                "*SET_SOLID_GENERATE_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     sid    solver",
-               "",
+               "         $2",
                "$#   b1beg     b1end     b2beg     b2end     b3beg     b3end     b4beg     b4end",
-               "",
+               "         $3          $4",
                "$"
           ],
           "description": "SET_SOLID_GENERATE_TITLE",
-          "prefix": "*SET_SOLID_GENERATE_TITLE"
+          "prefix": [
+               "*SET_SOLID_GENERATE_TITLE",
+               "SET_SOLID_GENERATE_TITLE"
+          ]
      },
      "*SET_SOLID_INTERSECT_TITLE": {
           "body": [
                "*SET_SOLID_INTERSECT_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     sid    solver",
-               "",
+               "         $2",
                "$#   ssid1     ssid2     ssid3     ssid4     ssid5     ssid6     ssid7     ssid8",
-               "",
+               "         $3          $4",
                "$"
           ],
           "description": "SET_SOLID_INTERSECT_TITLE",
-          "prefix": "*SET_SOLID_INTERSECT_TITLE"
+          "prefix": [
+               "*SET_SOLID_INTERSECT_TITLE",
+               "SET_SOLID_INTERSECT_TITLE"
+          ]
      },
      "*SET_SOLID_TITLE": {
           "body": [
                "*SET_SOLID_TITLE",
                "$# title",
-               "title",
+               "$1",
                "$#     sid    solver",
-               "",
+               "         $2",
                "$#    eid1      eid2      eid3      eid4      eid5      eid6      eid7      eid8",
-               "",
+               "         $3",
                "$"
           ],
           "description": "SET_SOLID_TITLE",
-          "prefix": "*SET_SOLID_TITLE"
+          "prefix": [
+               "*SET_SOLID_TITLE",
+               "SET_SOLID_TITLE"
+          ]
      },
      "*TERMINATION_BODY": {
           "body": [
                "*TERMINATION_BODY",
                "$#     pid      stop      maxc      minc",
-               "",
+               "         $1",
                "$"
           ],
           "description": "TERMINATION_BODY",
-          "prefix": "*TERMINATION_BODY"
+          "prefix": [
+               "*TERMINATION_BODY",
+               "TERMINATION_BODY"
+          ]
      },
      "*TERMINATION_CONTACT": {
           "body": [
                "*TERMINATION_CONTACT",
                "$#     cid     actim       dur     thres       dof",
-               "",
+               "         $1",
                "$"
           ],
           "description": "TERMINATION_CONTACT",
-          "prefix": "*TERMINATION_CONTACT"
+          "prefix": [
+               "*TERMINATION_CONTACT",
+               "TERMINATION_CONTACT"
+          ]
      },
      "*TERMINATION_CURVE": {
           "body": [
@@ -3224,7 +3960,10 @@
                "$"
           ],
           "description": "TERMINATION_CURVE",
-          "prefix": "*TERMINATION_CURVE"
+          "prefix": [
+               "*TERMINATION_CURVE",
+               "TERMINATION_CURVE"
+          ]
      },
      "*TERMINATION_DELETED_SHELLS": {
           "body": [
@@ -3234,7 +3973,10 @@
                "$"
           ],
           "description": "TERMINATION_DELETED_SHELLS",
-          "prefix": "*TERMINATION_DELETED_SHELLS"
+          "prefix": [
+               "*TERMINATION_DELETED_SHELLS",
+               "TERMINATION_DELETED_SHELLS"
+          ]
      },
      "*TERMINATION_DELETED_SHELLS_SET": {
           "body": [
@@ -3244,7 +3986,10 @@
                "$"
           ],
           "description": "TERMINATION_DELETED_SHELLS_SET",
-          "prefix": "*TERMINATION_DELETED_SHELLS_SET"
+          "prefix": [
+               "*TERMINATION_DELETED_SHELLS_SET",
+               "TERMINATION_DELETED_SHELLS_SET"
+          ]
      },
      "*TERMINATION_DELETED_SOLIDS": {
           "body": [
@@ -3254,7 +3999,10 @@
                "$"
           ],
           "description": "TERMINATION_DELETED_SOLIDS",
-          "prefix": "*TERMINATION_DELETED_SOLIDS"
+          "prefix": [
+               "*TERMINATION_DELETED_SOLIDS",
+               "TERMINATION_DELETED_SOLIDS"
+          ]
      },
      "*TERMINATION_DELETED_SOLIDS_SET": {
           "body": [
@@ -3264,36 +4012,74 @@
                "$"
           ],
           "description": "TERMINATION_DELETED_SOLIDS_SET",
-          "prefix": "*TERMINATION_DELETED_SOLIDS_SET"
+          "prefix": [
+               "*TERMINATION_DELETED_SOLIDS_SET",
+               "TERMINATION_DELETED_SOLIDS_SET"
+          ]
      },
      "*TERMINATION_NODE": {
           "body": [
                "*TERMINATION_NODE",
                "$#     nid      stop      maxc      minc",
-               "",
+               "         $1",
                "$"
           ],
           "description": "TERMINATION_NODE",
-          "prefix": "*TERMINATION_NODE"
+          "prefix": [
+               "*TERMINATION_NODE",
+               "TERMINATION_NODE"
+          ]
      },
      "*TERMINATION_SENSOR": {
           "body": [
                "*TERMINATION_SENSOR",
                "$#    swid",
-               "",
+               "         $1",
                "$"
           ],
           "description": "TERMINATION_SENSOR",
-          "prefix": "*TERMINATION_SENSOR"
+          "prefix": [
+               "*TERMINATION_SENSOR",
+               "TERMINATION_SENSOR"
+          ]
      },
      "*TITLE": {
           "body": [
                "*TITLE",
                "$# title",
-               "title",
+               "$1",
                "$"
           ],
           "description": "TITLE",
-          "prefix": "*TITLE"
+          "prefix": [
+               "*TITLE",
+               "TITLE"
+          ]
+     },
+     "*lsbox": {
+          "body": [
+               "*lsbox",
+               "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$",
+               "$                                                                              $",
+               "$                                       $1                                       $",
+               "$                                                                              $",
+               "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
+          ],
+          "description": "lsbox",
+          "prefix": [
+               "*lsbox",
+               "lsbox"
+          ]
+     },
+     "*lsline": {
+          "body": [
+               "*lsline",
+               "$---+----1----+----2----+----3----+----4----+----5----+----6----+----7----+----8"
+          ],
+          "description": "lsline",
+          "prefix": [
+               "*lsline",
+               "lsline"
+          ]
      }
 }
