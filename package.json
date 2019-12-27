@@ -1,9 +1,15 @@
 {
     "name": "lsdyna",
-    "displayName": "LSDynaForVSCode",
+    "displayName": "LS-DYNA",
     "description": "Syntax Highlighting and Snippets for LS-Dyna Deck Creation and Editing",
-    "publisher": "DCHartlen",
-    "version": "0.0.1",
+	"publisher": "rosullivan",
+	"license": "SEE LICENSE IN LICENSE",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/osullivryan/vscode-lsdyna"
+	},
+    "icon": "images/LS_DYNA_geo_metro.png",
+    "version": "0.0.2",
     "engines": {
         "vscode": "^1.30.0"
     },

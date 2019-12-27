@@ -49,7 +49,7 @@
 					"comment": "LS-DYNA keywords type",
 					"name": "keyword.other.lsdyna",
 					"begin": "^[*]",
-					"end": "(?=\\,|\\n|\\_|\\r|[ ])"
+					"end": "(?=\\,|\\n|\\r|[ ])"
 				}
 			]
 		},
@@ -59,7 +59,7 @@
 					"comment": "posterior keywords and options",
 					"name": "entity.name.function.lsdyna",
 					"begin": "(?<=_)\\w",
-					"end": "(?=\\_|\\n|\\r|[ ])"
+					"end": "(?=\\n|\\r|[ ])"
 				}
 			]
 		},
@@ -69,7 +69,7 @@
 					"comment": "LS-DYNA parameter type",
 					"name": "variable.parameter.lsdyna",
 					"begin": "[&]",
-					"end": "(?=\\,|\\n|\\_|\\r|[ ])"
+					"end": "(?=\\,|\\n|\\r|[ ])"
 				}
 			]
 		},
