@@ -2,7 +2,7 @@
     "name": "lsdyna",
     "displayName": "LS-DYNA",
     "description": "Syntax Highlighting and Snippets for LS-Dyna Deck Creation and Editing",
-	"publisher": "rosullivan",
+	"publisher": "RyanOSullivan",
 	"license": "SEE LICENSE IN LICENSE",
 	"repository": {
 		"type": "git",
