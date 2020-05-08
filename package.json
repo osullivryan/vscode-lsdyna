@@ -4,6 +4,7 @@
     "description": "Syntax Highlighting and Snippets for LS-Dyna Deck Creation and Editing",
 	"publisher": "RyanOSullivan",
 	"license": "SEE LICENSE IN LICENSE",
+    "private": true,
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/osullivryan/vscode-lsdyna"
@@ -32,5 +33,20 @@
             "language": "lsdyna",
             "path": "./snippets/lsdyna.json"
         }]
-    }
+    },
+    "release": {
+		"branches": "master",
+		"verifyConditions": [
+			"@semantic-release/github"
+		],
+		"publish": [
+			"@semantic-release/github"
+		],
+		"success": [
+			"@semantic-release/github"
+		],
+		"fail": [
+			"@semantic-release/github"
+		]
+	},
 }
