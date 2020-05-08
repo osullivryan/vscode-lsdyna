@@ -1,7 +1,8 @@
 on:
   push:
     branches:
-      - feature/*
+      - '*'
+      - '!master'
 
 name: 'Release Vscode Plugin'
 jobs:
