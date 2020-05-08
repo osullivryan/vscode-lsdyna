@@ -61,5 +61,5 @@
         "fail": [
             "@semantic-release/github"
         ]
-    },
+    }
 }
