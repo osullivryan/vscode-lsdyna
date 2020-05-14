@@ -10,7 +10,7 @@
         "url": "https://github.com/osullivryan/vscode-lsdyna"
     },
     "icon": "images/LS_DYNA_geo_metro.png",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "engines": {
         "vscode": "^1.30.0"
     },
