@@ -2,14 +2,15 @@
     "name": "lsdyna",
     "displayName": "LS-DYNA",
     "description": "Syntax Highlighting and Snippets for LS-Dyna Deck Creation and Editing",
-	"publisher": "RyanOSullivan",
-	"license": "SEE LICENSE IN LICENSE",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/osullivryan/vscode-lsdyna"
-	},
+    "publisher": "RyanOSullivan",
+    "license": "SEE LICENSE IN LICENSE",
+    "private": true,
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/osullivryan/vscode-lsdyna"
+    },
     "icon": "images/LS_DYNA_geo_metro.png",
-    "version": "0.1.1",
+    "version": "1.1.0",
     "engines": {
         "vscode": "^1.30.0"
     },
@@ -17,20 +18,48 @@
         "Programming Languages"
     ],
     "contributes": {
-        "languages": [{
-            "id": "lsdyna",
-            "aliases": ["LS-Dyna", "lsdyna"],
-            "extensions": [".k",".key",".dyna"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "lsdyna",
-            "scopeName": "source.lsdyna",
-            "path": "./syntaxes/lsdyna.tmLanguage.json"
-        }],
-        "snippets": [{
-            "language": "lsdyna",
-            "path": "./snippets/lsdyna.json"
-        }]
+        "languages": [
+            {
+                "id": "lsdyna",
+                "aliases": [
+                    "LS-Dyna",
+                    "lsdyna"
+                ],
+                "extensions": [
+                    ".k",
+                    ".key",
+                    ".dyna"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "lsdyna",
+                "scopeName": "source.lsdyna",
+                "path": "./syntaxes/lsdyna.tmLanguage.json"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "lsdyna",
+                "path": "./snippets/lsdyna.json"
+            }
+        ]
+    },
+    "release": {
+        "branches": "master",
+        "verifyConditions": [
+            "@semantic-release/github"
+        ],
+        "publish": [
+            "@semantic-release/github"
+        ],
+        "success": [
+            "@semantic-release/github"
+        ],
+        "fail": [
+            "@semantic-release/github"
+        ]
     }
 }
