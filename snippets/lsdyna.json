@@ -50,7 +50,7 @@
           "body": [
                "*AIRBAG_INTERACTION",
                "$#     ab1       ab2      area        sf       pid      lcid     iflow",
-               "        $1        $2                 1.0        $3                   0",
+               "         $1          $2                  1.0         $3                    0",
                "$"
           ],
           "description": "AIRBAG_INTERACTION",
@@ -63,9 +63,9 @@
           "body": [
                "*AIRBAG_LOAD_CURVE_ID",
                "$#    abid heading",
-               "        $1",
+               "         $1",
                "$#     sid    sidtyp      rbid      vsca      psca      vini       mwd      spsf",
-               "        $2        $3",
+               "         $2          $3",
                "$#   stime      lcid        ro        pe         t        t0",
                "",
                "$"
@@ -109,7 +109,7 @@
           "body": [
                "*AIRBAG_REFERENCE_GEOMETRY",
                "$#   nid               x               y               z      tc      rc",
-               "      $1             0.0             0.0             0.0",
+               "       $1              0.0             0.0             0.0",
                "$"
           ],
           "description": "AIRBAG_REFERENCE_GEOMETRY",
@@ -122,7 +122,7 @@
           "body": [
                "*AIRBAG_SHELL_REFERENCE_GEOMETRY",
                "$#   eid     pid      n1      n2      n3      n4      n5      n6      n7      n8",
-               "      $1      $2      $3",
+               "       $1        $2        $3",
                "$"
           ],
           "description": "AIRBAG_SHELL_REFERENCE_GEOMETRY",
@@ -188,9 +188,9 @@
           "body": [
                "*BOUNDARY_PRESCRIBED_FINAL_GEOMETRY",
                "$#  bpfgid     lcidf    deathd",
-               "        $1        $2",
+               "         $1          $2",
                "$#   nid               x               y               z    lcid          death",
-               "      $3",
+               "       $3",
                "$"
           ],
           "description": "BOUNDARY_PRESCRIBED_FINAL_GEOMETRY",
@@ -203,7 +203,7 @@
           "body": [
                "*BOUNDARY_PRESCRIBED_MOTION_NODE",
                "$#  typeid       dof       vad      lcid        sf       vid     death     birth",
-               "        $1        $2        $3        $4       1.0",
+               "         $1          $2          $3          $4        1.0",
                "$"
           ],
           "description": "BOUNDARY_PRESCRIBED_MOTION_NODE",
@@ -216,21 +216,7 @@
           "body": [
                "*BOUNDARY_PRESCRIBED_MOTION_RIGID",
                "$#  typeid       dof       vad      lcid        sf       vid     death     birth",
-               "        $1         1         2        $2       1.0",
-               "        $3         2         2        $4       1.0",
-               "        $5         3         2        $6       1.0",
-               "        $7         5         2        $8       1.0",
-               "        $9         6         2        $10       1.0",
-               "        $11         7         2        $12       1.0",
-               "$",
-               "*DEFINE_CURVE_TITLE",
-               "$# title",
-               "Boundary",
-               "$#    lcid      sidr       sfa       sfo      offa      offo    dattyp",
-               "        $13         0       1.0       1.0       0.0       0.0",
-               "$#                a1                  o1",
-               "                 0.0                 0.0",
-               "              1000.0                 0.0",
+               "         $1          $2          $3          $4        1.0",
                "$"
           ],
           "description": "BOUNDARY_PRESCRIBED_MOTION_RIGID",
@@ -243,7 +229,7 @@
           "body": [
                "*BOUNDARY_PRESCRIBED_MOTION_SET",
                "$#  typeid       dof       vad      lcid        sf       vid     death     birth",
-               "        $1        $2        $3        $4       1.0",
+               "         $1          $2          $3          $4        1.0",
                "$"
           ],
           "description": "BOUNDARY_PRESCRIBED_MOTION_SET",
@@ -271,7 +257,7 @@
           "body": [
                "*BOUNDARY_SPC_NODE",
                "$#     nid       cid      dofx      dofy      dofz     dofrx     dofry     dofrz",
-               "        $1         0         1         1         1         1         1         1",
+               "         $1          0         1         1         1         1         1         1",
                "$"
           ],
           "description": "BOUNDARY_SPC_NODE",
@@ -284,7 +270,7 @@
           "body": [
                "*BOUNDARY_SPC_SET",
                "$#    nsid       cid      dofx      dofy      dofz     dofrx     dofry     dofrz",
-               "        $1         0         1         1         1         1         1         1",
+               "         $1          0         1         1         1         1         1         1",
                "$"
           ],
           "description": "BOUNDARY_SPC_SET",
@@ -320,7 +306,7 @@
           "body": [
                "*CONSTRAINED_EXTRA_NODES_NODE",
                "$#     pid       nid     iflag",
-               "        $1        $2        $3",
+               "         $1          $2          $3",
                "$"
           ],
           "description": "CONSTRAINED_EXTRA_NODES_NODE",
@@ -333,7 +319,7 @@
           "body": [
                "*CONSTRAINED_EXTRA_NODES_SET",
                "$#     pid      nsid     iflag",
-               "        $1        $2        $3",
+               "         $1          $2          $3",
                "$"
           ],
           "description": "CONSTRAINED_EXTRA_NODES_SET",
@@ -359,7 +345,7 @@
           "body": [
                "*CONSTRAINED_JOINT_CONSTANT_VELOCITY_ID",
                "$#     jid heading",
-               "        $2 $1",
+               "         $2  $1",
                "$#      n1        n2        n3        n4        n5        n6       rps      damp",
                "",
                "$"
@@ -374,7 +360,7 @@
           "body": [
                "*CONSTRAINED_JOINT_CYLINDRICAL_ID",
                "$#     jid heading",
-               "        $2 $1",
+               "         $2  $1",
                "$#      n1        n2        n3        n4        n5        n6       rps      damp",
                "",
                "$"
@@ -389,7 +375,7 @@
           "body": [
                "*CONSTRAINED_JOINT_GEARS_ID",
                "$#     jid heading",
-               "        $2 $1",
+               "         $2  $1",
                "$#      n1        n2        n3        n4        n5        n6       rps      damp",
                "",
                "$#   param      lcid      type        r1",
@@ -406,7 +392,7 @@
           "body": [
                "*CONSTRAINED_JOINT_LOCKING_ID",
                "$#     jid heading",
-               "        $2 $1",
+               "         $2  $1",
                "$#      n1        n2        n3        n4        n5        n6       rps      damp",
                "",
                "$"
@@ -421,7 +407,7 @@
           "body": [
                "*CONSTRAINED_JOINT_PLANAR_ID",
                "$#     jid heading",
-               "        $2 $1",
+               "         $2  $1",
                "$#      n1        n2        n3        n4        n5        n6       rps      damp",
                "",
                "$"
@@ -436,7 +422,7 @@
           "body": [
                "*CONSTRAINED_JOINT_PULLEY_ID",
                "$#     jid heading",
-               "        $2 $1",
+               "         $2  $1",
                "$#      n1        n2        n3        n4        n5        n6       rps      damp",
                "",
                "$#   param      lcid      type        r1",
@@ -453,7 +439,7 @@
           "body": [
                "*CONSTRAINED_JOINT_RACK_AND_PINION_ID",
                "$#     jid heading",
-               "        $2 $1",
+               "         $2  $1",
                "$#      n1        n2        n3        n4        n5        n6       rps      damp",
                "",
                "$#   param      lcid      type        r1",
@@ -470,7 +456,7 @@
           "body": [
                "*CONSTRAINED_JOINT_REVOLUTE_ID",
                "$#     jid heading",
-               "        $2 $1",
+               "         $2  $1",
                "$#      n1        n2        n3        n4        n5        n6       rps      damp",
                "",
                "$"
@@ -485,7 +471,7 @@
           "body": [
                "*CONSTRAINED_JOINT_ROTATIONAL_MOTOR_ID",
                "$#     jid heading",
-               "        $2 $1",
+               "         $2  $1",
                "$#      n1        n2        n3        n4        n5        n6       rps      damp",
                "",
                "$#   param      lcid      type        r1",
@@ -502,7 +488,7 @@
           "body": [
                "*CONSTRAINED_JOINT_SCREW_ID",
                "$#     jid heading",
-               "        $2 $1",
+               "         $2  $1",
                "$#      n1        n2        n3        n4        n5        n6       rps      damp",
                "",
                "$#   param      lcid      type        r1",
@@ -519,7 +505,7 @@
           "body": [
                "*CONSTRAINED_JOINT_SPHERICAL_ID",
                "$#     jid heading",
-               "        $2 $1",
+               "         $2  $1",
                "$#      n1        n2        n3        n4        n5        n6       rps      damp",
                "",
                "$"
@@ -598,7 +584,7 @@
           "body": [
                "*CONSTRAINED_JOINT_TRANSLATIONAL_ID",
                "$#     jid heading",
-               "        $2 $1",
+               "         $2  $1",
                "$#      n1        n2        n3        n4        n5        n6       rps      damp",
                "",
                "$"
@@ -613,7 +599,7 @@
           "body": [
                "*CONSTRAINED_JOINT_TRANSLATIONAL_MOTOR_ID",
                "$#     jid heading",
-               "        $2 $1",
+               "         $2  $1",
                "$#      n1        n2        n3        n4        n5        n6       rps      damp",
                "",
                "$#   param      lcid      type        r1",
@@ -630,7 +616,7 @@
           "body": [
                "*CONSTRAINED_JOINT_UNIVERSAL_ID",
                "$#     jid heading",
-               "        $2 $1",
+               "         $2  $1",
                "$#      n1        n2        n3        n4        n5        n6       rps      damp",
                "",
                "$"
@@ -645,7 +631,7 @@
           "body": [
                "*CONSTRAINED_NODAL_RIGID_BODY",
                "$#     pid       cid      nsid     pnode      iprt    drflag    rrflag",
-               "        $1",
+               "         $1",
                "$"
           ],
           "description": "CONSTRAINED_NODAL_RIGID_BODY",
@@ -658,7 +644,7 @@
           "body": [
                "*CONSTRAINED_NODAL_RIGID_BODY_SPC",
                "$#     pid       cid      nsid     pnode      iprt    drflag    rrflag",
-               "        $1",
+               "         $1",
                "$#     cmo      con1      con2",
                "         1         7         7",
                "$"
@@ -673,7 +659,7 @@
           "body": [
                "*CONSTRAINED_NODE_SET",
                "$#    nsid       dof        tf",
-               "        $1        $2",
+               "         $1          $2",
                "$"
           ],
           "description": "CONSTRAINED_NODE_SET",
@@ -686,7 +672,7 @@
           "body": [
                "*CONSTRAINED_RIGID_BODIES",
                "$#    pidm      pids     iflag",
-               "        $1        $2        $3",
+               "         $1          $2          $3",
                "$"
           ],
           "description": "CONSTRAINED_RIGID_BODIES",
@@ -729,11 +715,11 @@
           "body": [
                "*CONTACT_AIRBAG_SINGLE_SURFACE_ID",
                "$#     cid title",
-               "        $2 $1",
+               "         $2  $1",
                "$#    ssid      msid     sstyp     mstyp    sboxid    mboxid       spr       mpr",
-               "        $3                   2",
+               "         $3                    2",
                "$#      fs        fd        dc        vc       vdc     pench        bt        dt",
-               "        $4        $5                          20.0",
+               "         $4          $5                           20.0",
                "$#     sfs       sfm       sst       mst      sfst      sfmt       fsf       vsf",
                "",
                "$#    soft    sofscl    lcidab    maxpar     sbopt     depth     bsort    frcfrq",
@@ -789,11 +775,11 @@
           "body": [
                "*CONTACT_AUTOMATIC_GENERAL_INTERIOR_ID",
                "$#     cid title",
-               "        $2 $1",
+               "         $2  $1",
                "$#    ssid      msid     sstyp     mstyp    sboxid    mboxid       spr       mpr",
-               "        $3                  $4",
+               "         $3                    $4",
                "$#      fs        fd        dc        vc       vdc    penchk        bt        dt",
-               "        $5        $6                          20.0",
+               "         $5          $6                           20.0",
                "$#     sfs       sfm       sst       mst      sfst      sfmt       fsf       vsf",
                "",
                "$#    soft    sofscl    lcidab    maxpar     sbopt     depth     bsort    frcfrq",
@@ -816,13 +802,13 @@
           "body": [
                "*CONTACT_AUTOMATIC_GENERAL_MPP_ID",
                "$#     cid title",
-               "        $2 $1",
+               "         $2  $1",
                "$#  ignore      bckt    lcbckt    ns2trk   inititr    paramx              caprm8",
                "                                                                               0",
                "$#    ssid      msid     sstyp     mstyp    sboxid    mboxid       spr       mpr",
-               "        $3                  $4",
+               "         $3                    $4",
                "$#      fs        fd        dc        vc       vdc    penchk        bt        dt",
-               "        $5        $6                          20.0",
+               "         $5          $6                           20.0",
                "$#     sfs       sfm       sst       mst      sfst      sfmt       fsf       vsf",
                "",
                "$#    soft    sofscl    lcidab    maxpar     sbopt     depth     bsort    frcfrq",
@@ -845,11 +831,11 @@
           "body": [
                "*CONTACT_AUTOMATIC_SINGLE_SURFACE_ID",
                "$#     cid title",
-               "        $2 $1",
+               "         $2  $1",
                "$#    ssid      msid     sstyp     mstyp    sboxid    mboxid       spr       mpr",
-               "        $3                  $4",
+               "         $3                    $4",
                "$#      fs        fd        dc        vc       vdc    penchk        bt        dt",
-               "        $5        $6                          20.0",
+               "         $5          $6                           20.0",
                "$#     sfs       sfm       sst       mst      sfst      sfmt       fsf       vsf",
                "",
                "$#    soft    sofscl    lcidab    maxpar     sbopt     depth     bsort    frcfrq",
@@ -926,9 +912,9 @@
           "body": [
                "*CONTACT_AUTOMATIC_SURFACE_TO_SURFACE_ID",
                "$#     cid title",
-               "        $2 $1",
+               "         $2  $1",
                "$#    ssid      msid     sstyp     mstyp    sboxid    mboxid       spr       mpr",
-               "        $3        $4        $5        $6",
+               "         $3          $4          $5          $6",
                "$#      fs        fd        dc        vc       vdc    penchk        bt        dt",
                "       0.1       0.1                          20.0",
                "$#     sfs       sfm       sst       mst      sfst      sfmt       fsf       vsf",
@@ -972,9 +958,9 @@
           "body": [
                "*CONTACT_FORCE_TRANSDUCER_PENALTY_ID",
                "$#     cid title",
-               "        $2 $1",
+               "         $2  $1",
                "$#    ssid      msid     sstyp     mstyp    sboxid    mboxid       spr       mpr",
-               "        $3        $4        $5        $6",
+               "         $3          $4          $5          $6",
                "$#      fs        fd        dc        vc       vdc    penchk        bt        dt",
                "",
                "$#     sfs       sfm       sst       mst      sfst      sfmt       fsf       vsf",
@@ -991,7 +977,7 @@
           "body": [
                "*CONTACT_INTERIOR",
                "$#    psid",
-               "        $1",
+               "         $1",
                "$"
           ],
           "description": "CONTACT_INTERIOR",
@@ -1004,9 +990,9 @@
           "body": [
                "*CONTACT_TIED_SHELL_EDGE_TO_SURFACE_BEAM_OFFSET_ID",
                "$#     cid title",
-               "        $2 $1",
+               "         $2  $1",
                "$#    ssid      msid     sstyp     mstyp    sboxid    mboxid       spr       mpr",
-               "        $3        $4        $5        $6",
+               "         $3          $4          $5          $6",
                "$#      fs        fd        dc        vc       vdc    penchk        bt        dt",
                "",
                "$#     sfs       sfm       sst       mst      sfst      sfmt       fsf       vsf",
@@ -1226,7 +1212,7 @@
           "body": [
                "*CONTROL_MPP_DECOMPOSITION_ARRANGE_PARTS",
                "$#      id      type",
-               "        $1         1",
+               "         $1          1",
                "$"
           ],
           "description": "CONTROL_MPP_DECOMPOSITION_ARRANGE_PARTS",
@@ -1250,7 +1236,7 @@
           "body": [
                "*CONTROL_MPP_DECOMPOSITION_PARTSET_DISTRIBUTE",
                "$#     id1       id2       id3       id4       id5       id6       id7       id8",
-               "        $1",
+               "         $1",
                "$"
           ],
           "description": "CONTROL_MPP_DECOMPOSITION_PARTSET_DISTRIBUTE",
@@ -1349,7 +1335,7 @@
           "body": [
                "*CONTROL_TERMINATION",
                "$#  endtim    endcyc     dtmin    endeng    endmas     nosol",
-               "        $1",
+               "         $1",
                "$"
           ],
           "description": "CONTROL_TERMINATION",
@@ -1414,7 +1400,7 @@
           "body": [
                "*DAMPING_FREQUENCY_RANGE",
                "$#   cdamp      flow     fhigh      psid",
-               "        $1        $2        $3        $4",
+               "         $1          $2          $3          $4",
                "$"
           ],
           "description": "DAMPING_FREQUENCY_RANGE",
@@ -1427,7 +1413,7 @@
           "body": [
                "*DAMPING_GLOBAL",
                "$#    lcid    valdmp       stx       sty       stz       srx       sry       srz",
-               "        $1",
+               "         $1",
                "$"
           ],
           "description": "DAMPING_GLOBAL",
@@ -1440,9 +1426,7 @@
           "body": [
                "*DAMPING_MASS",
                "$#     pid      lcid        sf      flag",
-               "        $1        $2       1.0         1",
-               "$#     stx       sty       stz       srx       sry       srz",
-               "",
+               "         $1          $2",
                "$"
           ],
           "description": "DAMPING_MASS",
@@ -1455,9 +1439,7 @@
           "body": [
                "*DAMPING_MASS_SET",
                "$#    psid      lcid        sf      flag",
-               "        $1        $2       1.0         1",
-               "$#     stx       sty       stz       srx       sry       srz",
-               "",
+               "         $1          $2",
                "$"
           ],
           "description": "DAMPING_MASS_SET",
@@ -1470,7 +1452,7 @@
           "body": [
                "*DAMPING_PART_STIFFNESS",
                "$#     pid      coef",
-               "        $1        $2",
+               "         $1          $2",
                "$"
           ],
           "description": "DAMPING_PART_STIFFNESS",
@@ -1483,7 +1465,7 @@
           "body": [
                "*DAMPING_PART_STIFFNESS_SET",
                "$#    psid      coef",
-               "        $1        $2",
+               "         $1          $2",
                "$"
           ],
           "description": "DAMPING_PART_STIFFNESS_SET",
@@ -1496,7 +1478,7 @@
           "body": [
                "*DAMPING_RELATIVE",
                "$#   cdamp      freq     pidrb      psid",
-               "        $1        $2        $3        $4",
+               "         $1          $2          $3          $4",
                "$"
           ],
           "description": "DAMPING_RELATIVE",
@@ -1509,7 +1491,7 @@
           "body": [
                "*DATABASE_ABSTAT",
                "$#      dt    binary      lcur     ioopt",
-               "        $1         2",
+               "         $1          2",
                "$"
           ],
           "description": "DATABASE_ABSTAT",
@@ -1535,7 +1517,7 @@
           "body": [
                "*DATABASE_BINARY_D3PLOT",
                "$#      dt      lcdt      beam     npltc    psetid",
-               "        $1",
+               "         $1",
                "$#   loopt",
                "",
                "$"
@@ -1563,7 +1545,7 @@
           "body": [
                "*DATABASE_BINARY_INTFOR",
                "$#      dt      lcdt      beam     npltc    psetid",
-               "        $1",
+               "         $1",
                "$#   loopt",
                "",
                "$"
@@ -1591,7 +1573,7 @@
           "body": [
                "*DATABASE_BNDOUT",
                "$#      dt    binary      lcur     ioopt",
-               "        $1         2",
+               "         $1          2",
                "$"
           ],
           "description": "DATABASE_BNDOUT",
@@ -1604,7 +1586,7 @@
           "body": [
                "*DATABASE_CPM_SENSOR",
                "$#      dt    binary",
-               "        $1",
+               "         $1",
                "$#   segid    offset      r/lx    len/ly        lz",
                "",
                "$"
@@ -1636,7 +1618,7 @@
           "body": [
                "*DATABASE_CROSS_SECTION_SET",
                "$#    nsid      hsid      bsid      ssid      tsid      dsid        id     itype",
-               "        $1",
+               "         $1",
                "$"
           ],
           "description": "DATABASE_CROSS_SECTION_SET",
@@ -1649,7 +1631,7 @@
           "body": [
                "*DATABASE_CURVOUT",
                "$#      dt    binary      lcur     ioopt",
-               "        $1         2",
+               "         $1          2",
                "$"
           ],
           "description": "DATABASE_CURVOUT",
@@ -1662,7 +1644,7 @@
           "body": [
                "*DATABASE_DEFORC",
                "$#      dt    binary      lcur     ioopt",
-               "        $1         2",
+               "         $1          2",
                "$"
           ],
           "description": "DATABASE_DEFORC",
@@ -1675,7 +1657,7 @@
           "body": [
                "*DATABASE_DISBOUT",
                "$#      dt    binary      lcur     ioopt",
-               "        $1         2",
+               "         $1          2",
                "$"
           ],
           "description": "DATABASE_DISBOUT",
@@ -1688,7 +1670,7 @@
           "body": [
                "*DATABASE_ELOUT",
                "$#      dt    binary      lcur     ioopt",
-               "        $1         2",
+               "         $1          2",
                "$"
           ],
           "description": "DATABASE_ELOUT",
@@ -1750,7 +1732,7 @@
           "body": [
                "*DATABASE_GLSTAT",
                "$#      dt    binary      lcur     ioopt",
-               "        $1         2",
+               "         $1          2",
                "$"
           ],
           "description": "DATABASE_GLSTAT",
@@ -1776,7 +1758,7 @@
           "body": [
                "*DATABASE_HISTORY_NODE",
                "$#     id1       id2       id3       id4       id5       id6       id7       id8",
-               "        $1",
+               "         $1",
                "$"
           ],
           "description": "DATABASE_HISTORY_NODE",
@@ -1789,7 +1771,7 @@
           "body": [
                "*DATABASE_HISTORY_NODE_LOCAL",
                "$#      id       cid       ref       hfo",
-               "        $1        $2        $3         0",
+               "         $1          $2          $3          0",
                "$"
           ],
           "description": "DATABASE_HISTORY_NODE_LOCAL",
@@ -1841,7 +1823,7 @@
           "body": [
                "*DATABASE_JNTFORC",
                "$#      dt    binary      lcur     ioopt",
-               "        $1         2",
+               "         $1          2",
                "$"
           ],
           "description": "DATABASE_JNTFORC",
@@ -1854,7 +1836,7 @@
           "body": [
                "*DATABASE_MATSUM",
                "$#      dt    binary      lcur     ioopt",
-               "        $1         2",
+               "         $1          2",
                "$"
           ],
           "description": "DATABASE_MATSUM",
@@ -1867,7 +1849,7 @@
           "body": [
                "*DATABASE_NCFORC",
                "$#      dt    binary      lcur     ioopt",
-               "        $1         2",
+               "         $1          2",
                "$"
           ],
           "description": "DATABASE_NCFORC",
@@ -1893,7 +1875,7 @@
           "body": [
                "*DATABASE_NODFOR",
                "$#      dt    binary      lcur     ioopt",
-               "        $1         2",
+               "         $1          2",
                "$"
           ],
           "description": "DATABASE_NODFOR",
@@ -1906,7 +1888,7 @@
           "body": [
                "*DATABASE_NODOUT",
                "$#      dt    binary      lcur     ioopt",
-               "        $1         2",
+               "         $1          2",
                "$"
           ],
           "description": "DATABASE_NODOUT",
@@ -1919,7 +1901,7 @@
           "body": [
                "*DATABASE_RBDOUT",
                "$#      dt    binary      lcur     ioopt",
-               "        $1         2",
+               "         $1          2",
                "$"
           ],
           "description": "DATABASE_RBDOUT",
@@ -1932,7 +1914,7 @@
           "body": [
                "*DATABASE_RCFORC",
                "$#      dt    binary      lcur     ioopt",
-               "        $1         2",
+               "         $1          2",
                "$"
           ],
           "description": "DATABASE_RCFORC",
@@ -1958,7 +1940,7 @@
           "body": [
                "*DATABASE_SBTOUT",
                "$#      dt    binary      lcur     ioopt",
-               "        $1         2",
+               "         $1          2",
                "$"
           ],
           "description": "DATABASE_SBTOUT",
@@ -1971,7 +1953,7 @@
           "body": [
                "*DATABASE_SECFORC",
                "$#      dt    binary      lcur     ioopt",
-               "        $1         2",
+               "         $1          2",
                "$"
           ],
           "description": "DATABASE_SECFORC",
@@ -1984,7 +1966,7 @@
           "body": [
                "*DATABASE_SLEOUT",
                "$#      dt    binary      lcur     ioopt",
-               "        $1         2",
+               "         $1          2",
                "$"
           ],
           "description": "DATABASE_SLEOUT",
@@ -1997,7 +1979,7 @@
           "body": [
                "*DATABASE_SPCFORC",
                "$#      dt    binary      lcur     ioopt",
-               "        $1         2",
+               "         $1          2",
                "$"
           ],
           "description": "DATABASE_SPCFORC",
@@ -2066,7 +2048,7 @@
           "body": [
                "*DEFINE_COORDINATE_NODES",
                "$#     cid        n1        n2        n3      flag       dir",
-               "        $1        $2        $3        $4                   X",
+               "         $1          $2          $3          $4                    X",
                "$"
           ],
           "description": "DEFINE_COORDINATE_NODES",
@@ -2079,9 +2061,9 @@
           "body": [
                "*DEFINE_COORDINATE_SYSTEM",
                "$#     cid        x0        y0        z0        xl        yl        zl",
-               "        $1",
+               "         $1",
                "$#      xp        yp        zp",
-               "        $2",
+               "         $2",
                "$"
           ],
           "description": "DEFINE_COORDINATE_SYSTEM",
@@ -2111,7 +2093,7 @@
           "body": [
                "*DEFINE_COORDINATE_VECTOR",
                "$#     cid        xx        yx        zx        xv        yv        zv       nid",
-               "        $1        $2        $3        $4        $5        $6        $7",
+               "         $1          $2          $3          $4          $5          $6          $7",
                "$"
           ],
           "description": "DEFINE_COORDINATE_VECTOR",
@@ -2124,7 +2106,7 @@
           "body": [
                "*DEFINE_CPM_BAG_INTERACTION",
                "$#  bagId1    bagId2",
-               "        $1        $2",
+               "         $1          $2",
                "$"
           ],
           "description": "DEFINE_CPM_BAG_INTERACTION",
@@ -2137,11 +2119,11 @@
           "body": [
                "*DEFINE_CPM_CHAMBER",
                "$#      id      nchm",
-               "        $1        $2",
+               "         $1          $2",
                "$#    sid1      sid2    ninter    chm_id",
-               "        $3        $4",
+               "         $3          $4",
                "$#    sid3    itype3     tochm",
-               "        $5        $6        $7",
+               "         $5          $6          $7",
                "$"
           ],
           "description": "DEFINE_CPM_CHAMBER",
@@ -2154,7 +2136,7 @@
           "body": [
                "*DEFINE_CPM_VENT",
                "$#      id       c23    lctc23    lcpc23     enh_v      ppop     c23up      iopt",
-               "        $1        $2",
+               "         $1          $2",
                "$#      jt      ids1      ids2     iopt1",
                "",
                "$"
@@ -2171,7 +2153,7 @@
                "$# title",
                "$1",
                "$#    lcid     rlcid       sfa       sfo      offa      offo",
-               "        $2        $3       1.0       1.0       0.0       0.0",
+               "         $2          $3        1.0       1.0       0.0       0.0",
                "$"
           ],
           "description": "DEFINE_CURVE_DUPLICATE_TITLE",
@@ -2186,7 +2168,7 @@
                "$# title",
                "$1",
                "$#    lcid      sidr",
-               "        $2",
+               "         $2",
                "$# function",
                "",
                "$"
@@ -2203,7 +2185,7 @@
                "$# title",
                "$1",
                "$#    lcid      sidr      dist    tstart      tend     trise        v0",
-               "        $2         0        $3        $4        $5        $6        $7",
+               "         $2          0         $3          $4          $5          $6          $7",
                "$"
           ],
           "description": "DEFINE_CURVE_SMOOTH_TITLE",
@@ -2218,7 +2200,7 @@
                "$# title",
                "$1",
                "$#    lcid      sidr       sfa       sfo      offa      offo    dattyp",
-               "        $2         0       1.0       1.0       0.0       0.0",
+               "         $2          0       1.0       1.0       0.0       0.0",
                "$#                a1                  o1",
                "                 0.0                 0.0",
                "                 1.0                 1.0",
@@ -2234,7 +2216,7 @@
           "body": [
                "*DEFINE_ELEMENT_DEATH_BEAM",
                "$#     eid      time     boxid     inout",
-               "        $1        $2",
+               "         $1          $2",
                "$"
           ],
           "description": "DEFINE_ELEMENT_DEATH_BEAM",
@@ -2247,7 +2229,7 @@
           "body": [
                "*DEFINE_ELEMENT_DEATH_BEAM_SET",
                "$#     sid      time     boxid     inout",
-               "        $1        $2",
+               "         $1          $2",
                "$"
           ],
           "description": "DEFINE_ELEMENT_DEATH_BEAM_SET",
@@ -2260,7 +2242,7 @@
           "body": [
                "*DEFINE_ELEMENT_DEATH_SHELL",
                "$#     eid      time     boxid     inout",
-               "        $1        $2",
+               "         $1          $2",
                "$"
           ],
           "description": "DEFINE_ELEMENT_DEATH_SHELL",
@@ -2273,7 +2255,7 @@
           "body": [
                "*DEFINE_ELEMENT_DEATH_SHELL_SET",
                "$#     sid      time     boxid     inout",
-               "        $1        $2",
+               "         $1          $2",
                "$"
           ],
           "description": "DEFINE_ELEMENT_DEATH_SHELL_SET",
@@ -2286,7 +2268,7 @@
           "body": [
                "*DEFINE_ELEMENT_DEATH_SOLID",
                "$#     eid      time     boxid     inout",
-               "        $1        $2",
+               "         $1          $2",
                "$"
           ],
           "description": "DEFINE_ELEMENT_DEATH_SOLID",
@@ -2299,7 +2281,7 @@
           "body": [
                "*DEFINE_ELEMENT_DEATH_SOLID_SET",
                "$#     sid      time     boxid     inout",
-               "        $1        $2",
+               "         $1          $2",
                "$"
           ],
           "description": "DEFINE_ELEMENT_DEATH_SOLID_SET",
@@ -2312,7 +2294,7 @@
           "body": [
                "*DEFINE_ELEMENT_DEATH_THICK_SHELL",
                "$#     eid      time     boxid     inout",
-               "        $1        $2",
+               "         $1          $2",
                "$"
           ],
           "description": "DEFINE_ELEMENT_DEATH_THICK_SHELL",
@@ -2325,7 +2307,7 @@
           "body": [
                "*DEFINE_ELEMENT_DEATH_THICK_SHELL_SET",
                "$#     sid      time     boxid     inout",
-               "        $1        $2",
+               "         $1          $2",
                "$"
           ],
           "description": "DEFINE_ELEMENT_DEATH_THICK_SHELL_SET",
@@ -2338,9 +2320,9 @@
           "body": [
                "*DEFINE_FRICTION",
                "$#      id      fs_d      fd_d      dc_d      vc_d",
-               "        $1",
+               "         $1",
                "$#   pid_i     pid_j     fs_ij     fd_ij     dc_ij     vc_ij    ptypei    ptypej",
-               "        $2",
+               "         $2",
                "$"
           ],
           "description": "DEFINE_FRICTION",
@@ -2353,7 +2335,7 @@
           "body": [
                "*DEFINE_FUNCTION",
                "$#     fid heading",
-               "        $1",
+               "         $1",
                "$# function",
                "",
                "$"
@@ -2368,11 +2350,11 @@
           "body": [
                "*DEFINE_FUNCTION_TABULATED",
                "$#     fid heading",
-               "        $1",
+               "         $1",
                "$# function",
                "",
                "$#                a1                  o1",
-               "                  $2                  $3",
+               "                   $2                    $3",
                "$"
           ],
           "description": "DEFINE_FUNCTION_TABULATED",
@@ -2385,7 +2367,7 @@
           "body": [
                "*DEFINE_SD_ORIENTATION",
                "$#     vid       iop        xt        yt        zt      nid1      nid2",
-               "        $1",
+               "         $1",
                "$"
           ],
           "description": "DEFINE_SD_ORIENTATION",
@@ -2400,10 +2382,10 @@
                "$# title",
                "$1",
                "$#    tbid       sfa      offa",
-               "        $2",
+               "         $2",
                "$#             value             curveId",
-               "                  $3                  $4",
-               "                  $5                  $6",
+               "                   $3                    $4",
+               "                   $5                    $6",
                "$"
           ],
           "description": "DEFINE_TABLE_2D_TITLE",
@@ -2418,10 +2400,10 @@
                "$# title",
                "$1",
                "$#    tbid       sfa      offa",
-               "        $2",
+               "         $2",
                "$#             value             tableId",
-               "                  $3                  $4",
-               "                  $5                  $6",
+               "                   $3                    $4",
+               "                   $5                    $6",
                "$"
           ],
           "description": "DEFINE_TABLE_3D_TITLE",
@@ -2436,10 +2418,10 @@
                "$# title",
                "$1",
                "$#    tbid       sfa      offa",
-               "        $2",
+               "         $2",
                "$#             value",
-               "                  $3",
-               "                  $4",
+               "                   $3",
+               "                   $4",
                "$"
           ],
           "description": "DEFINE_TABLE_TITLE",
@@ -2454,29 +2436,29 @@
                "$# title",
                "$1",
                "$#  tranid",
-               "        $2",
+               "         $2",
                "$#  option        a1        a2        a3",
-               "    TRANSL        $3        $4        $5",
+               "    TRANSL         $3          $4          $5",
                "$-------------------------------------------------------------------------------",
                "$#  option        a1        a2        a3",
-               "     SCALE        $6        $7        $8",
+               "     SCALE         $6          $7          $8",
                "$-------------------------------------------------------------------------------",
                "$#  option        a1        a2        a3        a4        a5        a6        a7",
-               "    ROTATE        $9        $10        $11        $12        $13        $14        $15",
+               "    ROTATE         $9          $10          $11          $12          $13          $14          $15",
                "$-------------------------------------------------------------------------------",
                "$#  option        a1        a2        a3        a4",
-               "     POINT         1        $16        $17        $18",
-               "     POINT         2        $19        $20        $21",
+               "     POINT         1         $16          $17          $18",
+               "     POINT         2         $19          $20          $21",
                "$#  option        a1        a2        a3",
-               "    ROTATE         1         2        $22",
+               "    ROTATE         1         2         $22",
                "$-------------------------------------------------------------------------------",
                "$#  option        a1        a2        a3        a4",
-               "     POINT         1        $23        $24        $25",
-               "     POINT         2        $26        $27        $28",
-               "     POINT         3        $29        $30        $31",
-               "     POINT         4        $32        $33        $34",
-               "     POINT         5        $35        $36        $37",
-               "     POINT         6        $38        $39        $40",
+               "     POINT         1         $23          $24          $25",
+               "     POINT         2         $26          $27          $28",
+               "     POINT         3         $29          $30          $31",
+               "     POINT         4         $32          $33          $34",
+               "     POINT         5         $35          $36          $37",
+               "     POINT         6         $38          $39          $40",
                "$#  option        a1        a2        a3        a4        a5        a6",
                "     POS6P         1         2         3         4         5         6",
                "$"
@@ -2491,7 +2473,7 @@
           "body": [
                "*DEFINE_VECTOR_NODES",
                "$#     vid     nodet     nodeh",
-               "        $1        $2        $3",
+               "         $1          $2          $3",
                "$"
           ],
           "description": "DEFINE_VECTOR_NODES",
@@ -2506,7 +2488,7 @@
                "$# title",
                "$1",
                "$#     vid        xt        yt        zt        xh        yh        zh       cid",
-               "        $2        $3        $4        $5        $6        $7        $8",
+               "         $2          $3          $4          $5          $6          $7          $8",
                "$"
           ],
           "description": "DEFINE_VECTOR_TITLE",
@@ -2519,7 +2501,7 @@
           "body": [
                "*DEFORMABLE_TO_RIGID",
                "$#     pid       mrb     ptype",
-               "        $1",
+               "         $1",
                "$"
           ],
           "description": "DEFORMABLE_TO_RIGID",
@@ -2532,9 +2514,9 @@
           "body": [
                "*DEFORMABLE_TO_RIGID_AUTOMATIC",
                "$#   swset      code     time1     time2     time3     entno     relsw    paired",
-               "        $1",
+               "         $1",
                "$#    nrbf      ncsf       rwf     dtmax       d2r       r2d    offset",
-               "                                                          $2",
+               "                                                           $2",
                "$#     pid",
                "",
                "$"
@@ -2549,7 +2531,7 @@
           "body": [
                "*DEFORMABLE_TO_RIGID_INERTIA",
                "$#     pid",
-               "        $1",
+               "         $1",
                "$#      xc        yc        zc        tm",
                "",
                "$#     ixx       ixy       ixz       iyy       iyz       izz",
@@ -2566,7 +2548,7 @@
           "body": [
                "*ELEMENT_BEAM",
                "$    eid     pid      n1      n2      n3     rt1     rr1     rt2     rr2   local",
-               "      $1      $2      $3      $4      $5",
+               "       $1        $2        $3        $4        $5",
                "$"
           ],
           "description": "ELEMENT_BEAM",
@@ -2579,7 +2561,7 @@
           "body": [
                "*ELEMENT_DISCRETE",
                "$#   eid     pid      n1      n2     vid               s      pf          offset",
-               "      $1      $2      $3      $4",
+               "       $1        $2        $3        $4",
                "$"
           ],
           "description": "ELEMENT_DISCRETE",
@@ -2592,7 +2574,7 @@
           "body": [
                "*ELEMENT_INERTIA",
                "$#   eid     nid     cid",
-               "      $1      $2",
+               "       $1        $2",
                "$#     ixx       ixy       ixz       iyy       iyz       izz         m",
                "",
                "$"
@@ -2607,7 +2589,7 @@
           "body": [
                "*ELEMENT_MASS",
                "$#   eid      id            mass     pid",
-               "      $1      $2              $3",
+               "       $1        $2                $3",
                "$"
           ],
           "description": "ELEMENT_MASS",
@@ -2620,7 +2602,7 @@
           "body": [
                "*ELEMENT_MASS_PART",
                "$#    id         addmass         finmass            lcid",
-               "      $1              $2              $3",
+               "       $1                $2                $3",
                "$"
           ],
           "description": "ELEMENT_MASS_PART",
@@ -2633,7 +2615,7 @@
           "body": [
                "*ELEMENT_MASS_PART_SET",
                "$#    id         addmass         finmass            lcid",
-               "      $1              $2              $3",
+               "       $1                $2                $3",
                "$"
           ],
           "description": "ELEMENT_MASS_PART_SET",
@@ -2646,7 +2628,7 @@
           "body": [
                "*ELEMENT_PLOTEL",
                "$    eid      n1      n2",
-               "      $1      $2      $3",
+               "       $1        $2        $3",
                "$"
           ],
           "description": "ELEMENT_PLOTEL",
@@ -2659,7 +2641,7 @@
           "body": [
                "*ELEMENT_SEATBELT",
                "$#   eid     pid      n1      n2   sbrid            slen      n3      n4",
-               "      $1      $2      $3",
+               "       $1        $2        $3",
                "$"
           ],
           "description": "ELEMENT_SEATBELT",
@@ -2672,7 +2654,7 @@
           "body": [
                "*ELEMENT_SEATBELT_ACCELEROMETER",
                "$#  sbacid      nid1      nid2      nid3     igrav    intopt      mass",
-               "        $1",
+               "         $1",
                "$"
           ],
           "description": "ELEMENT_SEATBELT_ACCELEROMETER",
@@ -2685,7 +2667,7 @@
           "body": [
                "*ELEMENT_SEATBELT_PRETENSIONER",
                "$#  sbprid    sbprty    sbsid1    sbsid2    sbsid3    sbsid4",
-               "        $1",
+               "         $1",
                "$#   sbrid      time    ptlcid    lmtfrc",
                "",
                "$"
@@ -2700,7 +2682,7 @@
           "body": [
                "*ELEMENT_SEATBELT_RETRACTOR",
                "$#   sbrid    sbrnid      sbid      sid1      sid2      sid3      sid4",
-               "        $1",
+               "         $1",
                "$#    tdel      pull     llcid     ulcid      lfed",
                "",
                "$"
@@ -2715,9 +2697,9 @@
           "body": [
                "*ELEMENT_SEATBELT_SENSOR",
                "$#   sbsid    sbstyp     sbsfl",
-               "        $1         3",
-               "$#    time",
-               "        $2",
+               "         $1          2",
+               "$#   sbrid    pulrat    pultim",
+               "         $2",
                "$"
           ],
           "description": "ELEMENT_SEATBELT_SENSOR",
@@ -2730,7 +2712,7 @@
           "body": [
                "*ELEMENT_SEATBELT_SLIPRING",
                "$# sbsrid1     sdid1     sbid2        fc    sbrnid     ltime       fcs      onid",
-               "        $1        $2        $3        $4        $5",
+               "         $1          $2          $3          $4          $5",
                "$#       k    funcid    direct        dc              lcnffd    lcnffs",
                "",
                "$"
@@ -2745,7 +2727,7 @@
           "body": [
                "*ELEMENT_SHELL",
                "$#   eid     pid      n1      n2      n3      n4      n5      n6      n7      n8",
-               "      $1      $2      $3",
+               "       $1        $2        $3",
                "$"
           ],
           "description": "ELEMENT_SHELL",
@@ -3590,7 +3572,7 @@
           "body": [
                "*INITIAL_FOAM_REFERENCE_GEOMETRY",
                "$#   nid               x               y               z",
-               "        $1",
+               "         $1",
                "$"
           ],
           "description": "INITIAL_FOAM_REFERENCE_GEOMETRY",
@@ -3629,11 +3611,11 @@
           "body": [
                "*INITIAL_VELOCITY",
                "$#    nsid    nsidex     boxid    irigid      icid",
-               "        $1        $2",
+               "         $1          $2",
                "$#      vx        vy        vz       vxr       vyr       vzr",
-               "        $3",
+               "         $3",
                "$#     vxe       vye       vze      vxre      vyre      vzre",
-               "        $4",
+               "         $4",
                "$"
           ],
           "description": "INITIAL_VELOCITY",
@@ -3646,9 +3628,9 @@
           "body": [
                "*INITIAL_VELOCITY_GENERATION",
                "$#      id      styp     omega        vx        vy        vz     ivatn      icid",
-               "        $1        $2        $3                                       1",
+               "         $1          $2          $3                                        1",
                "$#      xc        yc        zc        nx        ny        nz     phase    irigid",
-               "        $4        $5        $6        $7        $8        $9",
+               "         $4          $5          $6          $7          $8          $9",
                "$"
           ],
           "description": "INITIAL_VELOCITY_GENERATION",
@@ -3661,7 +3643,7 @@
           "body": [
                "*INITIAL_VELOCITY_GENERATION_START_TIME",
                "$#   stime",
-               "        $1",
+               "         $1",
                "$"
           ],
           "description": "INITIAL_VELOCITY_GENERATION_START_TIME",
@@ -3674,7 +3656,7 @@
           "body": [
                "*INITIAL_VELOCITY_NODE",
                "$#     nid        vx        vy        vz       vxr       vyr       vzr      icid",
-               "        $1",
+               "         $1",
                "$"
           ],
           "description": "INITIAL_VELOCITY_NODE",
@@ -3687,7 +3669,7 @@
           "body": [
                "*INITIAL_VELOCITY_RIGID_BODY",
                "$#     pid        vx        vy        vz       vxr       vyr       vzr      icid",
-               "        $1",
+               "         $1",
                "$"
           ],
           "description": "INITIAL_VELOCITY_RIGID_BODY",
@@ -3700,7 +3682,7 @@
           "body": [
                "*INTERFACE_SPRINGBACK_LSDYNA",
                "$#    psid      nshv     ftype               ftnsr    nthhsv             intstrn",
-               "        $1                   0",
+               "         $1                    0",
                "$"
           ],
           "description": "INTERFACE_SPRINGBACK_LSDYNA",
@@ -3744,7 +3726,7 @@
           "body": [
                "*LOAD_NODE_POINT",
                "$#     nid       dof      lcid        sf       cid        m1        m2        m3",
-               "        $1        $2        $3       1.0",
+               "         $1          $2          $3        1.0",
                "$"
           ],
           "description": "LOAD_NODE_POINT",
@@ -3757,7 +3739,7 @@
           "body": [
                "*LOAD_NODE_SET",
                "$#    nsid       dof      lcid        sf       cid        m1        m2        m3",
-               "        $1        $2        $3       1.0",
+               "         $1          $2          $3        1.0",
                "$"
           ],
           "description": "LOAD_NODE_SET",
@@ -3770,7 +3752,7 @@
           "body": [
                "*LOAD_RIGID_BODY",
                "$#     pid       dof      lcid        sf       cid        m1        m2        m3",
-               "        $1        $2        $3       1.0",
+               "         $1          $2          $3        1.0",
                "$"
           ],
           "description": "LOAD_RIGID_BODY",
@@ -3839,7 +3821,7 @@
                "$# title",
                "$1",
                "$#     mid        ro         k         c     scln1     scln2     dofn1     dofn2",
-               "        $2        $3",
+               "         $2          $3",
                "$#    cid1      cid2",
                "",
                "$"
@@ -3856,7 +3838,7 @@
                "$# title",
                "$1",
                "$#     mid       flc       fac       ela     fvopt        x0        x1",
-               "        $2",
+               "         $2",
                "$"
           ],
           "description": "MAT_ADD_AIRBAG_POROSITY_LEAKAGE_TITLE",
@@ -3869,7 +3851,7 @@
           "body": [
                "*MAT_ADD_EROSION",
                "$#     mid      excl    mxpres     mneps    effeps    voleps    numfip       ncs",
-               "        $1",
+               "         $1",
                "$#  mnpres     sigp1     sigvm     mxeps     epssh     sigth   impulse    failtm",
                "",
                "$#    idam    dmgtyp     lcsdg     ecrit    dmgexp     dcrit    fadexp    lcregd",
@@ -3911,7 +3893,7 @@
                "$# title",
                "$1",
                "$#     mid        ro         e      lcid        f0    tmaxf0     tramp     iread",
-               "        $2        $3",
+               "         $2          $3",
                "$#  output    tstart",
                "",
                "$"
@@ -3928,7 +3910,7 @@
                "$# title",
                "$1",
                "$#     mid      ldcr",
-               "        $2        $3",
+               "         $2          $3",
                "$"
           ],
           "description": "MAT_DAMPER_NONLINEAR_VISCOUS_TITLE",
@@ -3943,7 +3925,7 @@
                "$# title",
                "$1",
                "$#     mid        dc",
-               "        $2        $3",
+               "         $2          $3",
                "$"
           ],
           "description": "MAT_DAMPER_VISCOUS_TITLE",
@@ -3958,7 +3940,7 @@
                "$# title",
                "$1",
                "$#     mid        ro     tpidr     tpids     tpidt     rpidr     rpids     rpidt",
-               "        $2        $3",
+               "         $2          $3",
                "$"
           ],
           "description": "MAT_ELASTIC_6DOF_SPRING_DISCRETE_BEAM_TITLE",
@@ -3998,7 +3980,7 @@
                "$# title",
                "$1",
                "$#     mid        ro         k        f0         d       cdf       tdf",
-               "        $2        $3        $4",
+               "         $2          $3          $4",
                "$#   flcid     hlcid        c1        c2       dle     glcid",
                "",
                "$"
@@ -4015,7 +3997,7 @@
                "$# title",
                "$1",
                "$#     mid        ro         e        pr        da        db         k",
-               "        $2        $3        $4        $5",
+               "         $2          $3          $4          $5",
                "$"
           ],
           "description": "MAT_ELASTIC_TITLE",
@@ -4030,7 +4012,7 @@
                "$# title",
                "$1",
                "$#     mid        ro        tr        ts        tt        rr        rs        rt",
-               "        $2        $3",
+               "         $2          $3",
                "$#    rpst      rpsr",
                "",
                "$"
@@ -4047,7 +4029,7 @@
                "$# title",
                "$1",
                "$#     mid        ro         k   unldopt    offset     dampf",
-               "        $2        $3",
+               "         $2          $3",
                "$#   lcidt    lcidtu    lcidtd    lcidte",
                "",
                "$#  utfail    ucfail        iu",
@@ -4066,7 +4048,7 @@
                "$# title",
                "$1",
                "$#     mid        ro        kt        kr   unldopt    offset     dampf     iflag",
-               "        $2        $3",
+               "         $2          $3",
                "$#  lcidtr    lcidts    lcidtt    lcidrr    lcidrs    lcidrt",
                "",
                "$# lcidtur   lcidtus   lcidtut   lcidrur   lcidrus   lcidrut",
@@ -4095,7 +4077,7 @@
                "$# title",
                "$1",
                "$#     mid        ro",
-               "        $2        $3",
+               "         $2          $3",
                "$#     dof      type         k         d       cdf       tdf",
                "",
                "$#   flcid     hlcid        c1        c2       dle     glcid",
@@ -4114,7 +4096,7 @@
                "$# title",
                "$1",
                "$#     mid        ro        co         n        p0        pa        ap        kh",
-               "        $2        $3",
+               "         $2          $3",
                "$#    lcid        fr      sclf     clear",
                "",
                "$"
@@ -4131,7 +4113,7 @@
                "$# title",
                "$1",
                "$#     mid        ro     tpidr     tpids     tpidt     rpidr     rpids     rpidt",
-               "        $2        $3",
+               "         $2          $3",
                "$"
           ],
           "description": "MAT_INELASTIC_6DOF_SPRING_DISCRETE_BEAM_TITLE",
@@ -4146,7 +4128,7 @@
                "$# title",
                "$1",
                "$#     mid        ro         k        f0         d       cdf       tdf",
-               "        $2        $3        $4",
+               "         $2          $3          $4",
                "$#   flcid     hlcid        c1        c2       dle     glcid",
                "",
                "$"
@@ -4163,7 +4145,7 @@
                "$# title",
                "$1",
                "$#     mid        ro       tkr       tks       tkt       rkr       rks       rkt",
-               "        $2        $3",
+               "         $2          $3",
                "$#     tdr       tds       tdt       rdr       rds       rdt",
                "",
                "$#     for       fos       fot       mor       mos       mot",
@@ -4182,7 +4164,7 @@
                "$# title",
                "$1",
                "$#     mid        ro    lcidtr    lcidts    lcidtt    lcidrr    lcidrs    lcidrt",
-               "        $2        $3",
+               "         $2          $3",
                "$# lcidtdr   lcidtds   lcidtdt   lcidrdr   lcidrds   lcidrdt",
                "",
                "$#     for       fos       fot       mor       mos       mot",
@@ -4205,7 +4187,7 @@
                "$# title",
                "$1",
                "$#     mid        ro       tkr       tks       tkt       rkr       rks       rkt",
-               "        $2        $3",
+               "         $2          $3",
                "$#     rdr       rds       rdt       rdr       rds       rdt",
                "",
                "$#   lcpdr     lcpds     lcpdt     lcpmr     lcpms     lcpmt",
@@ -4230,7 +4212,7 @@
                "$# title",
                "$1",
                "$#     mid        ro        pc        mu     terod     cerod        ym        pr",
-               "        $2        $3                                                $4        $5",
+               "         $2          $3                                                  $4          $5",
                "$"
           ],
           "description": "MAT_NULL_TITLE",
@@ -4245,9 +4227,9 @@
                "$# title",
                "$1",
                "$#     mid        ro         e        pr      sigy      etan      fail      tdel",
-               "        $2        $3        $4        $5",
+               "         $2          $3          $4          $5",
                "$#       c         p      lcss      lcsr        vp",
-               "                            $6",
+               "                             $6",
                "$#    eps1      eps2      eps3      eps4      eps5      eps6      eps7      eps8",
                "",
                "$#     es1       es2       es3       es4       es5       es6       es7       es8",
@@ -4266,7 +4248,7 @@
                "$# title",
                "$1",
                "$#     mid        ro         e        pr      sigy      etan      beta",
-               "        $2        $3        $4        $5",
+               "         $2          $3          $4          $5",
                "$#     src       srp        fs        vp",
                "",
                "$"
@@ -4283,7 +4265,7 @@
                "$# title",
                "$1",
                "$#     mid        ro         e        pr      sigy      etan",
-               "        $2        $3        $4        $5",
+               "         $2          $3          $4          $5",
                "$"
           ],
           "description": "MAT_RESULTANT_PLASTICITY_TITLE",
@@ -4298,7 +4280,7 @@
                "$# title",
                "$1",
                "$#     mid        ro         e        pr         n    couple         m     alias",
-               "        $2        $3        $4        $5",
+               "         $2          $3          $4          $5",
                "$#     cmo      con1      con2",
                "",
                "$#lco or a1       a2        a3        v1        v2        v3",
@@ -4317,13 +4299,13 @@
                "$# title",
                "$1",
                "$#     mid        ro      bulk      gmod      emod       nue    rbcfac    numint",
-               "        $2        $3        $4        $5        $6        $7        $8",
+               "         $2          $3          $4          $5          $6          $7          $8",
                "$#  lcid-T    lcid-C    lcid-S    lcid-B      nuep    lcid-P              incdam",
-               "        $9        $10        $11        $12        $13        $14",
+               "         $9          $10          $11          $12          $13          $14",
                "$#  lcid-D    epfail    deprpt  lcid_tri   lcid_lc",
-               "        $15        $16        $17        $18        $19",
+               "         $15          $16          $17          $18          $19",
                "$#   miter      mips             incfail     iconv      asaf",
-               "        $20        $21                  $22        $23        $24",
+               "         $20          $21                    $22          $23          $24",
                "$"
           ],
           "description": "MAT_SAMP-1",
@@ -4338,7 +4320,7 @@
                "$# title",
                "$1",
                "$#     mid      mpul     llcid     ulcid      lmin       cse      damp",
-               "        $2        $3        $4        $5        $6       2.0",
+               "         $2          $3          $4          $5          $6        2.0",
                "$"
           ],
           "description": "MAT_SEATBELT_TITLE",
@@ -4353,7 +4335,7 @@
                "$# title",
                "$1",
                "$#     mid        ro        st         d         r         h         k         c",
-               "        $2        $3",
+               "         $2          $3",
                "$#      c3       stf      rhof        c1        c2     lcidf     lcidd        s0",
                "",
                "$#   orfloc   orfrad        sf        dc",
@@ -4421,7 +4403,7 @@
                "$# title",
                "$1",
                "$#     mid         k",
-               "        $2        $3",
+               "         $2          $3",
                "$"
           ],
           "description": "MAT_SPRING_ELASTIC_TITLE",
@@ -4436,7 +4418,7 @@
                "$# title",
                "$1",
                "$      mid       lcd      lcdu      beta       tyi       cyi",
-               "        $2        $3        $4",
+               "         $2          $3          $4",
                "$"
           ],
           "description": "MAT_SPRING_GENERAL_NONLINEAR_TITLE",
@@ -4451,7 +4433,7 @@
                "$# title",
                "$1",
                "$      mid      lcfd        ku       ctf",
-               "        $2        $3",
+               "         $2          $3",
                "$"
           ],
           "description": "MAT_SPRING_INELASTIC_TITLE",
@@ -4466,7 +4448,7 @@
                "$# title",
                "$1",
                "$#     mid       lcd       lcr",
-               "        $2        $3        $4",
+               "         $2          $3          $4",
                "$"
           ],
           "description": "MAT_SPRING_NONLINEAR_ELASTIC_TITLE",
@@ -4494,7 +4476,7 @@
           "body": [
                "*NODE",
                "$#   nid               x               y               z      tc      rc",
-               "      $1             0.0             0.0             0.0",
+               "       $1              0.0             0.0             0.0",
                "$"
           ],
           "description": "NODE",
@@ -4507,7 +4489,7 @@
           "body": [
                "*NODE_MERGE_SET",
                "$#  nsid",
-               "      $1",
+               "       $1",
                "$"
           ],
           "description": "NODE_MERGE_SET",
@@ -4520,7 +4502,7 @@
           "body": [
                "*NODE_MERGE_SET_TOLERANCE",
                "$#  tolr",
-               "      $1",
+               "       $1",
                "$"
           ],
           "description": "NODE_MERGE_SET_TOLERANCE",
@@ -4533,7 +4515,7 @@
           "body": [
                "*NODE_TRANSFORM",
                "$#   trsid      nsid",
-               "        $1        $2",
+               "         $1          $2",
                "$"
           ],
           "description": "NODE_TRANSFORM",
@@ -4546,7 +4528,7 @@
           "body": [
                "*PARAMETER",
                "$#    name       val",
-               "        $1        $2",
+               "         $1          $2",
                "$"
           ],
           "description": "PARAMETER",
@@ -4559,7 +4541,7 @@
           "body": [
                "*PARAMETER_DUPLICATION",
                "$#   dflag",
-               "        $1",
+               "         $1",
                "$"
           ],
           "description": "PARAMETER_DUPLICATION",
@@ -4572,7 +4554,7 @@
           "body": [
                "*PARAMETER_EXPRESSION",
                "$#    name expression",
-               "        $1$2",
+               "         $1  $2",
                "$"
           ],
           "description": "PARAMETER_EXPRESSION",
@@ -4585,7 +4567,7 @@
           "body": [
                "*PARAMETER_EXPRESSION_LOCAL",
                "$#    name expression",
-               "        $1$2",
+               "         $1  $2",
                "$"
           ],
           "description": "PARAMETER_EXPRESSION_LOCAL",
@@ -4598,7 +4580,7 @@
           "body": [
                "*PARAMETER_LOCAL",
                "$#    name       val",
-               "        $1        $2",
+               "         $1          $2",
                "$"
           ],
           "description": "PARAMETER_LOCAL",
@@ -4613,7 +4595,7 @@
                "$# title",
                "$1",
                "$#     pid     secid       mid     eosid      hgid      grav    adpopt      tmid",
-               "        $2        $3        $4",
+               "         $2          $3          $4",
                "$"
           ],
           "description": "PART",
@@ -4626,7 +4608,7 @@
           "body": [
                "*PART_ANNEAL",
                "$#     pid      time",
-               "        $1",
+               "         $1",
                "$"
           ],
           "description": "PART_ANNEAL",
@@ -4639,7 +4621,7 @@
           "body": [
                "*PART_ANNEAL_SET",
                "$#    psid      time",
-               "        $1",
+               "         $1",
                "$"
           ],
           "description": "PART_ANNEAL_SET",
@@ -4654,7 +4636,7 @@
                "$# title",
                "$1",
                "$#     pid     secid       mid     eosid      hgid      grav    adpopt      tmid",
-               "        $2        $3        $4",
+               "         $2          $3          $4",
                "$#      fs        fd        dc        vc      optt       sft       ssf",
                "",
                "$"
@@ -4669,7 +4651,7 @@
           "body": [
                "*PART_DUPLICATE",
                "$#   ptype    typeid    idpoff    ideoff    idnoff    tranid",
-               "        $1",
+               "         $1",
                "$"
           ],
           "description": "PART_DUPLICATE",
@@ -4684,11 +4666,11 @@
                "$# title",
                "$1",
                "$#     pid     secid       mid     eosid      hgid      grav    adpopt      tmid",
-               "        $2        $3        $4",
+               "         $2          $3          $4",
                "$#      xc        yc        zc        tm      ircs    nodeid",
-               "        $5        $6        $7        $8",
+               "         $5          $6          $7          $8",
                "$#     ixx       ixy       ixz       iyy       iyz       izz",
-               "        $9        $10        $11        $12        $13        $14",
+               "         $9          $10          $11          $12          $13          $14",
                "$#     vtx       vty       vtz       vrx       vry       vrz",
                "",
                "$"
@@ -4703,7 +4685,7 @@
           "body": [
                "*PART_MOVE",
                "$#   pid            xmov            ymov            zmov     cid   ifset",
-               "      $1",
+               "       $1",
                "$"
           ],
           "description": "PART_MOVE",
@@ -4716,7 +4698,7 @@
           "body": [
                "*PART_SENSOR",
                "$#     pid      sida    active",
-               "        $1        $2",
+               "         $1          $2",
                "$"
           ],
           "description": "PART_SENSOR",
@@ -4746,9 +4728,9 @@
                "$# title",
                "$1",
                "$#   secid    elform      shrf   qr/irid       cst     scoor       nsm",
-               "        $2         6",
+               "         $2          6",
                "$#     vol      iner       cid        ca    offset     rrcon     srcon     trcon",
-               "                                      $3",
+               "                                       $3",
                "$"
           ],
           "description": "SECTION_BEAM_TITLE",
@@ -4763,7 +4745,7 @@
                "$# title",
                "$1",
                "$#   secid       dro        kd        v0        cl        fd",
-               "        $2        $3",
+               "         $2          $3",
                "$#     cdl       tdl",
                "",
                "$"
@@ -4780,7 +4762,7 @@
                "$# title",
                "$1",
                "$#   secid      area     thick",
-               "        $2",
+               "         $2",
                "$"
           ],
           "description": "SECTION_SEATBELT_TITLE",
@@ -4795,9 +4777,9 @@
                "$# title",
                "$1",
                "$#   secid    elform      shrf       nip     propt   qr/irid     icomp     setyp",
-               "        $2         9     0.833         1                             1",
+               "         $2          9     0.833         1                             1",
                "$#      t1        t2        t3        t4      nloc     marea      idof    edgset",
-               "        $3",
+               "         $3",
                "$#      bi        bi        bi        bi        bi        bi        bi        bi",
                "       0.0      90.0",
                "$"
@@ -4814,7 +4796,7 @@
                "$# title",
                "$1",
                "$#   secid    elform       aet",
-               "        $2         1",
+               "         $2          1",
                "$"
           ],
           "description": "SECTION_SOLID_TITLE",
@@ -4840,9 +4822,9 @@
           "body": [
                "*SENSOR_CONTROL",
                "$#  cntlid      type    typrid   timeoff",
-               "        $1        $2        $3",
+               "         $1          $2          $3",
                "$# initstt     swit1     swit2     swit3     swit4     swit5     swit6     swit7",
-               " $4ON/OFF?        $5",
+               "  $4 ON/OFF?         $5",
                "$"
           ],
           "description": "SENSOR_CONTROL",
@@ -4855,7 +4837,7 @@
           "body": [
                "*SENSOR_CPM_AIRBAG",
                "$#   cpmid    switid    tbirth    tdeath       tdr     defps     rbpid",
-               "        $1        $2        $3",
+               "         $1          $2          $3",
                "$"
           ],
           "description": "SENSOR_CPM_AIRBAG",
@@ -4868,16 +4850,16 @@
           "body": [
                "*SENSOR_DEFINE_CALC-MATH",
                "$#  sensid      calc     sens1     sens2     sens3     sens4     sens5     sens6",
-               "        $1    ABSSUM        $2",
-               "        $3       MIN        $4",
-               "        $5       MAX        $6",
-               "        $7    MAXMAG        $8",
-               "        $9    MINMAG        $10",
-               "        $11  MULTIPLY        $12",
-               "        $13      SQRY        $14",
-               "        $15  SQRTSQRE        $16",
-               "        $17    SUMABS        $18",
-               "        $19       SUM        $20",
+               "         $1     ABSSUM         $2",
+               "         $3        MIN         $4",
+               "         $5        MAX         $6",
+               "         $7     MAXMAG         $8",
+               "         $9     MINMAG         $10",
+               "         $11   MULTIPLY         $12",
+               "         $13       SQRY         $14",
+               "         $15   SQRTSQRE         $16",
+               "         $17     SUMABS         $18",
+               "         $19        SUM         $20",
                "$"
           ],
           "description": "SENSOR_DEFINE_CALC-MATH",
@@ -4890,7 +4872,7 @@
           "body": [
                "*SENSOR_DEFINE_ELEMENT",
                "$#  sensid     etype    elemid      comp     ctype     layer",
-               "        $1        $2        $3        $4        $5        $6",
+               "         $1          $2          $3          $4          $5          $6",
                "$"
           ],
           "description": "SENSOR_DEFINE_ELEMENT",
@@ -4903,7 +4885,7 @@
           "body": [
                "*SENSOR_DEFINE_ELEMENT_SET",
                "$#  sensid     etype    elemid      comp     ctype     layer",
-               "        $1        $2        $3        $4        $5        $6",
+               "         $1          $2          $3          $4          $5          $6",
                "$"
           ],
           "description": "SENSOR_DEFINE_ELEMENT_SET",
@@ -4916,7 +4898,7 @@
           "body": [
                "*SENSOR_DEFINE_FORCE",
                "$#  sensid     ftype    typeid       vid       crd",
-               "        $1        $2        $3        $4        $5",
+               "         $1          $2          $3          $4          $5",
                "$"
           ],
           "description": "SENSOR_DEFINE_FORCE",
@@ -4929,7 +4911,7 @@
           "body": [
                "*SENSOR_DEFINE_FUNCTION",
                "$#  sensid      func     sens1     sens2     sens3     sens4     sens5     sens6",
-               "        $1",
+               "         $1",
                "$"
           ],
           "description": "SENSOR_DEFINE_FUNCTION",
@@ -4942,7 +4924,7 @@
           "body": [
                "*SENSOR_DEFINE_MISC",
                "$#  sensid     mtype                  i1        i2        i3        i4",
-               "        $1",
+               "         $1",
                "$"
           ],
           "description": "SENSOR_DEFINE_MISC",
@@ -4955,7 +4937,7 @@
           "body": [
                "*SENSOR_DEFINE_NODE",
                "$#  cntlid     node1     node2       vid       crd     ctype",
-               "        $1        $2        $3        $4                  $5",
+               "         $1          $2          $3          $4                    $5",
                "$"
           ],
           "description": "SENSOR_DEFINE_NODE",
@@ -4968,7 +4950,7 @@
           "body": [
                "*SENSOR_DEFINE_NODE_SET",
                "$#  cntlid     node1     node2       vid       crd     ctype",
-               "        $1        $2        $3        $4                  $5",
+               "         $1          $2          $3          $4                    $5",
                "$"
           ],
           "description": "SENSOR_DEFINE_NODE_SET",
@@ -4981,7 +4963,7 @@
           "body": [
                "*SENSOR_SWITCH",
                "$#  switid      type    sensid     logic     value   filtrid    timwin",
-               "        $1        $2        $3  $4LT/GT?        $5",
+               "         $1          $2          $3    $4 LT/GT?         $5",
                "$"
           ],
           "description": "SENSOR_SWITCH",
@@ -4994,7 +4976,7 @@
           "body": [
                "*SENSOR_SWITCH_CALC-LOGIC",
                "$#  switid     swit1     swit2     swit3     swit4     swit5     swit6     swit7",
-               "        $1        $2",
+               "         $1          $2",
                "$"
           ],
           "description": "SENSOR_SWITCH_CALC-LOGIC",
@@ -5007,7 +4989,7 @@
           "body": [
                "*SENSOR_SWITCH_SHELL_TO_VENT",
                "$#      id     itype       c23",
-               "        $1",
+               "         $1",
                "$#    ssid     ftime      c23v",
                "",
                "$"
@@ -5039,9 +5021,9 @@
                "$# title",
                "$1",
                "$#     sid       da1       da2       da3       da4    solver",
-               "        $2",
+               "         $2",
                "$#    sid1     type1      sid2     type2      sid3     type3      sid4     type4",
-               "        $3        $4",
+               "         $3          $4",
                "$"
           ],
           "description": "SET_NODE_ADD_ADVANCED_TITLE",
@@ -5056,9 +5038,9 @@
                "$# title",
                "$1",
                "$#     sid       da1       da2       da3       da4    solver",
-               "        $2",
+               "         $2",
                "$#   nsid1     nsid2     nsid3     nsid4     nsid5     nsid6     nsid7     nsid8",
-               "        $3        $4",
+               "         $3          $4",
                "$"
           ],
           "description": "SET_NODE_ADD_TITLE",
@@ -5073,9 +5055,9 @@
                "$# title",
                "$1",
                "$#     sid       da1       da2       da3       da4    solver",
-               "        $2",
+               "         $2",
                "$#     nid        a1        a2        a3        a4",
-               "        $3",
+               "         $3",
                "$"
           ],
           "description": "SET_NODE_COLUMN_TITLE",
@@ -5090,22 +5072,22 @@
                "$# title",
                "$1",
                "$#     sid       da1       da2       da3       da4    solver",
-               "        $2",
+               "         $2",
                "$#  option        e1        e2        e3        e4        e5        e6        e7",
                "ALL",
-               "NODE              $3",
-               "DNODE             $4",
-               "PART              $5",
-               "DPART             $6",
-               "BOX               $7",
-               "DBOX              $8",
-               "VOL               $9",
-               "DVOL              $10",
-               "SET_SHELL         $11",
-               "SET_SOLID         $12",
-               "SET_BEAM          $13",
-               "SET_TSHELL        $14",
-               "SET_SPRING        $15",
+               "NODE               $3",
+               "DNODE              $4",
+               "PART               $5",
+               "DPART              $6",
+               "BOX                $7",
+               "DBOX               $8",
+               "VOL                $9",
+               "DVOL               $10",
+               "SET_SHELL          $11",
+               "SET_SOLID          $12",
+               "SET_BEAM           $13",
+               "SET_TSHELL         $14",
+               "SET_SPRING         $15",
                "$"
           ],
           "description": "SET_NODE_GENERAL_TITLE",
@@ -5120,9 +5102,9 @@
                "$# title",
                "$1",
                "$#     sid       da1       da2       da3       da4    solver",
-               "        $2",
+               "         $2",
                "$#   nsid1     nsid2     nsid3     nsid4     nsid5     nsid6     nsid7     nsid8",
-               "        $3        $4",
+               "         $3          $4",
                "$"
           ],
           "description": "SET_NODE_INTERSECT_TITLE",
@@ -5137,9 +5119,9 @@
                "$# title",
                "$1",
                "$#     sid       da1       da2       da3       da4    solver",
-               "        $2",
+               "         $2",
                "$#    bbeg      bend      incr",
-               "        $3        $4        $5",
+               "         $3          $4          $5",
                "$"
           ],
           "description": "SET_NODE_LIST_GENERATE_INCREMENT_TITLE",
@@ -5154,9 +5136,9 @@
                "$# title",
                "$1",
                "$#     sid       da1       da2       da3       da4    solver",
-               "        $2",
+               "         $2",
                "$#   b1beg     b1end     b2beg     b2end     b3beg     b3end     b4beg     b4end",
-               "        $3        $4",
+               "         $3          $4",
                "$"
           ],
           "description": "SET_NODE_LIST_GENERATE_TITLE",
@@ -5171,9 +5153,9 @@
                "$# title",
                "$1",
                "$#     sid       da1       da2       da3       da4    solver",
-               "        $2",
+               "         $2",
                "$#    nid1      nid2      nid3      nid4      nid5      nid6      nid7      nid8",
-               "        $3",
+               "         $3",
                "$"
           ],
           "description": "SET_NODE_LIST_TITLE",
@@ -5188,9 +5170,9 @@
                "$# title",
                "$1",
                "$#     sid       da1       da2       da3       da4    solver",
-               "        $2",
+               "         $2",
                "$#   psid1     psid2     psid3     psid4     psid5     psid6     psid7     psid8",
-               "        $3",
+               "         $3",
                "$"
           ],
           "description": "SET_PART_ADD_TITLE",
@@ -5205,9 +5187,9 @@
                "$# title",
                "$1",
                "$#     sid       da1       da2       da3       da4    solver",
-               "        $2",
+               "         $2",
                "$#     pid        a1        a2        a3        a4",
-               "        $3",
+               "         $3",
                "$"
           ],
           "description": "SET_PART_COLUMN_TITLE",
@@ -5222,9 +5204,9 @@
                "$# title",
                "$1",
                "$#     sid       da1       da2       da3       da4    solver",
-               "        $2",
+               "         $2",
                "$#    bbeg      bend      incr",
-               "        $3        $4        $5",
+               "         $3          $4          $5",
                "$"
           ],
           "description": "SET_PART_LIST_GENERATE_INCREMNET_TITLE",
@@ -5239,9 +5221,9 @@
                "$# title",
                "$1",
                "$#     sid       da1       da2       da3       da4    solver",
-               "        $2",
+               "         $2",
                "$#   b1beg     b1end     b2beg     b2end     b3beg     b3end     b4beg     b4end",
-               "        $3        $4",
+               "         $3          $4",
                "$"
           ],
           "description": "SET_PART_LIST_GENERATE_TITLE",
@@ -5256,9 +5238,9 @@
                "$# title",
                "$1",
                "$#     sid       da1       da2       da3       da4    solver",
-               "        $2",
+               "         $2",
                "$#    pid1      pid2      pid3      pid4      pid5      pid6      pid7      pid8",
-               "        $3",
+               "         $3",
                "$"
           ],
           "description": "SET_PART_LIST_TITLE",
@@ -5290,9 +5272,9 @@
                "$# title",
                "$1",
                "$#     sid       da1       da2       da3       da4    solver",
-               "        $2",
+               "         $2",
                "$#   ssid1     ssid2     ssid3     ssid4     ssid5     ssid6     ssid7     ssid8",
-               "        $3        $4",
+               "         $3          $4",
                "$"
           ],
           "description": "SET_SHELL_ADD_TITLE",
@@ -5307,9 +5289,9 @@
                "$# title",
                "$1",
                "$#     sid       da1       da2       da3       da4    solver",
-               "        $2",
+               "         $2",
                "$#     eid        a1        a2        a3        a4",
-               "        $3",
+               "         $3",
                "$"
           ],
           "description": "SET_SHELL_COLUMN_TITLE",
@@ -5324,15 +5306,15 @@
                "$# title",
                "$1",
                "$#     sid    solver",
-               "        $2",
+               "         $2",
                "$#  option        e1        e2        e3        e4        e5        e6        e7",
                "ALL",
-               "ELEM              $3",
-               "DELEM             $4",
-               "PART              $5",
-               "DPART             $6",
-               "BOX               $7",
-               "DBOX              $8",
+               "ELEM               $3",
+               "DELEM              $4",
+               "PART               $5",
+               "DPART              $6",
+               "BOX                $7",
+               "DBOX               $8",
                "$"
           ],
           "description": "SET_SHELL_GENERAL_TITLE",
@@ -5347,9 +5329,9 @@
                "$# title",
                "$1",
                "$#     sid       da1       da2       da3       da4    solver",
-               "        $2",
+               "         $2",
                "$#   ssid1     ssid2     ssid3     ssid4     ssid5     ssid6     ssid7     ssid8",
-               "        $3        $4",
+               "         $3          $4",
                "$"
           ],
           "description": "SET_SHELL_INTERSECT_TITLE",
@@ -5364,9 +5346,9 @@
                "$# title",
                "$1",
                "$#     sid       da1       da2       da3       da4    solver",
-               "        $2",
+               "         $2",
                "$#    bbeg      bend      incr",
-               "        $3        $4        $5",
+               "         $3          $4          $5",
                "$"
           ],
           "description": "SET_SHELL_LIST_GENERATE_INCREMENT_TITLE",
@@ -5381,9 +5363,9 @@
                "$# title",
                "$1",
                "$#     sid       da1       da2       da3       da4    solver",
-               "        $2",
+               "         $2",
                "$#   b1beg     b1end     b2beg     b2end     b3beg     b3end     b4beg     b4end",
-               "        $3        $4",
+               "         $3          $4",
                "$"
           ],
           "description": "SET_SHELL_LIST_GENERATE_TITLE",
@@ -5398,9 +5380,9 @@
                "$# title",
                "$1",
                "$#     sid       da1       da2       da3       da4    solver",
-               "        $2",
+               "         $2",
                "$#    eid1      eid2      eid3      eid4      eid5      eid6      eid7      eid8",
-               "        $3",
+               "         $3",
                "$"
           ],
           "description": "SET_SHELL_LIST_TITLE",
@@ -5415,9 +5397,9 @@
                "$# title",
                "$1",
                "$#     sid    solver",
-               "        $2",
+               "         $2",
                "$#   ssid1     ssid2     ssid3     ssid4     ssid5     ssid6     ssid7     ssid8",
-               "        $3        $4",
+               "         $3          $4",
                "$"
           ],
           "description": "SET_SOLID_ADD_TITLE",
@@ -5432,15 +5414,15 @@
                "$# title",
                "$1",
                "$#     sid    solver",
-               "        $2",
+               "         $2",
                "$#  option        e1        e2        e3        e4        e5        e6        e7",
                "ALL",
-               "PART              $3",
-               "DPART             $4",
-               "ELEM              $5",
-               "DELEM             $6",
-               "BOX               $7",
-               "DBOX              $8",
+               "PART               $3",
+               "DPART              $4",
+               "ELEM               $5",
+               "DELEM              $6",
+               "BOX                $7",
+               "DBOX               $8",
                "$"
           ],
           "description": "SET_SOLID_GENERAL_TITLE",
@@ -5455,9 +5437,9 @@
                "$# title",
                "$1",
                "$#     sid    solver",
-               "        $2",
+               "         $2",
                "$#    bbeg      bend      incr",
-               "        $3        $4",
+               "         $3          $4",
                "$"
           ],
           "description": "SET_SOLID_GENERATE_INCREMENT_TITLE",
@@ -5472,9 +5454,9 @@
                "$# title",
                "$1",
                "$#     sid    solver",
-               "        $2",
+               "         $2",
                "$#   b1beg     b1end     b2beg     b2end     b3beg     b3end     b4beg     b4end",
-               "        $3        $4",
+               "         $3          $4",
                "$"
           ],
           "description": "SET_SOLID_GENERATE_TITLE",
@@ -5489,9 +5471,9 @@
                "$# title",
                "$1",
                "$#     sid    solver",
-               "        $2",
+               "         $2",
                "$#   ssid1     ssid2     ssid3     ssid4     ssid5     ssid6     ssid7     ssid8",
-               "        $3        $4",
+               "         $3          $4",
                "$"
           ],
           "description": "SET_SOLID_INTERSECT_TITLE",
@@ -5506,9 +5488,9 @@
                "$# title",
                "$1",
                "$#     sid    solver",
-               "        $2",
+               "         $2",
                "$#    eid1      eid2      eid3      eid4      eid5      eid6      eid7      eid8",
-               "        $3",
+               "         $3",
                "$"
           ],
           "description": "SET_SOLID_TITLE",
@@ -5521,7 +5503,7 @@
           "body": [
                "*TERMINATION_BODY",
                "$#     pid      stop      maxc      minc",
-               "        $1",
+               "         $1",
                "$"
           ],
           "description": "TERMINATION_BODY",
@@ -5534,7 +5516,7 @@
           "body": [
                "*TERMINATION_CONTACT",
                "$#     cid     actim       dur     thres       dof",
-               "        $1",
+               "         $1",
                "$"
           ],
           "description": "TERMINATION_CONTACT",
@@ -5612,7 +5594,7 @@
           "body": [
                "*TERMINATION_NODE",
                "$#     nid      stop      maxc      minc",
-               "        $1",
+               "         $1",
                "$"
           ],
           "description": "TERMINATION_NODE",
@@ -5625,7 +5607,7 @@
           "body": [
                "*TERMINATION_SENSOR",
                "$#    swid",
-               "        $1",
+               "         $1",
                "$"
           ],
           "description": "TERMINATION_SENSOR",
@@ -5651,7 +5633,7 @@
           "body": [
                "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$",
                "$                                                                              $",
-               "$                                      $1                                    $",
+               "$                                       $1                                     $",
                "$                                                                              $",
                "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
           ],
