@@ -169,6 +169,66 @@
                "AIRBAG_SIMPLE_PRESSURE_VOLUME_ID"
           ]
      },
+     "*ALE_COUPLING_RIGID_BODY": {
+          "body": [
+               "*ALE_COUPLING_RIGID_BODY",
+               "$#     pid      esid",
+               "",
+               "$#      id    idtype    ictype    iexcle",
+               ""
+          ],
+          "description": "ALE_COUPLING_RIGID_BODY",
+          "prefix": [
+               "*ALE_COUPLING_RIGID_BODY",
+               "ALE_COUPLING_RIGID_BODY"
+          ]
+     },
+     "*ALE_ESSENTIAL_BOUNDARY": {
+          "body": [
+               "*ALE_ESSENTIAL_BOUNDARY",
+               "$#      id    idtype    ictype     iexcl",
+               ""
+          ],
+          "description": "ALE_ESSENTIAL_BOUNDARY",
+          "prefix": [
+               "*ALE_ESSENTIAL_BOUNDARY",
+               "ALE_ESSENTIAL_BOUNDARY"
+          ]
+     },
+     "*ALE_PRESCRIBED_MOTION": {
+          "body": [
+               "*ALE_PRESCRIBED_MOTION",
+               "$#   mmsid    inside      sidr",
+               "",
+               "$#   lcvtx     lcvty     lcvtz",
+               "",
+               "$#   lcvrx     lcvry     lcvrz",
+               "",
+               "$#      xg        yg        zg",
+               ""
+          ],
+          "description": "ALE_PRESCRIBED_MOTION",
+          "prefix": [
+               "*ALE_PRESCRIBED_MOTION",
+               "ALE_PRESCRIBED_MOTION"
+          ]
+     },
+     "*ALE_REFINE": {
+          "body": [
+               "*ALE_REFINE",
+               "$#      id      type      nlvl     mmsid",
+               "",
+               "$#  ntotrf    ncycrf    critrf     valrf     begrf     endrf     layrf",
+               "",
+               "$#   maxrm    ncycrm    critrm     valrm     begrm     endrm",
+               ""
+          ],
+          "description": "ALE_REFINE",
+          "prefix": [
+               "*ALE_REFINE",
+               "ALE_REFINE"
+          ]
+     },
      "*BOUNDARY_CONVECTION_SET": {
           "body": [
                "*BOUNDARY_CONVECTION_SET",
@@ -639,6 +699,46 @@
           "prefix": [
                "*CONSTRAINED_JOINT_UNIVERSAL_ID",
                "CONSTRAINED_JOINT_UNIVERSAL_ID"
+          ]
+     },
+     "*CONSTRAINED_LAGRANGE_IN_SOLID": {
+          "body": [
+               "*CONSTRAINED_LAGRANGE_IN_SOLID",
+               "$#   slave    master     sstyp     mstyp     nquad     ctype     direc     mcoup",
+               "",
+               "$#   start       end      pfac      fric    frcmin      norm   normtyp      damp",
+               "",
+               "$#      cq      hmin      hmax     ileak     pleak   lcidpor     nvent  blockage",
+               "",
+               "$#  iboxid   ipenchk   intforc   ialesof    lagmul    pfacmm      thkf",
+               "",
+               "$#      a1        b1        a2        b2        a3        b3             poreini",
+               ""
+          ],
+          "description": "CONSTRAINED_LAGRANGE_IN_SOLID",
+          "prefix": [
+               "*CONSTRAINED_LAGRANGE_IN_SOLID",
+               "CONSTRAINED_LAGRANGE_IN_SOLID"
+          ]
+     },
+     "*CONSTRAINED_LAGRANGE_IN_SOLID_EDGE": {
+          "body": [
+               "*CONSTRAINED_LAGRANGE_IN_SOLID_EDGE",
+               "$#   slave    master     sstyp     mstyp     nquad     ctype     direc     mcoup",
+               "",
+               "$#   start       end      pfac      fric    frcmin      norm   normtyp      damp",
+               "",
+               "$#      cq      hmin      hmax     ileak     pleak   lcidpor     nvent  blockage",
+               "",
+               "$#  iboxid   ipenchk   intforc   ialesof    lagmul    pfacmm      thkf",
+               "",
+               "$#      a1        b1        a2        b2        a3        b3",
+               ""
+          ],
+          "description": "CONSTRAINED_LAGRANGE_IN_SOLID_EDGE",
+          "prefix": [
+               "*CONSTRAINED_LAGRANGE_IN_SOLID_EDGE",
+               "CONSTRAINED_LAGRANGE_IN_SOLID_EDGE"
           ]
      },
      "*CONSTRAINED_NODAL_RIGID_BODY": {
