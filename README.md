@@ -33,6 +33,7 @@ This extension integrates LS-DYNA formatting, keyword snippets, and language too
 **Sidebar Panel**
 - **Include Tree** — recursively scans all `*INCLUDE` files and displays them as a tree; click any entry to open the file
 - **Keyword Index** — shows all keywords used in the current file (local mode) or the full include tree (recursive mode); toggle between modes with the toolbar buttons
+![sidebar.png](./images/sidebar.png)
 
 **Diagnostics**
 - Lines exceeding 80 characters (excluding comments) are flagged as warnings
