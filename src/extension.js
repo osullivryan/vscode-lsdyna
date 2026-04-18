@@ -287,6 +287,111 @@ class LsdynaRenameProvider {
     }
 }
 
+// ---------------------------------------------------------------------------
+// Keyword field hover
+// ---------------------------------------------------------------------------
+
+let _fieldData = null;
+
+function getFieldData() {
+    if (!_fieldData) {
+        const dataPath = path.join(__dirname, '..', 'keywords', 'field_data.json');
+        try {
+            _fieldData = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+        } catch {
+            _fieldData = {};
+        }
+    }
+    return _fieldData;
+}
+
+function lookupKeyword(name) {
+    const data = getFieldData();
+    if (data[name]) return data[name];
+    const tokens = name.split('_');
+    for (let i = tokens.length - 1; i >= 1; i--) {
+        const candidate = tokens.slice(0, i).join('_');
+        if (data[candidate]) return data[candidate];
+    }
+    return null;
+}
+
+function keywordHoverMarkdown(kwName, entry) {
+    const cards = entry.c;
+    const lines = [`**\\*${kwName}**`];
+    let cardNum = 1;
+    for (const card of cards) {
+        if (!card.length) continue;
+        const isWide = card.length === 1 && card[0].w >= 40;
+        if (isWide) {
+            lines.push(`\n*Card ${cardNum} (title):* ${card[0].n}`);
+        } else {
+            const names = card.map(f => f.n).join(', ');
+            lines.push(`\n*Card ${cardNum}:* ${names}`);
+        }
+        cardNum++;
+    }
+    if (entry.r) lines.push('\n*Last card repeats for each data row.*');
+    return lines.join('\n');
+}
+
+class LsdynaFieldHoverProvider {
+    provideHover(document, position) {
+        const line = document.lineAt(position.line);
+        const text = line.text;
+        const trimmed = text.trimStart();
+
+        // Hover on keyword lines
+        if (trimmed.startsWith('*')) {
+            const kwName = trimmed.slice(1).toUpperCase().split(/[\s,$]/)[0];
+            if (!kwName) return null;
+            const entry = lookupKeyword(kwName);
+            if (!entry) return null;
+            const md = new vscode.MarkdownString(keywordHoverMarkdown(kwName, entry));
+            return new vscode.Hover(md);
+        }
+
+        // Skip comment lines
+        if (trimmed.startsWith('$')) return null;
+
+        // Find the enclosing keyword line
+        let kwLine = null;
+        for (let i = position.line - 1; i >= 0; i--) {
+            const t = document.lineAt(i).text.trimStart();
+            if (t.startsWith('*')) { kwLine = i; break; }
+        }
+        if (kwLine === null) return null;
+
+        const kwText = document.lineAt(kwLine).text.trim();
+        const kwName = kwText.slice(1).toUpperCase().split(/[\s,]/)[0];
+        const entry = lookupKeyword(kwName);
+        if (!entry) return null;
+
+        // Count which card index this line is (skip comments between keyword and here)
+        let cardIndex = 0;
+        for (let i = kwLine + 1; i < position.line; i++) {
+            const t = document.lineAt(i).text.trimStart();
+            if (!t.startsWith('$') && t.length > 0) cardIndex++;
+        }
+
+        const cards = entry.c;
+        // For repeating keywords, clamp to last card
+        const clampedIndex = entry.r ? Math.min(cardIndex, cards.length - 1) : cardIndex;
+        const card = cards[clampedIndex];
+        if (!card || card.length === 0) return null;
+
+        const col = position.character;
+        const field = card.find(f => col >= f.p && col < f.p + f.w);
+        if (!field) return null;
+
+        const typeLabel = field.t ? ` *(${field.t})*` : '';
+        const helpText = field.h ? `\n\n${field.h}` : '';
+        const md = new vscode.MarkdownString(`**${field.n}**${typeLabel}${helpText}`);
+        const range = new vscode.Range(position.line, field.p, position.line, field.p + field.w);
+        return new vscode.Hover(md, range);
+    }
+}
+
 class LsdynaParameterCodeLensProvider {
     provideCodeLenses(document) {
         const defs = findParameterDefinitions(document);
@@ -648,6 +753,9 @@ function activate(context) {
         vscode.languages.registerDocumentLinkProvider({ language: 'lsdyna' }, new LsdynaDocumentLinkProvider())
     );
 
+    context.subscriptions.push(
+        vscode.languages.registerHoverProvider({ language: 'lsdyna' }, new LsdynaFieldHoverProvider())
+    );
     context.subscriptions.push(
         vscode.languages.registerCodeLensProvider({ language: 'lsdyna' }, new LsdynaParameterCodeLensProvider())
     );

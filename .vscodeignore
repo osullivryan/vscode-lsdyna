@@ -1,0 +1,7 @@
+.github
+.gitignore
+test
+node_modules
+keywords/process_keywords.py
+keywords/generate_from_pydyna.py
+**/*.ipynb
