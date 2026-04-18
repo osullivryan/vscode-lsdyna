@@ -5,6 +5,7 @@
 	"patterns": [
 		{"include": "#comments"},
 		{"include": "#dyna_numeric"},
+		{"include": "#parameter_expression_block"},
 		{"include": "#keywords_type"},
 		{"include": "#separate"},
 		{"include": "#posterior_keywords_and_options"},
@@ -70,6 +71,31 @@
 					"name": "variable.parameter.lsdyna",
 					"begin": "[&]",
 					"end": "(?=\\,|\\n|\\r|[ ])"
+				}
+			]
+		},
+		"parameter_expression_block": {
+			"comment": "PARAMETER_EXPRESSION block — bare variable refs in expression values",
+			"begin": "^(\\*PARAMETER_EXPRESSION[^\\n]*)",
+			"beginCaptures": {
+				"1": { "name": "keyword.other.lsdyna" }
+			},
+			"while": "^(?![*])",
+			"patterns": [
+				{ "include": "#comments" },
+				{
+					"comment": "expression data line: TYPE name expression",
+					"match": "^[RI]\\s+\\w+\\s+(\\S.*$)",
+					"captures": {
+						"1": {
+							"patterns": [
+								{
+									"match": "[A-Za-z_]\\w*",
+									"name": "variable.parameter.lsdyna"
+								}
+							]
+						}
+					}
 				}
 			]
 		},

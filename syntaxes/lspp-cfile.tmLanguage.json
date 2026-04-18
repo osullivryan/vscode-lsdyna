@@ -1,0 +1,69 @@
+{
+    "name": "LS-PrePost Command File",
+    "scopeName": "source.lsprepost-command-file",
+    "fileTypes": ["cfile"],
+    "patterns": [
+        { "include": "#comments" },
+        { "include": "#strings" },
+        { "include": "#constants" },
+        { "include": "#parameters" },
+        { "include": "#parameter-references" },
+        { "include": "#statements" }
+    ],
+    "repository": {
+        "comments": {
+            "patterns": [
+                {
+                    "name": "comment.line.dollar.lsprepost-command-file",
+                    "match": "\\$.*$"
+                }
+            ]
+        },
+        "strings": {
+            "patterns": [
+                {
+                    "name": "string.quoted.double.lsprepost-command-file",
+                    "begin": "\"",
+                    "end": "\"|\\n",
+                    "patterns": [{ "include": "#parameter-references" }]
+                }
+            ]
+        },
+        "constants": {
+            "patterns": [
+                {
+                    "name": "constant.numeric.lsprepost-command-file",
+                    "match": "\\b[+-]?(\\d+|\\d*\\.?\\d+)(?:[eE][-+]?\\d+)?\\b"
+                }
+            ]
+        },
+        "parameters": {
+            "patterns": [
+                {
+                    "name": "keyword.declaration.lsprepost-command-file",
+                    "match": "\\bparameter\\b"
+                },
+                {
+                    "name": "variable.other.lsprepost-command-file",
+                    "match": "(?<=parameter\\s+)\\w+"
+                }
+            ]
+        },
+        "parameter-references": {
+            "patterns": [
+                {
+                    "name": "variable.other.lsprepost-command-file",
+                    "match": "&\\w+"
+                }
+            ]
+        },
+        "statements": {
+            "patterns": [
+                {
+                    "name": "punctuation.terminator.lsprepost-command-file",
+                    "match": ";"
+                }
+            ]
+        }
+    }
+}

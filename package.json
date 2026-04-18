@@ -10,27 +10,54 @@
         "url": "https://github.com/osullivryan/vscode-lsdyna"
     },
     "icon": "images/LS_DYNA_geo_metro.png",
-    "version": "1.2.1",
+    "version": "2.0.0",
     "engines": {
-        "vscode": "^1.30.0"
+        "vscode": "^1.80.0"
     },
+    "main": "./src/extension.js",
     "categories": [
         "Programming Languages"
     ],
+    "scripts": {
+        "test": "mocha test/**/*.test.js"
+    },
+    "devDependencies": {
+        "mocha": "^10.0.0"
+    },
     "contributes": {
+        "viewsContainers": {
+            "activitybar": [
+                {
+                    "id": "lsdyna-includes",
+                    "title": "LS-DYNA Include Tree",
+                    "icon": "images/ls.svg"
+                }
+            ]
+        },
+        "views": {
+            "lsdyna-includes": [
+                {
+                    "id": "lsdynaIncludeTree",
+                    "name": "Include Tree"
+                },
+                {
+                    "id": "lsdynaKeywordIndex",
+                    "name": "Keyword Index"
+                }
+            ]
+        },
         "languages": [
             {
                 "id": "lsdyna",
-                "aliases": [
-                    "LS-Dyna",
-                    "lsdyna"
-                ],
-                "extensions": [
-                    ".k",
-                    ".key",
-                    ".dyna"
-                ],
+                "aliases": ["LS-Dyna", "lsdyna"],
+                "extensions": [".k", ".key", ".dyna"],
                 "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "lsprepost-command-file",
+                "aliases": ["LS-PrePost Command File"],
+                "extensions": [".cfile"],
+                "configuration": "./language-configuration-lspp-cfile.json"
             }
         ],
         "grammars": [
@@ -38,6 +65,11 @@
                 "language": "lsdyna",
                 "scopeName": "source.lsdyna",
                 "path": "./syntaxes/lsdyna.tmLanguage.json"
+            },
+            {
+                "language": "lsprepost-command-file",
+                "scopeName": "source.lsprepost-command-file",
+                "path": "./syntaxes/lspp-cfile.tmLanguage.json"
             }
         ],
         "snippets": [
@@ -45,7 +77,102 @@
                 "language": "lsdyna",
                 "path": "./snippets/lsdyna.json"
             }
-        ]
+        ],
+        "commands": [
+            {
+                "command": "extension.openIncludeFile",
+                "title": "Open *INCLUDE File"
+            },
+            {
+                "command": "extension.selectKeyword",
+                "title": "Select Current Keyword"
+            },
+            {
+                "command": "extension.jumpToNextKeyword",
+                "title": "Jump to Next Keyword",
+                "icon": "$(arrow-down)"
+            },
+            {
+                "command": "extension.jumpToPreviousKeyword",
+                "title": "Jump to Previous Keyword",
+                "icon": "$(arrow-up)"
+            },
+            {
+                "command": "extension.scanIncludeTree",
+                "title": "Scan Include Tree",
+                "icon": "$(refresh)"
+            },
+            {
+                "command": "extension.scanKeywordIndex",
+                "title": "Scan Full Tree",
+                "icon": "$(list-tree)"
+            },
+            {
+                "command": "extension.keywordIndexSetLocal",
+                "title": "View Current File",
+                "icon": "$(file-text)"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "extension.jumpToNextKeyword",
+                "key": "ctrl+alt+down",
+                "when": "editorLangId == 'lsdyna'"
+            },
+            {
+                "command": "extension.jumpToPreviousKeyword",
+                "key": "ctrl+alt+up",
+                "when": "editorLangId == 'lsdyna'"
+            }
+        ],
+        "configurationDefaults": {
+            "[lsdyna]": {
+                "editor.wordWrap": "off"
+            }
+        },
+        "menus": {
+            "view/title": [
+                {
+                    "command": "extension.scanIncludeTree",
+                    "when": "view == lsdynaIncludeTree",
+                    "group": "navigation"
+                },
+                {
+                    "command": "extension.scanKeywordIndex",
+                    "when": "view == lsdynaKeywordIndex",
+                    "group": "navigation"
+                },
+                {
+                    "command": "extension.keywordIndexSetLocal",
+                    "when": "view == lsdynaKeywordIndex && lsdyna.keywordIndexMode == 'recursive'",
+                    "group": "navigation"
+                }
+            ],
+            "editor/context": [
+                {
+                    "command": "extension.openIncludeFile",
+                    "when": "editorLangId == 'lsdyna' && lsdyna.onIncludeLine",
+                    "group": "navigation"
+                },
+                {
+                    "command": "extension.selectKeyword",
+                    "when": "editorLangId == 'lsdyna'",
+                    "group": "9_cutcopypaste"
+                }
+            ],
+            "editor/title": [
+                {
+                    "command": "extension.jumpToNextKeyword",
+                    "when": "editorLangId == 'lsdyna'",
+                    "group": "navigation"
+                },
+                {
+                    "command": "extension.jumpToPreviousKeyword",
+                    "when": "editorLangId == 'lsdyna'",
+                    "group": "navigation"
+                }
+            ]
+        }
     },
     "release": {
         "branches": "master",
