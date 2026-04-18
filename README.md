@@ -95,6 +95,7 @@ There are a few ways you can go about adding keywords or features:
 
 - [osullivryan](https://github.com/osullivryan)
 - [yshl](https://github.com/yshl)
+- [maxiiss](https://github.com/maxiiss)
 
 ### Some References
 
