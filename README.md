@@ -90,6 +90,11 @@ There are a few ways you can go about adding keywords or features:
     3. Run `python keywords/generate_from_pydyna.py` from the repo root to regenerate `snippets/lsdyna.json` from the full pydyna keyword database (3168 keywords).
     4. Create a new pull request to merge your branch into master.
 
+### Contributors
+
+- [osullivryan](https://github.com/osullivryan)
+- [yshl](https://github.com/yshl)
+
 ### Some References
 
 [vim-lsdyna](https://github.com/gradzikb/vim-lsdyna)  
