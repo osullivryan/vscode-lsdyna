@@ -18,7 +18,7 @@ const {
     findPreviousKeyword,
 } = require('../src/extension')._internals;
 
-const FIXTURE_DIR = '/Users/ryanosullivan/Downloads/Bolt_A_Explicit';
+const FIXTURE_DIR = path.join(__dirname, 'Bolt_A_Explicit');
 
 // ---------------------------------------------------------------------------
 // findParameterDefinitions
